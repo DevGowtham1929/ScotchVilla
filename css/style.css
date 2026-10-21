@@ -468,6 +468,36 @@ ul, ol {
   gap: 30px;
 }
 
+.hero-no-image .hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 480px;
+  padding: 60px 20px 80px;
+}
+
+.hero-no-image .hero-content-col {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+
+.hero-no-image .hero-text-wrap {
+  padding-left: 0;
+}
+
+.hero-no-image .hero-description {
+  margin: 0 auto 35px auto;
+  max-width: 620px;
+}
+
+.hero-no-image .hero-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .hero-media-col {
   display: flex;
   align-items: flex-end;
