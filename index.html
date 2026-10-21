@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scotchvilla – Every great world begins small.</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Google Fonts: Fraunces (with SOFT axis) & Bricolage Grotesque -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="site-header" class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" title="Scotchvilla">
+        <img src="images/scotchvilla-logo.png" alt="Scotchvilla - Your tiny paw buddy" class="logo-img" width="580" height="622">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#story-so-far" class="nav-link">Our Story</a></li>
+          <li class="nav-item"><a href="#meet-scotch" class="nav-link">Meet Scotch</a></li>
+          <li class="nav-item"><a href="#puppies" class="nav-link">Meet the Family</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#join-scotchvilla" class="nav-link">Join Scotchvilla</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="header-actions">
+        <a href="#contact-modal" class="btn btn-primary nav-cta open-contact-trigger">Get in Touch</a>
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <ul class="mobile-menu">
+        <li class="mobile-item"><a href="#hero" class="mobile-link active">Home</a></li>
+        <li class="mobile-item"><a href="#story-so-far" class="mobile-link">Our Story</a></li>
+        <li class="mobile-item"><a href="#meet-scotch" class="mobile-link">Meet Scotch</a></li>
+        <li class="mobile-item"><a href="#puppies" class="mobile-link">Meet the Family</a></li>
+        <li class="mobile-item"><a href="#gallery" class="mobile-link">Gallery</a></li>
+        <li class="mobile-item"><a href="#join-scotchvilla" class="mobile-link">Join Scotchvilla</a></li>
+        <li class="mobile-item"><a href="#" class="mobile-link">Blog</a></li>
+        <li class="mobile-item mobile-cta-wrap">
+          <a href="#contact-modal" class="btn btn-primary btn-block open-contact-trigger">Get in Touch</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== SECTION 1: HERO ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="section-container hero-container">
+        
+        <!-- Left Column: Hero Dog Artwork & Red Shape -->
+        <div class="hero-media-col">
+          <div class="hero-media-wrapper hero-art-wrapper">
+            <div class="hero-main-img-box">
+              <img src="images/hero-dog-red-art@2x.png" 
+                   srcset="images/hero-dog-red-art.png 510w, images/hero-dog-red-art@2x.png 1020w"
+                   sizes="(max-width: 768px) 100vw, 680px"
+                   alt="Scotch - Dog with raised paw on red organic background" 
+                   class="hero-dog-img hero-dog-art" 
+                   width="680" height="558"
+                   loading="eager"
+                   fetchpriority="high">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Hero Content -->
+        <div class="hero-content-col">
+          <div class="hero-text-wrap">
+            <span class="section-badge gold-badge">WELCOME TO SCOTCHVILLA</span>
+            <h1 class="hero-headline">Every great<br class="desktop-br"> world begins<br class="desktop-br"> small.</h1>
+            <p class="hero-description">
+              It began with Scotch, a dwarf Beagle with an old soul, a gentle waddle and a deep devotion to coconuts. Today, it’s a little world where different is beautiful.
+            </p>
+            <div class="hero-cta-wrap">
+              <a href="#contact-modal" class="btn btn-primary btn-hero open-contact-trigger">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: MEET SCOTCH ==================== -->
+    <section id="meet-scotch" class="why-us-section">
+      <div class="section-container why-us-container">
+        
+        <!-- Left Column -->
+        <div class="why-us-col why-us-left">
+          <span class="section-badge gold-badge">Meet Scotch</span>
+          <h2 class="section-title">“Unhurried. Unbothered.<br class="desktop-br"> Unmistakably Scotch.”</h2>
+          <p class="why-us-paragraph">
+            Most Beagles chase the world. Scotch prefers to let it come to him. He takes life at the pace of a waddle, cuddles rather than barks and approaches every meal with complete devotion. He looks like a soft toy and behaves like an old soul. Somehow, that’s exactly what makes him unforgettable.
+          </p>
+          <div class="why-us-image-card">
+            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/wrgbgr-839x1024.png" 
+                 alt="Scotch resting peacefully" 
+                 class="rounded-card-img" 
+                 width="839" height="1024"
+                 loading="lazy">
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="why-us-col why-us-right">
+          <div class="why-us-floating-card">
+            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/iwygr-1024x800.png" 
+                 alt="Scotch portrait badge" 
+                 class="floating-banner-img" 
+                 width="1024" height="800"
+                 loading="lazy">
+          </div>
+          <div class="why-us-image-card main-right-card">
+            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/rgbw-839x1024.png" 
+                 alt="Scotch cuddled up" 
+                 class="rounded-card-img" 
+                 width="839" height="1024"
+                 loading="lazy">
+          </div>
+          <p class="why-us-paragraph secondary-desc">
+            Every picture of me tells a small story. An ear flopped over a cushion. A nose pointed hopefully at the kitchen. A waddle, mid-adventure. (The adventure was snacks.) I never planned to be famous. I simply lay down, tilted my head and let the world fall in love. My family has been chasing me with a camera ever since. Not that I’m hard to catch. You’re welcome ;)
+          </p>
+          <a href="#puppies" class="btn-text-link">
+            <span>See more of my pictures</span>
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: THE STORY SO FAR ==================== -->
+    <section id="story-so-far" class="story-so-far-section">
+      <div class="section-container">
+        
+        <!-- Header with Heart Doodles -->
+        <div class="section-header-centered story-header">
+          <span class="doodle-heart doodle-heart-left" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E95B47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </span>
+
+          <span class="section-badge gold-badge">The Story So Far</span>
+          <h2 class="section-title">From A Birthday Present<br class="desktop-br"> To A Little World</h2>
+          
+          <span class="doodle-heart doodle-heart-right" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E95B47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </span>
+        </div>
+
+        <!-- 3 Interactive Story Cards Grid -->
+        <div class="story-cards-grid">
+          
+          <!-- Card 1 -->
+          <article class="story-card">
+            <div class="story-card-media">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/24tbb4-839x1024.png" 
+                   alt="Akash and Scotch in 2021" 
+                   class="story-card-img" 
+                   width="839" height="1024"
+                   loading="lazy">
+              <!-- Hover Overlay with Story Text -->
+              <div class="story-card-overlay">
+                <div class="story-overlay-inner">
+                  <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <p class="story-card-text">
+                    Some birthdays come with cake. Akash’s came with me. I was born on his birthday, 27 June 2021, so technically, I’m a birthday present. That August, his sister Athira and her husband Sagar brought me home to fill a quiet space in his life. One look at me, and he never quite recovered.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="story-card-caption">
+              <h3 class="story-card-title">Happy Birthday to Us!</h3>
+              <p class="story-card-subtitle">A very special delivery · 2021</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="story-card">
+            <div class="story-card-media">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/brgbrg-839x1024.png" 
+                   alt="Scotch at Pet Fed Bengaluru 2023" 
+                   class="story-card-img" 
+                   width="839" height="1024"
+                   loading="lazy">
+              <!-- Hover Overlay with Story Text -->
+              <div class="story-card-overlay">
+                <div class="story-overlay-inner">
+                  <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <p class="story-card-text">
+                    My Instagram began as a few photos for friends. Then the head tilt happened, and suddenly I had fans from Brazil to Thailand. In 2023, they voted me the official mascot of Pet Fed Bengaluru, and I joined Akash and Sagar on stage to present awards. Gracious in victory. Didn’t eat a single trophy.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="story-card-caption">
+              <h3 class="story-card-title">The People Have Spoken</h3>
+              <p class="story-card-subtitle">Voted mascot of Pet Fed Bengaluru · 2023</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="story-card">
+            <div class="story-card-media">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/qerge-839x1024.png" 
+                   alt="Scotchvilla Brand Launch at Pet Fair 2026" 
+                   class="story-card-img" 
+                   width="839" height="1024"
+                   loading="lazy">
+              <!-- Hover Overlay with Story Text -->
+              <div class="story-card-overlay">
+                <div class="story-overlay-inner">
+                  <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <p class="story-card-text">
+                    Somewhere between the naps and the snacks, Akash realised this was never just about me. It was about everyone who looks, walks or lives a little differently. So in January 2026, Scotchvilla launched at Pet Fair Bengaluru as a character-led brand built on kindness and joy. I’m still the main character, obviously.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="story-card-caption">
+              <h3 class="story-card-title">Pupdate: We’re a Brand Now!</h3>
+              <p class="story-card-subtitle">Launched at Pet Fair Bengaluru · 2026</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: SCOTCHVILLA PHILOSOPHY ==================== -->
+    <section id="philosophy" class="quote-parallax-section">
+      <div class="quote-overlay"></div>
+      <div class="quote-container">
+        <blockquote class="parallax-quote-text">
+          Scotchvilla is a little corner of the world<br class="desktop-br">
+          where different is beautiful,<br class="desktop-br">
+          kindness is cool and joy is never far off.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: THE HEART OF SCOTCHVILLA ==================== -->
+    <section id="heart-of-scotchvilla" class="core-values-section">
+      <div class="section-container">
+        
+        <!-- Header -->
+        <div class="section-header-centered core-values-header">
+          <span class="section-badge gold-badge">The Heart of Scotchvilla</span>
+          <h2 class="section-title">Life, according to<br class="desktop-br"> One small Beagle.</h2>
+          <p class="section-subtitle core-values-intro">
+            Sometimes, we can be Scotch to someone else. Everything Scotchvilla makes, shares and dreams up comes back to four simple beliefs, learnt from one small dog who never needed to be anyone but himself.
+          </p>
+        </div>
+
+        <!-- 4 Core Values Grid -->
+        <div class="core-values-grid">
+          
+          <!-- Value 1: Compassion -->
+          <div class="core-value-card">
+            <div class="core-value-icon-box">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/wrbtw.png" 
+                   alt="Compassion icon" 
+                   class="core-value-icon-img" 
+                   width="120" height="120" 
+                   loading="lazy">
+            </div>
+            <h3 class="core-value-title">Compassion</h3>
+            <p class="core-value-desc">
+              Scotch taught us that love means showing up for the hard days too. Quiet, consistent care beats grand gestures, every time.
+            </p>
+          </div>
+
+          <!-- Value 2: Kindness -->
+          <div class="core-value-card">
+            <div class="core-value-icon-box">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/vwefvef.png" 
+                   alt="Kindness icon" 
+                   class="core-value-icon-img" 
+                   width="120" height="120" 
+                   loading="lazy">
+            </div>
+            <h3 class="core-value-title">Kindness</h3>
+            <p class="core-value-desc">
+              Kindness is cool. Not weak, not preachy, but joyful and confident. The gentlest dog we know proves it every single day.
+            </p>
+          </div>
+
+          <!-- Value 3: Empathy & Inclusivity -->
+          <div class="core-value-card">
+            <div class="core-value-icon-box">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/4tb4tb.png" 
+                   alt="Empathy & Inclusivity icon" 
+                   class="core-value-icon-img" 
+                   width="120" height="120" 
+                   loading="lazy">
+            </div>
+            <h3 class="core-value-title">Empathy &amp; Inclusivity</h3>
+            <p class="core-value-desc">
+              Understanding someone’s world changes how we treat them. So there will always be room here for people, animals and personalities that don’t fit the mold.
+            </p>
+          </div>
+
+          <!-- Value 4: Joy -->
+          <div class="core-value-card">
+            <div class="core-value-icon-box">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/35yn5.png" 
+                   alt="Joy icon" 
+                   class="core-value-icon-img" 
+                   width="120" height="120" 
+                   loading="lazy">
+            </div>
+            <h3 class="core-value-title">Joy</h3>
+            <p class="core-value-desc">
+              A little happiness grows bigger when it’s passed on. Scotch started by cheering up strangers online. We intend to keep going.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 6: DIFFERENT IS BEAUTIFUL ==================== -->
+    <section id="different-is-beautiful" class="different-section">
+      <div class="section-container">
+
+        <!-- Two Column Layout: Visuals on Left, Story on Right -->
+        <div class="different-grid">
+          
+          <!-- Left Column: Arched Pill Photos & Playful Doodles -->
+          <div class="different-visual-col">
+            <div class="different-photos-wrap">
+              
+              <!-- Floating Top Red Squiggle Doodle -->
+              <span class="different-doodle doodle-squiggle" aria-hidden="true">
+                <svg width="46" height="42" viewBox="0 0 50 46" fill="none">
+                  <path d="M4 14 C12 4, 30 2, 42 16 C48 23, 44 36, 32 38 C22 40, 14 30, 22 18" stroke="#E95B47" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+
+              <!-- Floating Top-Right Gold Sparkle Doodle -->
+              <span class="different-doodle doodle-sparkle" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                  <path d="M18 2 L18 34 M2 18 L34 18 M6 6 L30 30 M6 30 L30 6" stroke="#FCAD36" stroke-width="3.2" stroke-linecap="round"/>
+                </svg>
+              </span>
+
+              <!-- Left Arch Photo (tall pill) -->
+              <div class="arch-photo-box arch-photo-left">
+                <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/4tbt4-839x1024.png" 
+                     alt="Scotch being gently held" 
+                     class="arch-photo-img" 
+                     width="839" height="1024" 
+                     loading="lazy">
+              </div>
+
+              <!-- Right Arch Photo (offset pill) -->
+              <div class="arch-photo-box arch-photo-right">
+                <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/4tb4tb4-819x1024.png" 
+                     alt="Cozy pet moments" 
+                     class="arch-photo-img" 
+                     width="819" height="1024" 
+                     loading="lazy">
+              </div>
+
+              <!-- Bottom Playful Hand-Drawn Doodle & Label -->
+              <div class="different-pup-doodle" aria-hidden="true">
+                <svg class="radiating-rays-svg" width="36" height="26" viewBox="0 0 40 30" fill="none">
+                  <path d="M6 24 L2 18 M16 20 L16 8 M26 22 L32 14" stroke="#E95B47" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <div class="pup-doodle-text">
+                  <span class="pup-doodle-headline">Forever pup!</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Story Copy & Checklist Grid -->
+          <div class="different-content-col">
+            
+            <h2 class="different-headline">
+              Dwarfism Made Me a<br>
+              Little <span class="doodle-circled">Different<svg class="doodle-circle-svg" viewBox="0 0 170 65" fill="none" preserveAspectRatio="none"><ellipse cx="85" cy="32" rx="78" ry="26" stroke="#E95B47" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="280 20" transform="rotate(-2 85 32)"/><path d="M15 42 C40 58 135 56 160 38" stroke="#E95B47" stroke-width="2.5" stroke-linecap="round"/></svg></span>, but<br>
+              It Never Made Me Less!
+            </h2>
+
+            <p class="different-intro-paragraph">
+              I was around seven months old when DNA tests and X-rays finally gave us an answer. It explained my small size and my little waddle. It changed nothing about how much I’m loved.
+            </p>
+
+            <!-- 2x2 Checklist Grid -->
+            <div class="different-checklist-grid">
+              
+              <!-- Point 1: What it is -->
+              <div class="checklist-item">
+                <div class="checklist-item-header">
+                  <span class="checklist-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#FCAD36"/>
+                      <path d="M8 12 L11 15 L16 9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h3 class="checklist-item-title">What it is</h3>
+                </div>
+                <p class="checklist-item-desc">
+                  Dwarfism in dogs is a structural skeletal condition, not just a cute look. It shapes how a dog grows and can bring other health complications too.
+                </p>
+              </div>
+
+              <!-- Point 2: How we found out -->
+              <div class="checklist-item">
+                <div class="checklist-item-header">
+                  <span class="checklist-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#FCAD36"/>
+                      <path d="M8 12 L11 15 L16 9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h3 class="checklist-item-title">How we found out</h3>
+                </div>
+                <p class="checklist-item-desc">
+                  Akash’s colleague first noticed I wasn’t growing. After diet changes and several vets, a senior vet in Bengaluru recommended the tests that confirmed it.
+                </p>
+              </div>
+
+              <!-- Point 3: How I’m cared for -->
+              <div class="checklist-item">
+                <div class="checklist-item-header">
+                  <span class="checklist-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#FCAD36"/>
+                      <path d="M8 12 L11 15 L16 9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h3 class="checklist-item-title">How I’m cared for</h3>
+                </div>
+                <p class="checklist-item-desc">
+                  I also manage hypothyroidism and an enlarged heart, so my diet, daily activity and regular vet visits get a little extra attention and care.
+                </p>
+              </div>
+
+              <!-- Point 4: What it taught us -->
+              <div class="checklist-item">
+                <div class="checklist-item-header">
+                  <span class="checklist-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#FCAD36"/>
+                      <path d="M8 12 L11 15 L16 9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <h3 class="checklist-item-title">What it taught us</h3>
+                </div>
+                <p class="checklist-item-desc">
+                  Smaller stature, different walk, same right to a full and happy life. When I was diagnosed, the vet said I’d be a blessing. Akash says he was right.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 7: MEET THE FAMILY (CAROUSEL) ==================== -->
+    <section id="puppies" class="puppies-section">
+      <div class="section-container">
+        
+        <!-- Header -->
+        <div class="section-header-centered">
+          <span class="section-badge gold-badge">Meet the Family</span>
+          <h2 class="section-title">The hearts that hold me close,<br class="desktop-br"> every single day.</h2>
+          <p class="section-subtitle">
+            Every tiny paw needs someone to hold it. I’m lucky enough to have a whole family: the ones who feed me first, cuddle me longest, build my world with love and make every ordinary day feel like home.
+          </p>
+        </div>
+
+        <!-- Puppies Carousel Container -->
+        <div class="carousel-wrapper puppies-carousel-wrapper">
+          <button class="carousel-arrow carousel-arrow-prev" id="puppies-prev" aria-label="Previous family member">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-track-container" id="puppies-carousel-container">
+            <div class="carousel-track" id="puppies-carousel-track">
+              
+              <!-- Member 1: Srikala Bhaskaran -->
+              <div class="puppy-carousel-item tint-lavender">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/wetgteh-768x968.png" 
+                         alt="Srikala Bhaskaran" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Srikala Bhaskaran</h3>
+                    <p class="puppy-breed">Scotch’s Granny · Founder</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 2: Akash Bhaskar -->
+              <div class="puppy-carousel-item tint-coral">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/24tg4t-768x968.png" 
+                         alt="Akash Bhaskar" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Akash Bhaskar</h3>
+                    <p class="puppy-breed">Scotch’s Dad · Brand &amp; Business Head</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 3: Whiskey -->
+              <div class="puppy-carousel-item tint-amber">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/5yh5yh-768x968.png" 
+                         alt="Whiskey" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Whiskey</h3>
+                    <p class="puppy-breed">Chief Cheerleader · Scotch’s Younger Sibling</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 4: Niyati -->
+              <div class="puppy-carousel-item tint-lavender">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/l4k2tb-768x968.png" 
+                         alt="Niyati" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Niyati</h3>
+                    <p class="puppy-breed">Mum-in-Chief</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 5: Athira & Sagar -->
+              <div class="puppy-carousel-item tint-coral">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/uiktk-768x968.png" 
+                         alt="Athira & Sagar" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Athira &amp; Sagar</h3>
+                    <p class="puppy-breed">The Original Gift-Givers</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Member 6: Grandpa -->
+              <div class="puppy-carousel-item tint-amber">
+                <div class="puppy-card-inner">
+                  <div class="puppy-img-placeholder">
+                    <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/tyjtjj-768x968.png" 
+                         alt="Grandpa" 
+                         width="768" height="968" 
+                         loading="lazy">
+                  </div>
+                  <div class="puppy-card-info">
+                    <h3 class="puppy-name">Grandpa</h3>
+                    <p class="puppy-breed">Scotch’s Grandpa</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="carousel-arrow carousel-arrow-next" id="puppies-next" aria-label="Next family member">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="carousel-arrow carousel-arrow-next" id="puppies-next" aria-label="Next puppies">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 8: WHAT MY ONLINE FAM SAYS ==================== -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-container">
+        
+        <!-- Header -->
+        <div class="section-header-centered">
+          <span class="section-badge gold-badge">What My Online Fam Says</span>
+          <h2 class="section-title">Letters From My Online Fam<br class="desktop-br"> Proof That Joy Travels Further Than You Think.</h2>
+          <p class="section-subtitle">
+            A head tilt at home, a smile halfway across the world. They write from across oceans and just down the road. Some found me on a hard day; others simply needed a lift. Amid all the noise online, my little corner has stayed gentle, and I’ve kept every word.
+          </p>
+        </div>
+
+        <!-- Testimonials Carousel -->
+        <div class="testimonials-carousel-wrapper">
+          <div class="testimonials-track-container" id="testimonials-container">
+            <div class="testimonials-track" id="testimonials-track">
+              
+              <!-- Review 1 -->
+              <div class="testimonial-card">
+                <div class="testimonial-rating-box">
+                  <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/3rg3rg.png" 
+                       alt="5 stars rating" 
+                       width="117" height="112" 
+                       class="testimonial-rating-img"
+                       loading="lazy">
+                </div>
+                <div class="testimonial-body">
+                  <p class="testimonial-quote">
+                    “My experience with breeder was exceptional. Emma, our new Labrador, is a bundle of joy. The breeder was knowledgeable and caring, ensuring that we received a healthy and well-socialized puppy.”
+                  </p>
+                  <div class="testimonial-author">Emma Smith, London</div>
+                </div>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="testimonial-card">
+                <div class="testimonial-rating-box">
+                  <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/3rg3rg.png" 
+                       alt="5 stars rating" 
+                       width="117" height="112" 
+                       class="testimonial-rating-img"
+                       loading="lazy">
+                </div>
+                <div class="testimonial-body">
+                  <p class="testimonial-quote">
+                    “I couldn't be happier with the service I received from this breeder. Our Border Collie, Max, is smart and full of energy, just as we hoped. The breeder in Edinburgh provided excellent guidance, and Max is now a cherished part of our family.”
+                  </p>
+                  <div class="testimonial-author">James Anderson, Edinburgh</div>
+                </div>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="testimonial-card">
+                <div class="testimonial-rating-box">
+                  <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/3rg3rg.png" 
+                       alt="5 stars rating" 
+                       width="117" height="112" 
+                       class="testimonial-rating-img"
+                       loading="lazy">
+                </div>
+                <div class="testimonial-body">
+                  <p class="testimonial-quote">
+                    “I found my dream dog, Luna, through breeder in Manchester. The breeder was friendly and answered all my questions. Luna is not just a pet; she's a loving companion. I'm grateful for the wonderful experience.”
+                  </p>
+                  <div class="testimonial-author">Sarah Taylor, Manchester</div>
+                </div>
+              </div>
+
+              <!-- Review 4 (repeater) -->
+              <div class="testimonial-card">
+                <div class="testimonial-rating-box">
+                  <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/3rg3rg.png" 
+                       alt="5 stars rating" 
+                       width="117" height="112" 
+                       class="testimonial-rating-img"
+                       loading="lazy">
+                </div>
+                <div class="testimonial-body">
+                  <p class="testimonial-quote">
+                    “My experience with breeder was exceptional. Emma, our new Labrador, is a bundle of joy. The breeder was knowledgeable and caring, ensuring that we received a healthy and well-socialized puppy.”
+                  </p>
+                  <div class="testimonial-author">Emma Smith, London</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Carousel Dots -->
+          <div class="testimonial-dots" id="testimonials-dots">
+            <button class="t-dot active" data-index="0" aria-label="Slide 1"></button>
+            <button class="t-dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="t-dot" data-index="2" aria-label="Slide 3"></button>
+          </div>
+
+          <!-- Floating Bone Badge -->
+          <div class="testimonials-floating-badge" aria-hidden="true">
+            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/sryjry.png" 
+                 alt="" 
+                 width="613" height="371" 
+                 loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 9: JOIN SCOTCHVILLA ==================== -->
+    <section id="join-scotchvilla" class="bottom-cta-section">
+      <div class="cta-bg-overlay"></div>
+      <div class="section-container cta-container">
+        <div class="cta-inner-card">
+          <span class="section-badge gold-badge">Join Scotchvilla</span>
+          <h2 class="cta-headline">There’s always room for one more.<br class="desktop-br"> Pull up a paw and come on in</h2>
+          <p class="cta-subtext">
+            Join Scotchvilla for Pupdates straight from the villa: behind-the-scenes stories, event invites and first word on what’s coming next. New merch? New adventures? A new friend or two? Shh, I’ve said too much. No spam, ever. I’m far too busy napping.
+          </p>
+          <a href="#contact-modal" class="btn btn-primary btn-cta open-contact-trigger">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Explore Around -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Explore Around</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#hero" class="footer-nav-link">Home</a></li>
+              <li><a href="#story-so-far" class="footer-nav-link">Our Story</a></li>
+              <li><a href="#meet-scotch" class="footer-nav-link">Meet Scotch</a></li>
+              <li><a href="#puppies" class="footer-nav-link">Meet the Family</a></li>
+              <li><a href="#gallery" class="footer-nav-link">Gallery</a></li>
+              <li><a href="#join-scotchvilla" class="footer-nav-link">Join Scotchvilla</a></li>
+              <li><a href="#" class="footer-nav-link">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Need a Paw? (contact and help) -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Need a Paw? <span class="footer-col-subtitle">(contact and help)</span></h3>
+            <ul class="footer-nav-list">
+              <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Contact Us</a></li>
+              <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Collaborations &amp; Press</a></li>
+              <li><a href="#faq" class="footer-nav-link">FAQs</a></li>
+              <li><a href="mailto:hello@scotchvilla.com" class="footer-nav-link footer-email-link">hello@scotchvilla.com</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Legal -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Legal</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-nav-link">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="footer-nav-link">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Say Hello -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Say Hello</h3>
+            <ul class="footer-nav-list">
+              <li><a href="https://instagram.com/scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram</a></li>
+              <li><a href="https://instagram.com/scotchvilla_unfiltered" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Scotchvilla Unfiltered</a></li>
+              <li><a href="https://instagram.com/scotchvilla.brand" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Scotchvilla Brand</a></li>
+              <li><a href="https://youtube.com/@scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">YouTube</a></li>
+              <li><a href="https://threads.com/@scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Threads</a></li>
+              <li><a href="https://linkedin.com/company/scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Giant Display Wordmark (SCOTCHVILLA with Dog Paw Cutout) -->
+      <div class="footer-huge-wordmark" aria-label="Scotchvilla">
+        <img src="images/scotchvilla-wordmark@2x.png" 
+             alt="Scotchvilla" 
+             class="footer-wordmark-img" 
+             width="1631" 
+             height="187" 
+             loading="lazy">
+      </div>
+
+      <!-- Footer Bottom Bar (3-Part Layout) -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          &copy; 2026 Scotchvilla. All rights reserved.
+        </div>
+        <div class="footer-bottom-center">
+          Made with love (and coconuts).
+        </div>
+        <div class="footer-bottom-right">
+          Brand &amp; website crafted by <a href="https://instagram.com/saathandco" target="_blank" rel="noopener noreferrer" class="footer-credit-link">Saath&amp;Co.</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE VIDEO MODAL ==================== -->
+  <div id="video-modal" class="video-modal" aria-hidden="true" role="dialog" aria-label="Video Player">
+    <div class="video-modal-backdrop" id="video-modal-close-backdrop"></div>
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="video-modal-close-btn" aria-label="Close video">&times;</button>
+      <div class="video-iframe-container">
+        <iframe id="video-iframe" 
+                src="" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE CONTACT MODAL ==================== -->
+  <div id="contact-modal" class="contact-modal" aria-hidden="true" role="dialog" aria-label="Contact Us">
+    <div class="contact-modal-backdrop" id="contact-modal-close-backdrop"></div>
+    <div class="contact-modal-dialog">
+      <button class="contact-modal-close" id="contact-modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="contact-modal-header">
+        <span class="section-badge gold-badge">Get In Touch</span>
+        <h3 class="contact-modal-title">Find Your Furry Friend</h3>
+        <p class="contact-modal-subtitle">Leave your details and we will help you find the perfect puppy for your home.</p>
+      </div>
+      <form id="contact-form" class="contact-modal-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-8900">
+        </div>
+        <div class="form-group">
+          <label for="breed">Interested In</label>
+          <select id="breed" name="breed">
+            <option value="Any">Any Puppy / Not Sure</option>
+            <option value="Pug">Pug (Moris)</option>
+            <option value="Chihuahua">Chihuahua (Roy)</option>
+            <option value="American Spaniel">American Spaniel (Gven)</option>
+            <option value="Jack Russell">Jack Russell Terrier (Oliver)</option>
+            <option value="Rat Terrier">Rat Terrier (Emily)</option>
+            <option value="Toy Poodle">Toy Poodle (Pierre)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3" placeholder="Tell us about your home and lifestyle..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+      </form>
+      <div id="form-success-message" class="form-success-message" style="display: none;">
+        <i class="fas fa-check-circle"></i>
+        <h4>Thank you!</h4>
+        <p>Your message has been received. Our breeding team will get back to you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
