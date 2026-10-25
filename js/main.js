@@ -207,9 +207,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateTestimonials(index) {
       tIndex = index;
+      if (!cards.length) return;
       const cardWidth = cards[0].getBoundingClientRect().width;
       const gap = 30;
-      const offset = tIndex * (cardWidth + gap);
+      const visible = getTVisibleCount();
+      const maxOffset = Math.max(0, (cards.length - visible) * (cardWidth + gap));
+      const targetOffset = tIndex * (cardWidth + gap);
+      const offset = Math.min(targetOffset, maxOffset);
       testimonialsTrack.style.transform = `translateX(-${offset}px)`;
 
       testimonialDots.forEach((dot, idx) => {
@@ -367,5 +371,70 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ==========================================
+  // 11. HERO 3-IMAGE SLIDER (EVERY 2 SECONDS)
+  // ==========================================
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroDots = document.querySelectorAll('.hero-dot');
+  if (heroSlides.length > 1) {
+    let currentSlide = 0;
+    let slideTimer = null;
+
+    function goToSlide(index) {
+      heroSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('is-active');
+        } else {
+          slide.classList.remove('is-active');
+        }
+      });
+      heroDots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('is-active');
+        } else {
+          dot.classList.remove('is-active');
+        }
+      });
+      currentSlide = index;
+    }
+
+    function nextHeroSlide() {
+      const nextIndex = (currentSlide + 1) % heroSlides.length;
+      goToSlide(nextIndex);
+    }
+
+    function startHeroTimer() {
+      if (!slideTimer) {
+        slideTimer = setInterval(nextHeroSlide, 2000);
+      }
+    }
+
+    function stopHeroTimer() {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    }
+
+    // Start auto slide
+    startHeroTimer();
+
+    // Click dot navigation
+    heroDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        stopHeroTimer();
+        startHeroTimer();
+      });
+    });
+
+    // Pause on hover
+    const sliderWrap = document.getElementById('hero-slider-wrap');
+    if (sliderWrap) {
+      sliderWrap.addEventListener('mouseenter', stopHeroTimer);
+      sliderWrap.addEventListener('mouseleave', startHeroTimer);
+    }
+  }
 
 });

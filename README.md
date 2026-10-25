@@ -2,6 +2,8 @@
 
 A faithful, modern, pixel-perfect recreation of the [Kenela – Your Furry Friend](https://kenela.peerduck.com/your-furry-friend/) homepage template.
 
+Live site: [https://devgowtham1929.github.io/ScotchVilla/](https://devgowtham1929.github.io/ScotchVilla/)
+
 Built with clean, semantic HTML5, modern CSS3 (Custom Properties & Flexbox/Grid), and lightweight vanilla JavaScript.
 
 ---

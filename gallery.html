@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Every Picture Tells a Small Story | Scotchvilla</title>
+  <meta name="description" content="Explore photos of Scotch, the dwarf Beagle with an old soul, gentle waddle and deep devotion to coconuts. From puppy days to family moments.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Main & Subpages Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=3.0">
+  <link rel="stylesheet" href="css/pages.css?v=3.0">
+</head>
+<body class="page-gallery">
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="site-header" class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link" title="Scotchvilla">
+        <img src="images/scotchvilla-logo.png" alt="Scotchvilla - Your tiny paw buddy" class="logo-img" width="580" height="622">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html#story-so-far" class="nav-link">Our Story</a></li>
+          <li class="nav-item"><a href="index.html#meet-scotch" class="nav-link">Meet Scotch</a></li>
+          <li class="nav-item"><a href="index.html#puppies" class="nav-link">Meet the Family</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li class="nav-item"><a href="merch.html" class="nav-link">Merch</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="header-actions">
+        <a href="#contact-modal" class="btn btn-primary nav-cta open-contact-trigger"><i class="fas fa-paw nav-paw-icon"></i> Get in Touch</a>
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+      <ul class="mobile-menu">
+        <li class="mobile-item"><a href="index.html#hero" class="mobile-link">Home</a></li>
+        <li class="mobile-item"><a href="index.html#story-so-far" class="mobile-link">Our Story</a></li>
+        <li class="mobile-item"><a href="index.html#meet-scotch" class="mobile-link">Meet Scotch</a></li>
+        <li class="mobile-item"><a href="index.html#puppies" class="mobile-link">Meet the Family</a></li>
+        <li class="mobile-item"><a href="gallery.html" class="mobile-link active">Gallery</a></li>
+        <li class="mobile-item"><a href="merch.html" class="mobile-link">Merch</a></li>
+        <li class="mobile-item"><a href="blog.html" class="mobile-link">Blog</a></li>
+        <li class="mobile-item mobile-cta-wrap">
+          <a href="#contact-modal" class="btn btn-primary btn-block open-contact-trigger">Get in Touch</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== HERO BANNER ==================== -->
+    <section class="subpage-hero">
+      <!-- Floating Doodles -->
+      <span class="subpage-doodle subpage-doodle-left" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E95B47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </span>
+      <span class="subpage-doodle subpage-doodle-right" aria-hidden="true">
+        <svg width="44" height="44" viewBox="0 0 36 36" fill="none">
+          <path d="M18 2 L18 34 M2 18 L34 18 M6 6 L30 30 M6 30 L30 6" stroke="#FCAD36" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+
+      <div class="subpage-hero-container">
+        <div class="subpage-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Gallery</span>
+        </div>
+        <span class="section-badge gold-badge">MOMENTS &amp; MISCHIEF</span>
+        <h1 class="subpage-title">Every Picture Tells a Small Story.</h1>
+        <p class="subpage-subtitle">
+          An ear flopped over a cushion. A hopeful nose pointed towards the kitchen. A little waddle on a very important mission. (The mission being food).
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY GRID ==================== -->
+    <section class="gallery-section">
+      <div class="section-container">
+        
+        <!-- Filter Tabs -->
+        <div class="filter-bar" id="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All Moments</button>
+          <button class="filter-btn" data-filter="bow-tie">The Red Bow Tie</button>
+          <button class="filter-btn" data-filter="puppy">Puppy Days</button>
+          <button class="filter-btn" data-filter="family">Family &amp; Cuddles</button>
+          <button class="filter-btn" data-filter="adventures">Adventures</button>
+        </div>
+
+        <!-- Photos Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- Photo 1: Iconic Bow Tie -->
+          <article class="gallery-item" data-category="bow-tie">
+            <div class="gallery-img-wrapper">
+              <img src="images/hero-scotch.jpg" 
+                   alt="Scotch wearing his signature red polka-dot bow tie" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">The CEO in Red</h3>
+                <p class="gallery-caption-desc">Dressed to impress with the signature red polka-dot bow tie.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 2: Tongue out on grass -->
+          <article class="gallery-item" data-category="adventures">
+            <div class="gallery-img-wrapper">
+              <img src="images/scotch-section2-a.jpg" 
+                   alt="Scotch sticking his tongue out playfully on lawn" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Mid-Waddle Sunshine</h3>
+                <p class="gallery-caption-desc">Exploring the garden at a strictly unhurried pace.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 3: Puppy Cozy -->
+          <article class="gallery-item" data-category="puppy">
+            <div class="gallery-img-wrapper">
+              <img src="images/scotch-section2-b.jpg" 
+                   alt="Scotch as a tiny puppy napping on a blanket" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Post-Snack Snooze</h3>
+                <p class="gallery-caption-desc">The softest puppy eyes in the entire world.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 4: With Akash (Dad) -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-akash.png" 
+                   alt="Scotch and his dad Akash Bhaskar" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Dad &amp; His Best Boy</h3>
+                <p class="gallery-caption-desc">Akash and Scotch sharing an afternoon heart-to-heart.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 5: With Granny -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-granny.png" 
+                   alt="Scotch being cuddled by Granny Srikala" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Granny's Secret Favorite</h3>
+                <p class="gallery-caption-desc">Where the best treats and extra coconuts come from.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 6: With Whiskey -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-whiskey.png" 
+                   alt="Whiskey, Scotch's younger sibling" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Brotherly Bonding</h3>
+                <p class="gallery-caption-desc">Whiskey cheering on the CEO's every single move.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 7: With Athira & Sagar -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-athira-sagar.png" 
+                   alt="Athira and Sagar holding Scotch" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">The Original Gift-Givers</h3>
+                <p class="gallery-caption-desc">The doting aunt and uncle who brought Scotch home in 2021.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 8: With Mum-in-Chief Niyati -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-niyati.png" 
+                   alt="Niyati with Scotch" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Mum-in-Chief Cuddles</h3>
+                <p class="gallery-caption-desc">Unconditional warmth and daily belly rubs.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 9: With Grandpa -->
+          <article class="gallery-item" data-category="family">
+            <div class="gallery-img-wrapper">
+              <img src="images/family-grandpa.png" 
+                   alt="Grandpa Bhaskar PV with Scotch" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Grandpa's Quiet Partner</h3>
+                <p class="gallery-caption-desc">Sitting beside Grandpa watching the world go by.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 10: Pet Fed Mascot Journey -->
+          <article class="gallery-item" data-category="adventures">
+            <div class="gallery-img-wrapper">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/brgbrg-839x1024.png" 
+                   alt="Scotch voted Mascot of Pet Fed Bengaluru" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Pet Fed Mascot Award</h3>
+                <p class="gallery-caption-desc">Gracious in victory on stage. Never ate a single trophy!</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 11: Gentle Hugs -->
+          <article class="gallery-item" data-category="bow-tie">
+            <div class="gallery-img-wrapper">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/4tbt4-839x1024.png" 
+                   alt="Scotch being gently held" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Held with All the Love</h3>
+                <p class="gallery-caption-desc">Every tiny paw needs someone to hold it.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Photo 12: Cozy Moments -->
+          <article class="gallery-item" data-category="puppy">
+            <div class="gallery-img-wrapper">
+              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/4tb4tb4-819x1024.png" 
+                   alt="Cozy puppy memories" 
+                   class="gallery-img" 
+                   loading="lazy">
+              <div class="gallery-overlay">
+                <h3 class="gallery-caption-title">Forever Pup</h3>
+                <p class="gallery-caption-desc">Dwarfism gave him a different walk, but the biggest soul.</p>
+                <span class="gallery-zoom-icon"><i class="fas fa-search-plus"></i></span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== INSTAGRAM CTA BANNER ==================== -->
+    <section class="bottom-cta-section" style="background-color: var(--color-blue-bg);">
+      <div class="section-container cta-container">
+        <div class="cta-inner-card" style="background-color: #FFFFFF;">
+          <span class="section-badge gold-badge">SHARE THE LOVE</span>
+          <h2 class="cta-headline">Got a Picture With Scotch?</h2>
+          <p class="cta-subtext">
+            Tag <a href="https://instagram.com/scotchvilla" target="_blank" rel="noopener noreferrer" style="color: var(--color-coral); font-weight: 700;">@scotchvilla</a> in your posts and stories to be featured in our family album!
+          </p>
+          <a href="https://instagram.com/scotchvilla" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cta">
+            <i class="fab fa-instagram" style="margin-right: 8px;"></i> Visit Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+      <img id="lightbox-img" class="lightbox-img" src="" alt="">
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Explore Around -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Explore Around</h3>
+            <ul class="footer-nav-list">
+              <li><a href="index.html#hero" class="footer-nav-link">Home</a></li>
+              <li><a href="index.html#story-so-far" class="footer-nav-link">Our Story</a></li>
+              <li><a href="index.html#meet-scotch" class="footer-nav-link">Meet Scotch</a></li>
+              <li><a href="index.html#puppies" class="footer-nav-link">Meet the Family</a></li>
+              <li><a href="gallery.html" class="footer-nav-link active">Gallery</a></li>
+              <li><a href="merch.html" class="footer-nav-link">Merch</a></li>
+              <li><a href="blog.html" class="footer-nav-link">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Need a Paw? (contact and help) -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Need a Paw? <span class="footer-col-subtitle">(contact and help)</span></h3>
+            <ul class="footer-nav-list">
+              <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Contact Us</a></li>
+              <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Collaborations &amp; Press</a></li>
+              <li><a href="#faq" class="footer-nav-link">FAQs</a></li>
+              <li><a href="mailto:hello@scotchvilla.com" class="footer-nav-link footer-email-link">hello@scotchvilla.com</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Legal -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Legal</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-nav-link">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="footer-nav-link">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Say Hello -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Say Hello</h3>
+            <ul class="footer-nav-list">
+              <li><a href="https://instagram.com/scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Instagram</a></li>
+              <li><a href="https://instagram.com/scotchvilla_unfiltered" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Scotchvilla Unfiltered</a></li>
+              <li><a href="https://instagram.com/scotchvilla.brand" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Scotchvilla Brand</a></li>
+              <li><a href="https://youtube.com/@scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">YouTube</a></li>
+              <li><a href="https://threads.com/@scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Threads</a></li>
+              <li><a href="https://linkedin.com/company/scotchvilla" target="_blank" rel="noopener noreferrer" class="footer-nav-link">LinkedIn</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Giant Display Wordmark (SCOTCHVILLA with Dog Paw Cutout) -->
+      <div class="footer-huge-wordmark" aria-label="Scotchvilla">
+        <img src="images/scotchvilla-wordmark@2x.png" 
+             alt="Scotchvilla" 
+             class="footer-wordmark-img" 
+             width="1631" 
+             height="187" 
+             loading="lazy">
+      </div>
+
+      <!-- Footer Bottom Bar (3-Part Layout) -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          &copy; 2026 Scotchvilla. All rights reserved.
+        </div>
+        <div class="footer-bottom-center">
+          Made with love (and coconuts).
+        </div>
+        <div class="footer-bottom-right">
+          Brand &amp; website crafted by <a href="https://instagram.com/saathandco" target="_blank" rel="noopener noreferrer" class="footer-credit-link">Saath&amp;Co.</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CONTACT MODAL ==================== -->
+  <div id="contact-modal" class="contact-modal" aria-hidden="true" role="dialog" aria-label="Contact Us">
+    <div class="contact-modal-backdrop" id="contact-modal-close-backdrop"></div>
+    <div class="contact-modal-dialog">
+      <button class="contact-modal-close" id="contact-modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="contact-modal-header">
+        <span class="section-badge gold-badge">Get In Touch</span>
+        <h3 class="contact-modal-title">Off you go, little message</h3>
+        <p class="contact-modal-subtitle">Leave your details and drop a note in Scotch’s bowl.</p>
+      </div>
+      <form id="contact-form" class="contact-modal-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-8900">
+        </div>
+        <div class="form-group">
+          <label for="inquiry-reason">I am getting in touch about</label>
+          <select id="inquiry-reason" name="inquiry-reason">
+            <option value="hello">Just saying hello to Scotch</option>
+            <option value="collab">Collaborations &amp; Press</option>
+            <option value="story">Sharing my own pet story</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="3" placeholder="Write your note for Scotch..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Drop it in Scotch’s bowl</button>
+      </form>
+      <div id="form-success-message" class="form-success-message" style="display: none;">
+        <i class="fas fa-check-circle"></i>
+        <h4>Thank you!</h4>
+        <p>Your message has been dropped in Scotch’s bowl! We will get back to you shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery Filtering & Lightbox
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('#gallery-filters .filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxDesc = document.getElementById('lightbox-desc');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      // Category Filter
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Lightbox click
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const img = item.querySelector('.gallery-img');
+          const title = item.querySelector('.gallery-caption-title');
+          const desc = item.querySelector('.gallery-caption-desc');
+
+          if (img && lightbox && lightboxImg) {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxTitle.textContent = title ? title.textContent : '';
+            lightboxDesc.textContent = desc ? desc.textContent : '';
+            lightbox.classList.add('active');
+          }
+        });
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener('click', () => {
+          lightbox.classList.remove('active');
+        });
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
