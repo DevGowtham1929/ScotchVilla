@@ -359,15 +359,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 10. STORY CARDS TAP TOGGLE (MOBILE/TOUCH)
+  // 10. STORY CARDS TAP TOGGLE (MOBILE/TOUCH & KEYBOARD)
   // ==========================================
   const storyCards = document.querySelectorAll('.story-card');
   storyCards.forEach(card => {
-    card.addEventListener('click', () => {
+    const toggleCard = () => {
       const wasActive = card.classList.contains('is-active');
       storyCards.forEach(c => c.classList.remove('is-active'));
       if (!wasActive) {
         card.classList.add('is-active');
+      }
+    };
+    card.addEventListener('click', toggleCard);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleCard();
       }
     });
   });

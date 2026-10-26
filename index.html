@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/style.css?v=4.0">
+  <link rel="stylesheet" href="css/style.css?v=6.0">
 </head>
 <body>
 
@@ -40,6 +40,7 @@
           <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
           <li class="nav-item"><a href="merch.html" class="nav-link">Merch</a></li>
           <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="socials.html" class="nav-link">Socials</a></li>
         </ul>
       </nav>
 
@@ -64,6 +65,7 @@
         <li class="mobile-item"><a href="gallery.html" class="mobile-link">Gallery</a></li>
         <li class="mobile-item"><a href="merch.html" class="mobile-link">Merch</a></li>
         <li class="mobile-item"><a href="blog.html" class="mobile-link">Blog</a></li>
+        <li class="mobile-item"><a href="socials.html" class="mobile-link">Socials</a></li>
         <li class="mobile-item mobile-cta-wrap">
           <a href="#contact-modal" class="btn btn-primary btn-block open-contact-trigger">Get in Touch</a>
         </li>
@@ -157,17 +159,24 @@
         
         <!-- Left Column -->
         <div class="why-us-col why-us-left">
-          <span class="section-badge gold-badge">Meet Scotch</span>
+          <span class="section-badge gold-badge"><i class="fas fa-paw" style="margin-right: 6px;"></i> Meet Scotch</span>
           <h2 class="section-title">“Unhurried. Unbothered.<br class="desktop-br"> Unmistakably me.”</h2>
           <p class="why-us-paragraph">
             Most Beagles chase the world. I prefer to let it come to me. I take life at a waddle’s pace, choose cuddles over barking and approach every meal with absolute devotion. I may look like a soft toy, but behave like an old soul. And somehow, that’s what makes me, well, me.
           </p>
-          <div class="why-us-image-card">
+          <div class="scotch-bio-pills">
+            <span class="bio-pill"><i class="fas fa-birthday-cake"></i> Born 27 June 2021</span>
+            <span class="bio-pill"><i class="fas fa-paw"></i> Dwarf Beagle</span>
+            <span class="bio-pill"><i class="fas fa-cookie-bite"></i> Loves Coconuts 🥥</span>
+            <span class="bio-pill"><i class="fas fa-trophy"></i> Pet Fed Mascot 2023</span>
+          </div>
+          <div class="why-us-image-card card-img-left">
             <img src="images/scotch-section2-a.jpg" 
                  alt="Scotch sticking his tongue out on grass" 
                  class="rounded-card-img" 
                  width="768" height="1024"
                  loading="lazy">
+            <span class="image-card-caption-chip"><i class="fas fa-sun"></i> Scotch on the Lawn</span>
           </div>
         </div>
 
@@ -179,14 +188,17 @@
                  class="rounded-card-img" 
                  width="900" height="1024"
                  loading="lazy">
+            <span class="image-card-caption-chip"><i class="fas fa-heart"></i> The Signature Puppy Nap</span>
           </div>
           <p class="why-us-paragraph secondary-desc">
             Every picture of mine tells a small story. An ear flopped over a cushion. A hopeful nose pointed towards the kitchen. A little waddle on a very important mission. (The mission being food). I never planned to be famous. I simply lay down, tilted my head and let the world fall in love. My family has been chasing me with a camera ever since. Not that I am hard to catch. You are welcome ;)
           </p>
-          <a href="gallery.html" class="btn-text-link">
-            <span>See more of my pictures</span>
-            <i class="fas fa-long-arrow-alt-right"></i>
-          </a>
+          <div class="why-us-cta-wrap">
+            <a href="gallery.html" class="btn btn-outline" style="padding: 12px 28px; font-size: 15px;">
+              <span>See More Pictures</span>
+              <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -214,78 +226,123 @@
           </span>
         </div>
 
-        <!-- 3 Interactive Story Cards Grid -->
+        <!-- 3 Interactive 3D Rotating Flip Story Cards Grid -->
         <div class="story-cards-grid">
           
-          <!-- Card 1 -->
-          <article class="story-card">
-            <div class="story-card-media">
-              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/24tbb4-839x1024.png" 
-                   alt="Akash and Scotch in 2021" 
-                   class="story-card-img" 
-                   width="839" height="1024"
-                   loading="lazy">
-              <!-- Hover Overlay with Story Text -->
-              <div class="story-card-overlay">
-                <div class="story-overlay-inner">
+          <!-- Card 1: 2021 The Beginning -->
+          <article class="story-card flip-card" tabindex="0" role="button" aria-label="Happy Birthday to Us - Click or hover to flip">
+            <div class="flip-card-inner">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front">
+                <div class="story-card-media">
+                  <img src="images/family-akash.png" 
+                       alt="Akash Bhaskar and Scotch in 2021" 
+                       class="story-card-img" 
+                       width="839" height="1024"
+                       loading="lazy">
+                  <span class="story-year-badge"><i class="fas fa-calendar-alt"></i> August 2021</span>
+                  <span class="flip-indicator-pill"><i class="fas fa-sync-alt"></i> Flip Story</span>
+                </div>
+                <div class="story-card-caption">
+                  <h3 class="story-card-title">Happy Birthday to Us!</h3>
+                  <p class="story-card-subtitle">A very special delivery · 2021</p>
+                </div>
+              </div>
+
+              <!-- Back Face (Reveals Story on 3D Flip) -->
+              <div class="flip-card-back">
+                <div class="flip-back-inner">
                   <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <span class="flip-back-year">August 2021 · Origin Story</span>
+                  <h4 class="flip-back-title">Happy Birthday to Us!</h4>
                   <p class="story-card-text">
                     Some birthdays come with cake. My dad, Akash’s, came with me. I was born on 27 June 2021, the very same date Dad celebrates his birthday, just in a different year. I like to think I was his birthday present, only a little late. That August, my doting aunt Athira and her husband, my beloved Uncle Sagar, brought me home to fill a quiet space in Dad’s life. One look at me, and he never quite recovered.
                   </p>
+                  <div class="flip-back-signature">
+                    <i class="fas fa-paw"></i> <span>Scotch &amp; Dad Akash</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="story-card-caption">
-              <h3 class="story-card-title">Happy Birthday to Us!</h3>
-              <p class="story-card-subtitle">A very special delivery · 2021</p>
+
             </div>
           </article>
 
-          <!-- Card 2 -->
-          <article class="story-card">
-            <div class="story-card-media">
-              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/brgbrg-839x1024.png" 
-                   alt="Scotch at Pet Fed Bengaluru 2023" 
-                   class="story-card-img" 
-                   width="839" height="1024"
-                   loading="lazy">
-              <!-- Hover Overlay with Story Text -->
-              <div class="story-card-overlay">
-                <div class="story-overlay-inner">
+          <!-- Card 2: 2023 Pet Fed Mascot -->
+          <article class="story-card flip-card" tabindex="0" role="button" aria-label="The People Have Spoken - Click or hover to flip">
+            <div class="flip-card-inner">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front">
+                <div class="story-card-media">
+                  <img src="images/gallery/gallery-09.jpg" 
+                       alt="Scotch on stage at Pet Fed Bengaluru 2023" 
+                       class="story-card-img" 
+                       width="839" height="1024"
+                       loading="lazy">
+                  <span class="story-year-badge"><i class="fas fa-trophy"></i> November 2023</span>
+                  <span class="flip-indicator-pill"><i class="fas fa-sync-alt"></i> Flip Story</span>
+                </div>
+                <div class="story-card-caption">
+                  <h3 class="story-card-title">The People Have Spoken</h3>
+                  <p class="story-card-subtitle">Voted mascot of Pet Fed Bengaluru · 2023</p>
+                </div>
+              </div>
+
+              <!-- Back Face (Reveals Story on 3D Flip) -->
+              <div class="flip-card-back">
+                <div class="flip-back-inner">
                   <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <span class="flip-back-year">November 2023 · Milestone</span>
+                  <h4 class="flip-back-title">The People Have Spoken</h4>
                   <p class="story-card-text">
                     My Instagram started with a few photos for friends. Then came the head tilt, and suddenly, I had fans from Brazil to Thailand. In 2023, I was voted the official mascot of Pet Fed Bengaluru, joining my hoomans on stage to present awards. Gracious in victory. Never ate a single trophy.
                   </p>
+                  <div class="flip-back-signature">
+                    <i class="fas fa-paw"></i> <span>Official Pet Fed Mascot</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="story-card-caption">
-              <h3 class="story-card-title">The People Have Spoken</h3>
-              <p class="story-card-subtitle">Voted mascot of Pet Fed Bengaluru · 2023</p>
+
             </div>
           </article>
 
-          <!-- Card 3 -->
-          <article class="story-card">
-            <div class="story-card-media">
-              <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/qerge-839x1024.png" 
-                   alt="Scotchvilla Brand Launch at Pet Fair 2026" 
-                   class="story-card-img" 
-                   width="839" height="1024"
-                   loading="lazy">
-              <!-- Hover Overlay with Story Text -->
-              <div class="story-card-overlay">
-                <div class="story-overlay-inner">
+          <!-- Card 3: 2026 Brand Launch -->
+          <article class="story-card flip-card" tabindex="0" role="button" aria-label="Pupdate We're a Brand Now - Click or hover to flip">
+            <div class="flip-card-inner">
+              
+              <!-- Front Face -->
+              <div class="flip-card-front">
+                <div class="story-card-media">
+                  <img src="images/gallery/gallery-01.jpg" 
+                       alt="Scotchvilla Brand Family at Home" 
+                       class="story-card-img" 
+                       width="839" height="1024"
+                       loading="lazy">
+                  <span class="story-year-badge"><i class="fas fa-sparkles"></i> January 2026</span>
+                  <span class="flip-indicator-pill"><i class="fas fa-sync-alt"></i> Flip Story</span>
+                </div>
+                <div class="story-card-caption">
+                  <h3 class="story-card-title">Pupdate: We’re a Brand Now!</h3>
+                  <p class="story-card-subtitle">Launched at Pet Fair Bengaluru · 2026</p>
+                </div>
+              </div>
+
+              <!-- Back Face (Reveals Story on 3D Flip) -->
+              <div class="flip-card-back">
+                <div class="flip-back-inner">
                   <span class="story-quote-mark" aria-hidden="true">“</span>
+                  <span class="flip-back-year">January 2026 · A New Chapter</span>
+                  <h4 class="flip-back-title">We’re a Brand Now!</h4>
                   <p class="story-card-text">
                     Somewhere between the naps and the snacks, my hoomans led by my granny realised this was never just about me. It was about everyone who looks, walks or lives a little differently. So in January 2026, Scotchvilla launched at Pet Fair Bengaluru as a character-led brand built on kindness and joy. I am still the main character, obviously ;)
                   </p>
+                  <div class="flip-back-signature">
+                    <i class="fas fa-paw"></i> <span>Granny &amp; Scotchvilla Family</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="story-card-caption">
-              <h3 class="story-card-title">Pupdate: We’re a Brand Now!</h3>
-              <p class="story-card-subtitle">Launched at Pet Fair Bengaluru · 2026</p>
+
             </div>
           </article>
 
@@ -820,6 +877,7 @@
               <li><a href="gallery.html" class="footer-nav-link">Gallery</a></li>
               <li><a href="merch.html" class="footer-nav-link">Merch</a></li>
               <li><a href="blog.html" class="footer-nav-link">Blog</a></li>
+              <li><a href="socials.html" class="footer-nav-link">Socials</a></li>
             </ul>
           </div>
 
