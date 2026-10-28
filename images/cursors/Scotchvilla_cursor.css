@@ -1,0 +1,3 @@
+/* Scotchvilla custom cursors: original artwork, transparent background */
+html, body { cursor: url("Scotchvilla_Arrow_Website_Cursor.png") 19 6, auto; }
+a, button, [role="button"], input[type="submit"], input[type="button"] { cursor: url("Scotchvilla_Paw_Website_Cursor.png") 22 6, pointer; }

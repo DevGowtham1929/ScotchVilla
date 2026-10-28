@@ -53,124 +53,35 @@
   --transition-smooth: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Paw cursor set for mouse and trackpad users */
-.paw-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2000;
-  width: 48px;
-  height: 48px;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate3d(-100px, -100px, 0);
-  transition: opacity 120ms ease;
-  will-change: transform, opacity;
+/* Scotchvilla's supplied arrow and paw cursor artwork */
+html,
+body {
+  cursor: url("../images/cursors/Scotchvilla_Arrow_Website_Cursor.png") 19 6, auto;
 }
 
-.paw-cursor-icon {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  overflow: visible;
-  filter: drop-shadow(0 2px 2px rgba(36, 17, 8, 0.32));
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: url("../images/cursors/Scotchvilla_Paw_Website_Cursor.png") 22 6, pointer;
 }
 
-.paw-cursor.is-visible {
-  opacity: 1;
-}
-
-.paw-cursor.is-pointer .cursor-icon-pointer,
-.paw-cursor.is-paw .cursor-icon-paw,
-.paw-cursor.is-pointing .cursor-icon-point,
-.paw-cursor.is-grabbing .cursor-icon-grab,
-.paw-cursor.is-dropping .cursor-icon-drop,
-.paw-cursor.is-loading .cursor-icon-loading {
-  display: block;
-}
-
-.paw-cursor.is-paw .cursor-icon-paw,
-.paw-cursor.is-pointing .cursor-icon-point {
-  transform: rotate(-10deg) scale(1.08);
-}
-
-.paw-cursor.is-grabbing .cursor-icon-grab {
-  transform: rotate(12deg) scale(.92);
-}
-
-.paw-cursor.is-loading .cursor-icon-loading {
-  transform-origin: center;
-  animation: paw-cursor-load 1.2s ease-in-out infinite;
-}
-
-.paw-cursor-click-ring {
-  position: absolute;
-  inset: 8px;
-  border: 2px solid rgba(184, 52, 67, 0.78);
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(.35);
-}
-
-.paw-cursor.is-clicking .paw-cursor-click-ring {
-  animation: paw-cursor-click 280ms ease-out;
-}
-
-.paw-cursor-trail {
-  position: fixed;
-  z-index: 1998;
-  display: block;
-  width: 25px;
-  height: 25px;
-  color: #B87957;
-  opacity: 0;
-  pointer-events: none;
-  animation: paw-cursor-fade 720ms ease-out forwards;
-}
-
-.paw-cursor-trail svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.paw-cursor-trail.is-click-burst {
-  color: #B83443;
-  animation-duration: 450ms;
-}
-
-@keyframes paw-cursor-load {
-  0%, 100% { transform: rotate(-12deg) scale(.92); }
-  50% { transform: rotate(14deg) scale(1.08); }
-}
-
-@keyframes paw-cursor-click {
-  0% { opacity: .85; transform: scale(.35); }
-  100% { opacity: 0; transform: scale(1.7); }
-}
-
-@keyframes paw-cursor-fade {
-  0% { opacity: .62; transform: scale(.72) rotate(-10deg); }
-  100% { opacity: 0; transform: scale(.2) rotate(22deg) translateY(8px); }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  body.has-paw-cursor,
-  body.has-paw-cursor * {
-    cursor: none !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .paw-cursor,
-  .paw-cursor-icon,
-  .paw-cursor-trail {
-    animation: none !important;
-    transition: none !important;
-  }
+/* Keep the supplied paw cursor on the site's custom clickable cards too. */
+a,
+button,
+label,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.filter-btn,
+.featured-post-card,
+.blog-card,
+.btn-add-bag,
+.gallery-photo-card,
+.hero-dot,
+.story-card.flip-card {
+  cursor: url("../images/cursors/Scotchvilla_Paw_Website_Cursor.png") 22 6, pointer !important;
 }
 
 /* --------------------------------------------------
@@ -1182,7 +1093,7 @@ ul, ol {
 .why-us-image-card {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 420px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(6, 45, 62, 0.09);
@@ -1398,6 +1309,11 @@ ul, ol {
   display: block;
 }
 
+/* Keep the launch group balanced in the portrait card crop. */
+.story-card:nth-child(3) .story-card-img {
+  object-position: 68% center;
+}
+
 .story-card.flip-card:hover .story-card-img {
   transform: scale(1.05);
 }
@@ -1495,14 +1411,16 @@ ul, ol {
   position: relative;
 }
 
-/* Subtle paw print watermark in background */
+/* Designer-supplied sparkle, coconut, bow-tie and leaf doodle tile */
 .flip-card-back::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' opacity='0.03'%3E%3Cpath d='M30 40c-2.2 0-4-2.7-4-6s1.8-6 4-6 4 2.7 4 6-1.8 6-4 6zm14-4c-2.2 0-4-2.7-4-6s1.8-6 4-6 4 2.7 4 6-1.8 6-4 6zm-28 0c-2.2 0-4-2.7-4-6s1.8-6 4-6 4 2.7 4 6-1.8 6-4 6zm22-12c-2.2 0-4-2.7-4-6s1.8-6 4-6 4 2.7 4 6-1.8 6-4 6zm-8 28c-6.6 0-12-5.4-12-12 0-4.4 7.2-10 12-10s12 5.6 12 10c0 6.6-5.4 12-12 12z'/%3E%3C/svg%3E");
+  background-image: url("../images/brand-elements/doodle-tile.svg");
   background-repeat: repeat;
-  background-size: 80px 80px;
+  background-size: 240px 171px;
+  filter: brightness(0) invert(1);
+  opacity: 0.01;
   pointer-events: none;
   border-radius: 26px;
 }
@@ -1869,6 +1787,7 @@ ul, ol {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  gap: 18px;
   width: 100%;
   max-width: 440px;
   min-height: 440px;
@@ -1897,7 +1816,6 @@ ul, ol {
   width: 200px;
   height: 350px;
   margin-top: 50px;
-  margin-left: -35px;
   position: relative;
   z-index: 1;
 }
@@ -3056,5 +2974,105 @@ ul, ol {
   .hero-floating-badge {
     font-size: 11px;
     padding: 6px 12px;
+  }
+}
+
+/* Scotchvilla graphic kit accents used across the homepage */
+.core-values-section::before,
+.different-section::before,
+.bottom-cta-section::before,
+.bottom-cta-section::after,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.core-values-section::before {
+  top: 42px;
+  right: max(28px, calc((100vw - var(--container-max-width)) / 2));
+  width: 76px;
+  height: 76px;
+  background-image: url("../images/brand-elements/leaf.svg");
+  opacity: 0.28;
+  transform: rotate(18deg);
+}
+
+.different-section::before {
+  left: 2.5%;
+  bottom: 7%;
+  width: 92px;
+  height: 92px;
+  background-image: url("../images/brand-elements/coconut-half.svg");
+  opacity: 0.18;
+  transform: rotate(-14deg);
+}
+
+.bottom-cta-section::before {
+  left: 7%;
+  top: 22%;
+  width: 78px;
+  height: 78px;
+  background-image: url("../images/brand-elements/biscuit.svg");
+  opacity: 0.7;
+  animation: brand-float 6s ease-in-out infinite;
+}
+
+.bottom-cta-section::after {
+  right: 8%;
+  bottom: 18%;
+  width: 82px;
+  height: 82px;
+  background-image: url("../images/brand-elements/leaf.svg");
+  opacity: 0.55;
+  transform: rotate(28deg);
+  animation: brand-float 7s ease-in-out infinite reverse;
+}
+
+.bottom-cta-section .section-container,
+.core-values-section > .section-container,
+.different-section > .section-container,
+.site-footer .footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer::before {
+  inset: 0 0 auto;
+  height: 28px;
+  background-image: url("../images/brand-elements/dot-band-brown.svg");
+  background-size: auto 28px;
+  opacity: 0.34;
+}
+
+@keyframes brand-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@media (max-width: 768px) {
+  .core-values-section::before,
+  .different-section::before,
+  .bottom-cta-section::before,
+  .bottom-cta-section::after {
+    width: 48px;
+    height: 48px;
+    opacity: 0.24;
+  }
+
+  .core-values-section::before { top: 20px; right: 18px; }
+  .different-section::before { left: 8px; bottom: 3%; }
+  .bottom-cta-section::before { left: 4%; top: 7%; }
+  .bottom-cta-section::after { right: 4%; bottom: 5%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottom-cta-section::before,
+  .bottom-cta-section::after {
+    animation: none;
   }
 }

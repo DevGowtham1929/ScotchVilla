@@ -959,6 +959,26 @@
   display: block;
 }
 
+/* Video 1 (Landscape Reel): Cleanly cover the 'View more on Instagram' CTA button while keeping the video 100% playable */
+.reel-video-container.reel-video-container-reel1,
+.gallery-video-wrapper.gallery-video-wrapper-reel1 {
+  container-type: inline-size;
+}
+
+.reel-video-container.reel-video-container-reel1 .reel-video-bottom-mask,
+.gallery-video-wrapper.gallery-video-wrapper-reel1 .reel-video-bottom-mask {
+  position: absolute;
+  top: calc(54px + 53.33%);
+  top: calc(54px + 66.67cqw);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 2;
+  pointer-events: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
 .reel-info {
   padding: 16px 8px 4px;
   display: flex;
@@ -1799,4 +1819,228 @@
   .viral-media {
     height: 280px;
   }
+}
+
+/* Supplied Scotchvilla artwork: quiet, page-specific accents */
+.blog-hero,
+.socials-hero,
+.merch-hero,
+.gallery-hero {
+  isolation: isolate;
+}
+
+.blog-hero::before,
+.socials-hero::before,
+.merch-hero::before,
+.gallery-hero::before,
+.blog-hero::after,
+.socials-hero::after,
+.merch-hero::after,
+.gallery-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 8px 18px rgba(24, 12, 6, 0.2));
+  animation: brand-float 7s ease-in-out infinite;
+}
+
+.blog-hero::before {
+  left: 6%;
+  bottom: 16%;
+  width: 72px;
+  height: 72px;
+  background-image: url("../images/brand-elements/envelope.svg");
+  opacity: 0.9;
+}
+
+.blog-hero::after {
+  right: 6%;
+  top: 24%;
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/brand-elements/biscuit.svg");
+  opacity: 0.92;
+  animation-delay: -2s;
+}
+
+.gallery-hero::before {
+  right: 7%;
+  bottom: 12%;
+  width: 88px;
+  height: 88px;
+  background-image: url("../images/brand-elements/coconut-half.svg");
+  opacity: 0.86;
+}
+
+.gallery-hero::after {
+  right: 22%;
+  top: 17%;
+  width: 44px;
+  height: 44px;
+  background-image: url("../images/brand-elements/leaf.svg");
+  opacity: 0.85;
+  animation-delay: -3s;
+}
+
+.socials-hero::before {
+  left: 6%;
+  top: 20%;
+  width: 68px;
+  height: 68px;
+  background-image: url("../images/brand-elements/bow-tie.svg");
+  opacity: 0.9;
+}
+
+.socials-hero::after {
+  right: 6%;
+  bottom: 13%;
+  width: 82px;
+  height: 82px;
+  background-image: url("../images/brand-elements/dot-disc.svg");
+  opacity: 0.85;
+  animation-delay: -2s;
+}
+
+.merch-hero::before {
+  left: 6%;
+  bottom: 12%;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/brand-elements/coconut.svg");
+  opacity: 0.95;
+}
+
+.merch-hero::after {
+  right: 6%;
+  top: 18%;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/brand-elements/crumbs.svg");
+  opacity: 0.95;
+  animation-delay: -2s;
+}
+
+/* Blog shares the gallery photo backdrop, so keep its story motifs on the open right side. */
+.page-blog .gallery-hero::before {
+  left: auto;
+  right: 7%;
+  bottom: 14%;
+  background-image: url("../images/brand-elements/envelope.svg");
+}
+
+.page-blog .gallery-hero::after {
+  right: 18%;
+  top: 16%;
+  background-image: url("../images/brand-elements/biscuit.svg");
+}
+
+.page-blog .newsletter-banner,
+.page-gallery .gallery-reels-spotlight,
+.page-socials .community-wall-banner,
+.page-merch .merch-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-blog .newsletter-banner::before,
+.page-gallery .gallery-reels-spotlight::before,
+.page-socials .community-wall-banner::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.18;
+}
+
+.page-blog .newsletter-banner::before {
+  width: 110px;
+  height: 110px;
+  right: 24px;
+  top: 20px;
+  background-image: url("../images/brand-elements/envelope.svg");
+}
+
+.page-blog .newsletter-content,
+.page-gallery .reels-spotlight-header,
+.page-gallery .reels-spotlight-grid,
+.page-socials .community-wall-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-gallery .gallery-reels-spotlight::before {
+  width: 100px;
+  height: 100px;
+  right: 18px;
+  top: 18px;
+  background-image: url("../images/brand-elements/bowl.svg");
+}
+
+.page-socials .community-wall-banner::before {
+  width: 118px;
+  height: 118px;
+  left: 18px;
+  bottom: 12px;
+  background-image: url("../images/brand-elements/postcard.png");
+}
+
+.page-merch .merch-section::before {
+  content: "";
+  display: block;
+  height: 12px;
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  pointer-events: none;
+  background: url("../images/brand-elements/pattern-dots-yellow-cream.svg") repeat-x left top / 28px 12px;
+  opacity: 0.65;
+}
+
+.page-merch .merch-section > .section-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .blog-hero::before,
+  .blog-hero::after,
+  .socials-hero::before,
+  .socials-hero::after,
+  .gallery-hero::before,
+  .gallery-hero::after,
+  .merch-hero::before,
+  .merch-hero::after {
+    width: 46px;
+    height: 46px;
+    opacity: 0.55;
+  }
+
+  .blog-hero::before,
+  .socials-hero::before { left: 3%; }
+  .blog-hero::after,
+  .socials-hero::after,
+  .gallery-hero::before,
+  .merch-hero::after { right: 3%; }
+  .page-blog .newsletter-banner::before,
+  .page-gallery .gallery-reels-spotlight::before,
+  .page-socials .community-wall-banner::before { opacity: 0.09; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-hero::before,
+  .blog-hero::after,
+  .socials-hero::before,
+  .socials-hero::after,
+  .gallery-hero::before,
+  .gallery-hero::after,
+  .merch-hero::before,
+  .merch-hero::after { animation: none; }
 }
