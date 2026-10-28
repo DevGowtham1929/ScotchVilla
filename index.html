@@ -10,16 +10,16 @@
   <link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Google Fonts: Fraunces (with SOFT axis) & Bricolage Grotesque -->
+  <!-- Google Fonts: Titan One, Fraunces (with SOFT axis) & Bricolage Grotesque -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&family=Titan+One&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/style.css?v=6.0">
+  <link rel="stylesheet" href="css/style.css?v=10.0">
 </head>
 <body>
 
@@ -77,79 +77,86 @@
 
     <!-- ==================== SECTION 1: HERO ==================== -->
     <section id="hero" class="hero-section">
-      <div class="hero-bg-overlay"></div>
+      <!-- Curved Organic Backdrop Shape -->
+      <div class="hero-curved-backdrop" aria-hidden="true"></div>
+
+      <!-- Scattered Floating Paw Print Watermarks -->
+      <div class="hero-paw-watermark paw-left-top" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="18"/>
+          <ellipse cx="24" cy="42" rx="10" ry="14" transform="rotate(-18 24 42)"/>
+          <ellipse cx="42" cy="30" rx="9" ry="14" transform="rotate(-6 42 30)"/>
+          <ellipse cx="60" cy="30" rx="9" ry="14" transform="rotate(6 60 30)"/>
+          <ellipse cx="78" cy="42" rx="10" ry="14" transform="rotate(18 78 42)"/>
+        </svg>
+      </div>
+      <div class="hero-paw-watermark paw-left-bottom" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="18"/>
+          <ellipse cx="24" cy="42" rx="10" ry="14" transform="rotate(-18 24 42)"/>
+          <ellipse cx="42" cy="30" rx="9" ry="14" transform="rotate(-6 42 30)"/>
+          <ellipse cx="60" cy="30" rx="9" ry="14" transform="rotate(6 60 30)"/>
+          <ellipse cx="78" cy="42" rx="10" ry="14" transform="rotate(18 78 42)"/>
+        </svg>
+      </div>
+      <div class="hero-paw-watermark paw-center-mid" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="18"/>
+          <ellipse cx="24" cy="42" rx="10" ry="14" transform="rotate(-18 24 42)"/>
+          <ellipse cx="42" cy="30" rx="9" ry="14" transform="rotate(-6 42 30)"/>
+          <ellipse cx="60" cy="30" rx="9" ry="14" transform="rotate(6 60 30)"/>
+          <ellipse cx="78" cy="42" rx="10" ry="14" transform="rotate(18 78 42)"/>
+        </svg>
+      </div>
+      <div class="hero-paw-watermark paw-right-top" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="18"/>
+          <ellipse cx="24" cy="42" rx="10" ry="14" transform="rotate(-18 24 42)"/>
+          <ellipse cx="42" cy="30" rx="9" ry="14" transform="rotate(-6 42 30)"/>
+          <ellipse cx="60" cy="30" rx="9" ry="14" transform="rotate(6 60 30)"/>
+          <ellipse cx="78" cy="42" rx="10" ry="14" transform="rotate(18 78 42)"/>
+        </svg>
+      </div>
+      <div class="hero-paw-watermark paw-right-bottom" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <ellipse cx="50" cy="65" rx="22" ry="18"/>
+          <ellipse cx="24" cy="42" rx="10" ry="14" transform="rotate(-18 24 42)"/>
+          <ellipse cx="42" cy="30" rx="9" ry="14" transform="rotate(-6 42 30)"/>
+          <ellipse cx="60" cy="30" rx="9" ry="14" transform="rotate(6 60 30)"/>
+          <ellipse cx="78" cy="42" rx="10" ry="14" transform="rotate(18 78 42)"/>
+        </svg>
+      </div>
+
       <div class="section-container hero-container">
 
-        <!-- Left Column: Hero Content -->
+        <!-- Left Column: Framed Editorial Card -->
         <div class="hero-content-col">
-          <div class="hero-text-wrap">
-            <span class="section-badge gold-badge">WELCOME TO SCOTCHVILLA</span>
+          <div class="hero-card-frame">
+            <!-- Top Eyebrow with Bone Icon -->
+            <div class="hero-eyebrow-badge">
+              <svg class="hero-bone-icon" width="46" height="32" viewBox="0 0 56 36" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 9.5C10.5 5 6 3 2.5 5.5C-1 8 0 13 2.5 15.5C0 17.5 -0.5 22.5 2.5 25.5C5.5 28.5 10 27 12 22.5L44 22.5C46 27 50.5 28.5 53.5 25.5C56.5 22.5 56 17.5 53.5 15.5C56 13 57 8 53.5 5.5C50 3 45.5 5 44 9.5L12 9.5Z" />
+                <line x1="16" y1="13" x2="20" y2="18" stroke="currentColor" stroke-width="2" />
+                <line x1="21" y1="13" x2="25" y2="18" stroke="currentColor" stroke-width="2" />
+              </svg>
+              <span class="hero-eyebrow-text">Meet Our Furry Residents</span>
+            </div>
+
             <h1 class="hero-headline">Every great<br class="desktop-br"> world begins<br class="desktop-br"> small.</h1>
+
             <p class="hero-description">
               It all began with me — Scotch, a dwarf Beagle with an old soul, a gentle waddle and a deep devotion to coconuts. Today, I am the little dog behind Scotchvilla, a world where being different is beautiful.
             </p>
-            <div class="hero-cta-wrap">
-              <a href="#contact-modal" class="btn btn-primary btn-hero open-contact-trigger">Get in Touch</a>
-              <a href="#story-so-far" class="btn btn-outline btn-hero">Explore My Story</a>
-              <div class="hero-doodle-arrow" aria-hidden="true">
-                <svg width="44" height="32" viewBox="0 0 54 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M48 6C35 4 14 10 9 30M9 30L4 20M9 30L20 28" stroke="var(--color-coral, #FF5A36)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
+
+            <div class="hero-actions-row">
+              <a href="#contact-modal" class="btn btn-hero-adopt open-contact-trigger">Get in Touch</a>
+              <a href="#story-so-far" class="hero-check-action">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                <span>Explore My Story</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <!-- Right Column: Scotch 3-Image Rotating Carousel -->
-        <div class="hero-media-col">
-          <div class="hero-slider-wrap" id="hero-slider-wrap" aria-label="Scotch Photo Gallery Carousel">
-            
-            <div class="hero-slides-container">
-              <!-- Slide 1: Scotch with Bow Tie on Organic Blob -->
-              <div class="hero-slide is-active" data-index="0">
-                <img src="images/hero-scotch-on-blob@2x.png" 
-                     srcset="images/hero-scotch-on-blob.png 600w, images/hero-scotch-on-blob@2x.png 1200w"
-                     sizes="(max-width: 768px) 100vw, 660px"
-                     alt="Scotch - Dwarf Beagle with red bow tie on warm organic blob background" 
-                     class="hero-dog-art" 
-                     width="660" height="660"
-                     loading="eager" 
-                     fetchpriority="high">
-              </div>
-
-              <!-- Slide 2: Scotch on Grass with Head Tilt on Organic Blob -->
-              <div class="hero-slide" data-index="1">
-                <img src="images/hero-scotch-slide2@2x.png" 
-                     srcset="images/hero-scotch-slide2.png 600w, images/hero-scotch-slide2@2x.png 1200w"
-                     sizes="(max-width: 768px) 100vw, 660px"
-                     alt="Scotch - Dwarf Beagle head tilt on sunlit grass on warm organic blob background" 
-                     class="hero-dog-art" 
-                     width="660" height="660"
-                     loading="lazy">
-              </div>
-
-              <!-- Slide 3: Scotch as a Cozy Puppy on Organic Blob -->
-              <div class="hero-slide" data-index="2">
-                <img src="images/hero-scotch-slide3@2x.png" 
-                     srcset="images/hero-scotch-slide3.png 600w, images/hero-scotch-slide3@2x.png 1200w"
-                     sizes="(max-width: 768px) 100vw, 660px"
-                     alt="Scotch - Dwarf Beagle puppy resting cozy on warm organic blob background" 
-                     class="hero-dog-art" 
-                     width="660" height="660"
-                     loading="lazy">
-              </div>
-            </div>
-
-            <!-- Slide Dot Indicators -->
-            <div class="hero-slider-dots" role="tablist" aria-label="Hero slider pagination">
-              <button class="hero-dot is-active" data-slide="0" aria-label="Slide 1" role="tab"></button>
-              <button class="hero-dot" data-slide="1" aria-label="Slide 2" role="tab"></button>
-              <button class="hero-dot" data-slide="2" aria-label="Slide 3" role="tab"></button>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -275,8 +282,8 @@
               <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="story-card-media">
-                  <img src="images/gallery/gallery-09.jpg" 
-                       alt="Scotch on stage at Pet Fed Bengaluru 2023" 
+                  <img src="images/home/petfed-mascot.jpg" 
+                       alt="Scotch receiving his Pet Fed Bengaluru mascot award in 2023" 
                        class="story-card-img" 
                        width="839" height="1024"
                        loading="lazy">
@@ -314,8 +321,8 @@
               <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="story-card-media">
-                  <img src="images/gallery/gallery-01.jpg" 
-                       alt="Scotchvilla Brand Family at Home" 
+                  <img src="images/home/brand-launch.jpg" 
+                       alt="The Scotchvilla team celebrating the 2026 brand launch" 
                        class="story-card-img" 
                        width="839" height="1024"
                        loading="lazy">
@@ -1006,6 +1013,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=4.0"></script>
+  <script src="js/main.js?v=7.0"></script>
 </body>
 </html>

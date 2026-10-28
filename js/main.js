@@ -6,6 +6,174 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // 0. CUSTOM PAW CURSOR (MOUSE POINTERS)
+  // ==========================================
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const pawCursor = document.createElement('div');
+    pawCursor.className = 'paw-cursor is-pointer';
+    pawCursor.setAttribute('aria-hidden', 'true');
+    pawCursor.innerHTML = `
+      <svg class="paw-cursor-icon cursor-icon-pointer" viewBox="0 0 64 64" focusable="false">
+        <path d="M8 4 55 38l-20 2 11 17-9 5-11-18-13 15Z" fill="#FFF8EC" stroke="#452215" stroke-width="3.2" stroke-linejoin="round"/>
+        <g fill="#C67B39" stroke="#7C3D22" stroke-width="1.2">
+          <ellipse cx="22" cy="30" rx="4.1" ry="5.4" transform="rotate(-26 22 30)"/>
+          <ellipse cx="31" cy="27" rx="3.7" ry="5" transform="rotate(-9 31 27)"/>
+          <ellipse cx="39" cy="30" rx="3.5" ry="4.7" transform="rotate(15 39 30)"/>
+          <path d="M25 36c1-4 4-6 7-5 4 1 6 5 5 9-1 3-5 4-9 2-3-1-4-3-3-6Z"/>
+        </g>
+      </svg>
+      <svg class="paw-cursor-icon cursor-icon-paw" viewBox="0 0 64 64" focusable="false">
+        <path d="M24 42c-5 4-9 10-7 15 2 5 8 5 14 2l9-4c6 2 12 0 13-5 1-4-2-8-7-11" fill="#C98243" stroke="#472418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <ellipse cx="17" cy="25" rx="6" ry="9" transform="rotate(-25 17 25)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="29" cy="18" rx="6" ry="9" transform="rotate(-8 29 18)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="42" cy="20" rx="6" ry="9" transform="rotate(13 42 20)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="51" cy="30" rx="6" ry="8" transform="rotate(28 51 30)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <path d="M20 39c1-7 7-11 14-10 8 1 13 7 12 14-1 5-7 8-15 7-7-1-12-5-11-11Z" fill="#C98243" stroke="#472418" stroke-width="3"/>
+      </svg>
+      <svg class="paw-cursor-icon cursor-icon-point" viewBox="0 0 64 64" focusable="false">
+        <path d="M20 57c-4-1-7-5-9-10L4 34c-2-4 3-8 7-5l7 7-1-22c0-5 8-5 8 0l1 15 1-3c2-4 7-3 8 1l1 2c3-3 7-1 8 3 4-2 8 1 8 5l-1 9c-1 8-6 13-14 13H20Z" fill="#FFF8EC" stroke="#472418" stroke-width="3" stroke-linejoin="round"/>
+        <path d="m17 36-6-6m13-1 1 11m8-9 1 10m8-6 1 9" fill="none" stroke="#C98243" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <svg class="paw-cursor-icon cursor-icon-grab" viewBox="0 0 64 64" focusable="false">
+        <path d="M14 36c0-5 7-7 10-3l2 3-2-14c-1-5 7-7 9-2l3 11 1-8c1-5 9-4 9 1v10l2-5c2-4 8-2 8 3v13c0 11-7 16-18 16-9 0-14-4-18-11l-6-10c-2-4 2-7 6-4Z" transform="translate(0 -5)" fill="#C98243" stroke="#472418" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+      <svg class="paw-cursor-icon cursor-icon-drop" viewBox="0 0 64 64" focusable="false">
+        <path d="M11 27h42v30H11z" fill="#EABF83" stroke="#472418" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M27 27h10v30H27zM11 37h42" fill="#B83443" stroke="#472418" stroke-width="2.5"/>
+        <path d="M25 27c-9-1-8-11-2-11 4 0 6 4 9 8 2-5 6-10 11-8 6 3 2 11-6 11" fill="#B83443" stroke="#472418" stroke-width="2.5" stroke-linejoin="round"/>
+      </svg>
+      <svg class="paw-cursor-icon cursor-icon-loading" viewBox="0 0 64 64" focusable="false">
+        <ellipse cx="16" cy="25" rx="6" ry="9" transform="rotate(-25 16 25)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="29" cy="17" rx="6" ry="9" transform="rotate(-8 29 17)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="43" cy="19" rx="6" ry="9" transform="rotate(13 43 19)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <ellipse cx="52" cy="29" rx="6" ry="8" transform="rotate(28 52 29)" fill="#FFF8EC" stroke="#472418" stroke-width="2.5"/>
+        <path d="M20 39c1-7 7-11 14-10 8 1 13 7 12 14-1 5-7 8-15 7-7-1-12-5-11-11Z" fill="#C98243" stroke="#472418" stroke-width="3"/>
+      </svg>
+      <span class="paw-cursor-click-ring"></span>`;
+    document.body.appendChild(pawCursor);
+    document.body.classList.add('has-paw-cursor');
+
+    let cursorFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    let lastTrailX = 0;
+    let lastTrailY = 0;
+    let lastTrailAt = 0;
+    let droppingTimer;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const interactiveSelector = 'a, button, input, select, textarea, label, [role="button"], [tabindex]:not([tabindex="-1"]), .gallery-photo-card';
+
+    const setCursorState = (state) => {
+      const stateChanged = pawCursor.dataset.state !== state;
+      pawCursor.dataset.state = state;
+      pawCursor.classList.toggle('is-pointer', state === 'pointer');
+      pawCursor.classList.toggle('is-paw', state === 'hover');
+      pawCursor.classList.toggle('is-pointing', state === 'point');
+      pawCursor.classList.toggle('is-grabbing', state === 'grab');
+      pawCursor.classList.toggle('is-dropping', state === 'drop');
+      pawCursor.classList.toggle('is-loading', state === 'loading');
+      if (stateChanged && pawCursor.classList.contains('is-visible')) {
+        const offset = state === 'pointer' ? 3 : 22;
+        pawCursor.style.transform = `translate3d(${pointerX - offset}px, ${pointerY - offset}px, 0)`;
+      }
+    };
+
+    const addPawTrail = (x, y, extraClass = '') => {
+      if (reducedMotion) return;
+      const print = document.createElement('span');
+      print.className = `paw-cursor-trail ${extraClass}`.trim();
+      print.setAttribute('aria-hidden', 'true');
+      print.innerHTML = '<svg viewBox="0 0 32 32"><ellipse cx="8" cy="9" rx="3.2" ry="4.2"/><ellipse cx="15" cy="6" rx="3" ry="4"/><ellipse cx="22" cy="8" rx="3" ry="4"/><ellipse cx="26" cy="14" rx="2.8" ry="3.7"/><path d="M8 20c.7-4 4-6.5 8-6 4.4.5 7.4 4 6.8 7.7-.5 3.1-4.3 4.7-8.7 3.8C10 24.8 7.4 23 8 20Z"/></svg>';
+      print.style.left = `${x - 12}px`;
+      print.style.top = `${y - 12}px`;
+      document.body.appendChild(print);
+      print.addEventListener('animationend', () => print.remove(), { once: true });
+    };
+
+    document.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      pawCursor.classList.add('is-visible');
+
+      if (!pawCursor.classList.contains('is-grabbing') && !pawCursor.classList.contains('is-dropping') && !pawCursor.classList.contains('is-loading')) {
+        const target = event.target instanceof Element ? event.target : null;
+        const interactive = target && target.closest(interactiveSelector);
+        setCursorState(interactive ? (interactive.matches('button, [role="button"]') ? 'point' : 'hover') : 'pointer');
+      }
+
+      if (!reducedMotion) {
+        const now = performance.now();
+        const distance = Math.hypot(pointerX - lastTrailX, pointerY - lastTrailY);
+        if (distance > 54 && now - lastTrailAt > 90) {
+          addPawTrail(pointerX, pointerY);
+          lastTrailX = pointerX;
+          lastTrailY = pointerY;
+          lastTrailAt = now;
+        }
+      }
+
+      if (!cursorFrame) {
+        cursorFrame = window.requestAnimationFrame(() => {
+          const state = pawCursor.dataset.state;
+          const offset = state === 'pointer' ? 3 : 22;
+          pawCursor.style.transform = `translate3d(${pointerX - offset}px, ${pointerY - offset}px, 0)`;
+          cursorFrame = 0;
+        });
+      }
+    }, { passive: true });
+
+    document.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      const target = event.target instanceof Element ? event.target : null;
+      const interactive = target && target.closest(interactiveSelector);
+      const grabTarget = target && target.closest('[draggable="true"], img, [data-cursor-grab]');
+      setCursorState(grabTarget ? 'grab' : (interactive ? 'point' : 'hover'));
+      pawCursor.classList.add('is-clicking');
+      addPawTrail(event.clientX, event.clientY, 'is-click-burst');
+      window.setTimeout(() => pawCursor.classList.remove('is-clicking'), 280);
+    });
+
+    document.addEventListener('pointerup', (event) => {
+      if (event.pointerType !== 'mouse' || !pawCursor.classList.contains('is-grabbing')) return;
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      setCursorState('drop');
+      window.clearTimeout(droppingTimer);
+      droppingTimer = window.setTimeout(() => {
+        const target = document.elementFromPoint(pointerX, pointerY);
+        const interactive = target && target.closest(interactiveSelector);
+        setCursorState(interactive ? (interactive.matches('button, [role="button"]') ? 'point' : 'hover') : 'pointer');
+      }, 360);
+    });
+
+    document.addEventListener('dragstart', () => setCursorState('grab'));
+    document.addEventListener('dragend', () => {
+      setCursorState('drop');
+      window.setTimeout(() => setCursorState('pointer'), 360);
+    });
+    document.addEventListener('drop', (event) => {
+      if (event.pointerType === 'mouse') {
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        setCursorState('drop');
+      }
+    });
+    document.addEventListener('pointerleave', () => pawCursor.classList.remove('is-visible'));
+
+    if (document.readyState !== 'complete') {
+      setCursorState('loading');
+      window.addEventListener('load', () => {
+        setCursorState('pointer');
+        pawCursor.classList.remove('is-loading');
+      }, { once: true });
+    }
+  }
+
+  // ==========================================
   // 1. STICKY HEADER ON SCROLL
   // ==========================================
   const header = document.getElementById('site-header');
