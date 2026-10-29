@@ -206,17 +206,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateTestimonials(index) {
-      tIndex = index;
       if (!cards.length) return;
       const cardWidth = cards[0].getBoundingClientRect().width;
       const gap = 30;
       const visible = getTVisibleCount();
-      const maxOffset = Math.max(0, (cards.length - visible) * (cardWidth + gap));
+      const maxIndex = Math.max(0, cards.length - visible);
+      tIndex = Math.max(0, Math.min(index, maxIndex));
       const targetOffset = tIndex * (cardWidth + gap);
-      const offset = Math.min(targetOffset, maxOffset);
-      testimonialsTrack.style.transform = `translateX(-${offset}px)`;
+      testimonialsTrack.style.transform = `translateX(-${targetOffset}px)`;
 
       testimonialDots.forEach((dot, idx) => {
+        dot.hidden = idx > maxIndex;
         dot.classList.toggle('active', idx === tIndex);
       });
     }
@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function nextTestimonial() {
-      const maxDots = testimonialDots.length;
-      tIndex = (tIndex + 1) % maxDots;
+      const maxIndex = Math.max(0, cards.length - getTVisibleCount());
+      tIndex = tIndex >= maxIndex ? 0 : tIndex + 1;
       updateTestimonials(tIndex);
     }
 

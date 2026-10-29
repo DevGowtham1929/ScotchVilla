@@ -1700,12 +1700,16 @@ ul, ol {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  align-items: stretch;
 }
 
 .core-value-card {
   background-color: transparent;
   text-align: center;
   padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: transform var(--transition-smooth);
 }
 
@@ -1714,8 +1718,8 @@ ul, ol {
 }
 
 .core-value-icon-box {
-  width: 124px;
-  height: 124px;
+  width: 136px;
+  height: 136px;
   margin: 0 auto 24px;
   display: flex;
   align-items: center;
@@ -1735,7 +1739,7 @@ ul, ol {
 
 .core-value-title {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: clamp(20px, 1.35vw + 4px, 22.5px);
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-brown);
@@ -1743,6 +1747,11 @@ ul, ol {
   letter-spacing: -0.01em;
   font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
   transition: color var(--transition-fast);
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .core-value-card:hover .core-value-title {
@@ -2015,11 +2024,11 @@ ul, ol {
   min-width: calc((100% - 60px) / 3);
   background-color: #FFFFFF;
   border-radius: 20px;
-  padding: 40px 35px;
+  padding: 28px 30px;
   box-shadow: 0 10px 28px rgba(99, 39, 19, 0.06);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
@@ -2039,18 +2048,33 @@ ul, ol {
 
 .testimonial-quote {
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.68;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--color-brown);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-style: italic;
+}
+
+.testimonial-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .testimonial-author {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: rgba(99, 39, 19, 0.75);
+  margin-top: auto;
+}
+
+.testimonial-author span {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-navy-muted);
+  font-size: 12px;
+  font-weight: 500;
 }
 
 /* Testimonial Dots */
@@ -2058,8 +2082,8 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 45px;
+  gap: 10px;
+  margin-top: 32px;
 }
 
 .t-dot {
@@ -2068,6 +2092,10 @@ ul, ol {
   border-radius: 50%;
   background-color: rgba(99, 39, 19, 0.2);
   transition: all var(--transition-fast);
+}
+
+.t-dot[hidden] {
+  display: none;
 }
 
 .t-dot.active {
