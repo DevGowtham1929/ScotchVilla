@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <!-- Main & Subpages Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=16.0">
-  <link rel="stylesheet" href="css/pages.css?v=12.0">
+  <link rel="stylesheet" href="css/style.css?v=19.0">
+  <link rel="stylesheet" href="css/pages.css?v=14.0">
 </head>
 <body class="page-blog">
 
@@ -249,17 +249,11 @@
         <div class="newsletter-banner" style="margin-top: 70px;">
           <div class="newsletter-content">
             <span class="section-badge coral-badge">STAY IN TOUCH</span>
-            <h3 class="newsletter-title">Subscribe to Scotch’s Monthly Pupdate</h3>
+            <h3 class="newsletter-title">Follow along for Pupdates straight from the villa</h3>
             <p class="newsletter-desc">
-              Get heartwarming family stories, dwarf dog wellness guides, and early access to limited merch drops right in your inbox. No spam — only gentle tail wags.
+              Behind-the-scenes moments, event news and first word on what’s coming next. Come find us online.
             </p>
-            <form class="newsletter-form" id="pupdate-newsletter-form" onsubmit="event.preventDefault(); document.getElementById('newsletter-sub-feedback').style.display='block'; this.reset();">
-              <input type="email" class="newsletter-input" required placeholder="Enter your email address...">
-              <button type="submit" class="btn btn-primary newsletter-submit-btn">Get Pupdates</button>
-            </form>
-            <div id="newsletter-sub-feedback" style="display: none; margin-top: 14px; font-weight: 700; color: #166534; font-size: 15px;">
-              🐾 High five! You’re on Scotch’s VIP cuddle list. Check your inbox soon!
-            </div>
+            <a href="socials.html" class="btn btn-primary newsletter-submit-btn">Join the fam</a>
           </div>
         </div>
 
@@ -322,7 +316,7 @@
             <ul class="footer-nav-list">
               <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Contact Us</a></li>
               <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Collaborations &amp; Press</a></li>
-              <li><a href="#faq" class="footer-nav-link">FAQs</a></li>
+              <li><a href="faq.html" class="footer-nav-link">FAQs</a></li>
               <li><a href="mailto:hello@scotchvilla.com" class="footer-nav-link footer-email-link">hello@scotchvilla.com</a></li>
             </ul>
           </div>
@@ -332,8 +326,9 @@
             <h3 class="footer-col-title">Legal</h3>
             <ul class="footer-nav-list">
               <li><a href="#" class="footer-nav-link">Privacy Policy</a></li>
-              <li><a href="#" class="footer-nav-link">Terms &amp; Conditions</a></li>
-              <li><a href="#" class="footer-nav-link">Cookie Policy</a></li>
+              <li><a href="terms.html" class="footer-nav-link">Terms &amp; Conditions</a></li>
+              <li><a href="cookie-policy.html" class="footer-nav-link">Cookie Policy</a></li>
+              <li><button type="button" class="footer-nav-link cookie-settings-link" data-cookie-preferences>Cookie settings</button></li>
             </ul>
           </div>
 
@@ -426,7 +421,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=8.0"></script>
+  <script src="js/cookie-consent.js?v=1.0"></script>
+  <script src="js/main.js?v=10.0"></script>
   <script>
     // Blog Filtering & Article Reader Modal
     document.addEventListener('DOMContentLoaded', () => {

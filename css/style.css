@@ -84,6 +84,244 @@ input[type="button"],
   cursor: url("../images/cursors/Scotchvilla_Paw_Website_Cursor.png") 22 6, pointer !important;
 }
 
+/* Paw prints briefly follow mouse movement, with a small twinkle accent. */
+.paw-trail-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.paw-trail-print {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: rgba(99, 39, 19, 0.82);
+  font-size: 18px;
+  line-height: 1;
+  transform-origin: center;
+  animation: pawTrailFade 950ms ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.paw-trail-sparkle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: var(--color-gold);
+  font-size: 13px;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(252, 173, 54, 0.35);
+  animation: pawSparkle 720ms ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes pawTrailFade {
+  0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--paw-rotation)) scale(0.55); }
+  18% { opacity: 0.88; }
+  100% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--paw-rotation)) scale(1); }
+}
+
+@keyframes pawSparkle {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2) rotate(-25deg); }
+  30% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.35) rotate(35deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paw-trail-layer { display: none; }
+}
+
+/* Cookie analytics consent prompt */
+.cookie-consent-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 1000000;
+  width: min(620px, calc(100vw - 32px));
+  max-height: min(86vh, 680px);
+  overflow-y: auto;
+  transform: translateX(-50%);
+  padding: 24px 26px 20px;
+  border: 1px solid rgba(99, 39, 19, 0.16);
+  border-radius: 22px;
+  background: #fffaf1;
+  color: var(--color-brown);
+  box-shadow: 0 18px 60px rgba(40, 18, 8, 0.28);
+  font-family: var(--font-body);
+}
+
+.cookie-consent-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cookie-consent-cookie {
+  flex: 0 0 auto;
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.cookie-consent-title {
+  color: var(--color-brown);
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 4vw, 25px);
+  line-height: 1.2;
+}
+
+.cookie-consent-copy p {
+  margin: 0 0 10px;
+  color: rgba(99, 39, 19, 0.88);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cookie-consent-copy p:last-of-type {
+  margin-bottom: 14px;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-consent-actions button {
+  flex: 1;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-brown);
+  border-radius: 999px;
+  background: var(--color-brown);
+  color: #fffaf1;
+  font: 700 14px/1.2 var(--font-body);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cookie-consent-actions button:hover {
+  transform: translateY(-1px);
+  background: #7b3922;
+}
+
+.cookie-consent-actions button[data-cookie-choice="rejected"] {
+  background: transparent;
+  color: var(--color-brown);
+}
+
+.cookie-consent-actions button[data-cookie-choice="rejected"]:hover {
+  background: rgba(99, 39, 19, 0.08);
+}
+
+.cookie-consent-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 13px;
+  color: rgba(99, 39, 19, 0.58);
+  font-size: 12px;
+}
+
+.cookie-consent-links a,
+.cookie-consent-links button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-brown);
+  font: 600 12px/1.4 var(--font-body);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.cookie-settings-link {
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.cookie-policy-section {
+  padding: 34px 20px 90px;
+  background: var(--color-cream-bg);
+}
+
+.cookie-policy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(26px, 5vw, 58px);
+  border: 1px solid rgba(99, 39, 19, 0.1);
+  border-radius: 28px;
+  background: #fffdf9;
+  box-shadow: 0 18px 55px rgba(54, 18, 4, 0.07);
+}
+
+.cookie-policy-content section + section {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(99, 39, 19, 0.12);
+}
+
+.cookie-policy-content h2 {
+  margin: 0 0 10px;
+  color: var(--color-brown);
+  font: 700 clamp(22px, 3vw, 28px)/1.25 var(--font-serif);
+}
+
+.cookie-policy-content p {
+  color: var(--color-navy-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cookie-policy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  margin-top: 28px;
+}
+
+.cookie-policy-actions p {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .cookie-consent-banner {
+    bottom: 12px;
+    padding: 20px 18px 16px;
+    border-radius: 18px;
+  }
+
+  .cookie-consent-actions {
+    flex-direction: column;
+  }
+
+  .cookie-consent-actions button {
+    flex: none;
+    width: 100%;
+  }
+
+  .cookie-consent-links {
+    flex-wrap: wrap;
+  }
+
+  .cookie-policy-section {
+    padding: 20px 14px 58px;
+  }
+
+  .cookie-policy-content {
+    border-radius: 20px;
+  }
+}
+
 /* --------------------------------------------------
    Reset & Base Styles
 -------------------------------------------------- */
@@ -1309,13 +1547,19 @@ ul, ol {
   display: block;
 }
 
-/* Keep the launch group balanced in the portrait card crop. */
+/* Keep the launch group centered slightly to the right within the card crop. */
 .story-card:nth-child(3) .story-card-img {
-  object-position: 68% center;
+  object-position: 78% 56%;
+  transform: scale(1.06) translateX(1.5%);
+  transform-origin: 50% 56%;
 }
 
 .story-card.flip-card:hover .story-card-img {
   transform: scale(1.05);
+}
+
+.story-card:nth-child(3).flip-card:hover .story-card-img {
+  transform: scale(1.1) translateX(1.5%);
 }
 
 .story-year-badge {
@@ -1397,13 +1641,13 @@ ul, ol {
 .flip-card-back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  background-color: #2D1105;
-  background-image: radial-gradient(circle at 85% 15%, rgba(252, 173, 54, 0.18) 0%, transparent 55%),
-                    radial-gradient(circle at 15% 85%, rgba(233, 91, 71, 0.18) 0%, transparent 50%),
-                    linear-gradient(150deg, #2D1105 0%, #421B0A 55%, #1F0A02 100%);
+  background-color: #54301F;
+  background-image: radial-gradient(circle at 85% 15%, rgba(252, 173, 54, 0.24) 0%, transparent 55%),
+                    radial-gradient(circle at 15% 85%, rgba(233, 91, 71, 0.22) 0%, transparent 50%),
+                    linear-gradient(150deg, #64402C 0%, #75462E 55%, #4A281B 100%);
   color: #FFFFFF;
   padding: 34px 28px;
-  box-shadow: 0 20px 48px rgba(32, 11, 3, 0.35), inset 0 0 30px rgba(252, 173, 54, 0.08);
+  box-shadow: 0 20px 48px rgba(32, 11, 3, 0.24), inset 0 0 30px rgba(252, 173, 54, 0.12);
   border: 2px solid rgba(252, 173, 54, 0.45);
   justify-content: center;
   align-items: center;

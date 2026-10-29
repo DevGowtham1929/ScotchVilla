@@ -6,6 +6,73 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
+  // 0. PAW PRINT CURSOR TRAIL
+  // ==========================================
+  const hasFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (hasFinePointer && !prefersReducedMotion) {
+    const trailLayer = document.createElement('div');
+    trailLayer.className = 'paw-trail-layer';
+    trailLayer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(trailLayer);
+
+    let previousPoint = null;
+    let pawCount = 0;
+    const pawSpacing = 42;
+
+    function addPawPrint(x, y, angle) {
+      const paw = document.createElement('span');
+      paw.className = 'paw-trail-print';
+      paw.style.left = `${x}px`;
+      paw.style.top = `${y}px`;
+      paw.style.setProperty('--paw-rotation', `${angle + (pawCount % 2 ? 18 : -18)}deg`);
+
+      const pawIcon = document.createElement('i');
+      pawIcon.className = 'fas fa-paw';
+      paw.appendChild(pawIcon);
+      trailLayer.appendChild(paw);
+      paw.addEventListener('animationend', () => paw.remove(), { once: true });
+
+      if (pawCount % 2 === 0) {
+        const sparkle = document.createElement('span');
+        sparkle.className = 'paw-trail-sparkle';
+        sparkle.textContent = '✦';
+        sparkle.style.left = `${x + 11}px`;
+        sparkle.style.top = `${y - 10}px`;
+        trailLayer.appendChild(sparkle);
+        sparkle.addEventListener('animationend', () => sparkle.remove(), { once: true });
+      }
+
+      pawCount += 1;
+    }
+
+    document.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+
+      const point = { x: event.clientX, y: event.clientY };
+      if (!previousPoint) {
+        previousPoint = point;
+        addPawPrint(point.x, point.y, 0);
+        return;
+      }
+
+      const dx = point.x - previousPoint.x;
+      const dy = point.y - previousPoint.y;
+      const distance = Math.hypot(dx, dy);
+      if (distance >= pawSpacing) {
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+        const steps = Math.min(Math.floor(distance / pawSpacing), 5);
+        for (let step = 1; step <= steps; step += 1) {
+          const progress = (step * pawSpacing) / distance;
+          addPawPrint(previousPoint.x + dx * progress, previousPoint.y + dy * progress, angle);
+        }
+        previousPoint = point;
+      }
+    }, { passive: true });
+  }
+
+  // ==========================================
   // 1. STICKY HEADER ON SCROLL
   // ==========================================
   const header = document.getElementById('site-header');
