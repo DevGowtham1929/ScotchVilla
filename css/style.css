@@ -1720,7 +1720,7 @@ ul, ol {
 .core-value-icon-box {
   width: 136px;
   height: 136px;
-  margin: 0 auto 24px;
+  margin: 0 auto 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1743,14 +1743,11 @@ ul, ol {
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-brown);
-  margin-bottom: 14px;
+  margin-top: 0;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
   font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
   transition: color var(--transition-fast);
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
