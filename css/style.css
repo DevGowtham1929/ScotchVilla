@@ -3314,6 +3314,8 @@ ul, ol {
   inset: 0 0 auto;
   height: 28px;
   background-image: url("../images/brand-elements/dot-band-brown.svg");
+  background-position: left top;
+  background-repeat: repeat-x;
   background-size: auto 28px;
   opacity: 0.34;
 }
