@@ -14,14 +14,14 @@
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main & Subpages Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=20.0">
-  <link rel="stylesheet" href="css/pages.css?v=14.0">
+  <link rel="stylesheet" href="css/style.css?v=24.0">
+  <link rel="stylesheet" href="css/pages.css?v=19.0">
 </head>
 <body class="page-cookie-policy">
 
@@ -99,11 +99,12 @@
         </section>
         <section>
           <h2>Google Analytics</h2>
-          <p>If enabled, Google Analytics helps us understand how visitors use Scotchvilla. Analytics is optional and will only be activated after you choose “Accept Analytics.” If you choose “Reject Analytics,” Google Analytics will not be loaded. You can still use the website either way.</p>
+          <p>If enabled, Google Analytics helps us understand which pages people visit and the browsers, devices and approximate regions they use. Analytics is optional and only loads after you choose “Accept Analytics.” If you choose “Reject Analytics,” the Google Analytics tag is not loaded. You can use the website either way.</p>
+          <p>When you accept, this site sends analytics events to Scotchvilla’s Google Analytics property. Google Analytics may use first-party cookies such as <code>_ga</code> to distinguish a browser and report site usage. Google’s <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer">Analytics data and privacy information</a> explains the data it collects and how it handles IP addresses.</p>
         </section>
         <section>
           <h2>Your choice</h2>
-          <p>Your choice is saved in this browser. You can update it at any time below. You can also clear this site’s local storage in your browser settings to be asked again.</p>
+          <p>Scotchvilla saves only your accept or reject choice in this browser’s local storage. The site does not save visitor analytics in a Scotchvilla database; accepted analytics data is reported in Google Analytics. You can update your choice at any time below, or clear this site’s local storage in your browser settings to be asked again.</p>
           <div class="cookie-policy-actions">
             <button type="button" class="btn btn-primary" data-cookie-preferences>Change your choice anytime</button>
           </div>
@@ -204,7 +205,7 @@
       <div class="contact-modal-header">
         <span class="section-badge gold-badge">Get In Touch</span>
         <h3 class="contact-modal-title">Off you go, little message</h3>
-        <p class="contact-modal-subtitle">Leave your details and drop a note in Scotch’s bowl.</p>
+        <p class="contact-modal-subtitle">Leave your details to send a message directly to us on WhatsApp.</p>
       </div>
       <form id="contact-form" class="contact-modal-form">
         <div class="form-group">
@@ -217,15 +218,16 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-8900">
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
         </div>
         <div class="form-group">
           <label for="inquiry-reason">I am getting in touch about</label>
           <select id="inquiry-reason" name="inquiry-reason">
-            <option value="collab">Collaborations &amp; Press</option>
-            <option value="hello">Just saying hello to Scotch</option>
-            <option value="social">Social media feature / Tag</option>
-            <option value="merch">Merchandise question</option>
+            <option value="brand-collaboration">Brand collaboration</option>
+            <option value="press-media">Press &amp; media</option>
+            <option value="events-appearances">Events &amp; appearances</option>
+            <option value="merch-products">Merch &amp; products</option>
+            <option value="hello">Just saying hello to Scotch!</option>
             <option value="other">Something else</option>
           </select>
         </div>
@@ -233,17 +235,18 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="3" placeholder="Drop your note here..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Drop it in Scotch’s bowl</button>
+        <button type="submit" class="btn btn-primary btn-block"><i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 1.15em;"></i>Send via WhatsApp</button>
       </form>
       <div id="form-success-message" class="form-success-message" style="display: none;">
-        <i class="fas fa-check-circle"></i>
+        <i class="fab fa-whatsapp" style="font-size: 52px; color: #25D366; margin-bottom: 16px;"></i>
         <h4>Thank you!</h4>
-        <p>Your message has been dropped in Scotch’s bowl! We will get back to you shortly.</p>
+        <p>Opening WhatsApp to send your message...</p>
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=10.0"></script>
+  <script src="js/cookie-consent.js?v=2.0"></script>
+  <script src="js/main.js?v=12.0"></script>
 </body>
 </html>

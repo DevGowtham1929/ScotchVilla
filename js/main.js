@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0. PAW PRINT CURSOR TRAIL
   // ==========================================
   const hasFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  const hasCoarsePointer = window.matchMedia && window.matchMedia('(any-pointer: coarse)').matches;
+  const hasTouchInput = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (hasFinePointer && !prefersReducedMotion) {
+  if ((hasFinePointer || hasCoarsePointer || hasTouchInput) && !prefersReducedMotion) {
     const trailLayer = document.createElement('div');
     trailLayer.className = 'paw-trail-layer';
     trailLayer.setAttribute('aria-hidden', 'true');
@@ -47,10 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       pawCount += 1;
     }
 
-    document.addEventListener('pointermove', (event) => {
-      if (event.pointerType !== 'mouse') return;
-
-      const point = { x: event.clientX, y: event.clientY };
+    function followTrail(x, y) {
+      const point = { x, y };
       if (!previousPoint) {
         previousPoint = point;
         addPawPrint(point.x, point.y, 0);
@@ -69,7 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         previousPoint = point;
       }
+    }
+
+    document.addEventListener('pointermove', (event) => {
+      if (!['mouse', 'pen'].includes(event.pointerType)) return;
+      followTrail(event.clientX, event.clientY);
     }, { passive: true });
+
+    if (hasTouchInput) {
+      document.addEventListener('touchmove', (event) => {
+        const touch = event.touches[0];
+        if (touch) followTrail(touch.clientX, touch.clientY);
+      }, { passive: true });
+    }
   }
 
   // ==========================================
@@ -366,14 +378,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================
-  // 7. CONTACT MODAL & FORM HANDLER
+  // 7. CONTACT MODAL & FORM HANDLER (WHATSAPP INTEGRATION)
   // ==========================================
+  const WHATSAPP_PHONE = '918877338585'; // Destination WhatsApp number (+91 8877338585)
   const contactModal = document.getElementById('contact-modal');
   const contactCloseBtn = document.getElementById('contact-modal-close-btn');
   const contactBackdrop = document.getElementById('contact-modal-close-backdrop');
   const contactTriggers = document.querySelectorAll('.open-contact-trigger');
   const contactForm = document.getElementById('contact-form');
   const successMessage = document.getElementById('form-success-message');
+  const initialSuccessHtml = successMessage ? successMessage.innerHTML : '';
+
+  function escapeHtml(str) {
+    return (str || '').replace(/[&<>"']/g, (m) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[m]));
+  }
 
   function openContactModal(e) {
     if (e) e.preventDefault();
@@ -388,6 +412,17 @@ document.addEventListener('DOMContentLoaded', () => {
     contactModal.classList.remove('is-active');
     contactModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    // Reset form after modal animation completes
+    setTimeout(() => {
+      if (contactForm) {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+      }
+      if (successMessage) {
+        successMessage.style.display = 'none';
+        successMessage.innerHTML = initialSuccessHtml;
+      }
+    }, 300);
   }
 
   contactTriggers.forEach(btn => {
@@ -405,23 +440,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle Form Submit
+  // Handle Form Submit -> Directly send to WhatsApp (+91 8877338585)
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      if (contactForm.checkValidity && !contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const name = (contactForm.querySelector('#name')?.value || '').trim();
+      const email = (contactForm.querySelector('#email')?.value || '').trim();
+      const phone = (contactForm.querySelector('#phone')?.value || '').trim() || 'Not provided';
+      const reasonSelect = contactForm.querySelector('#inquiry-reason');
+      const reasonText = reasonSelect && reasonSelect.selectedIndex >= 0
+        ? reasonSelect.options[reasonSelect.selectedIndex].text
+        : 'General Inquiry';
+      const userMessage = (contactForm.querySelector('#message')?.value || '').trim() || 'No message provided';
+
+      // Build structured WhatsApp message
+      const waTextLines = [
+        '🐾 *New Website Inquiry - Scotchvilla*',
+        '',
+        `👤 *Name:* ${name || 'Friend'}`,
+        `📧 *Email:* ${email || 'N/A'}`,
+        `📞 *Phone:* ${phone}`,
+        `🏷️ *Topic:* ${reasonText}`,
+        '',
+        '💬 *Message:*',
+        userMessage
+      ];
+
+      const waText = encodeURIComponent(waTextLines.join('\n'));
+      const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${waText}`;
+
+      // Open WhatsApp directly in new tab or native WhatsApp app
+      window.open(waUrl, '_blank');
+
+      // Update and show modal confirmation state
       contactForm.style.display = 'none';
       if (successMessage) {
+        successMessage.innerHTML = `
+          <i class="fab fa-whatsapp" style="font-size: 54px; color: #25D366; margin-bottom: 16px; display: inline-block;"></i>
+          <h4>Thank you, ${escapeHtml(name) || 'friend'}!</h4>
+          <p style="margin-bottom: 20px; color: var(--color-navy-muted, #555); font-size: 15px; line-height: 1.5;">
+            Your inquiry is ready to send to <strong>+91 8877338585</strong> on WhatsApp. Click below if WhatsApp didn’t open automatically.
+          </p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 12px 24px; text-decoration: none; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fab fa-whatsapp" style="font-size: 18px; margin: 0; color: #fff;"></i> Open in WhatsApp
+            </a>
+            <button type="button" class="btn btn-outline" id="contact-modal-close-feedback-btn" style="padding: 12px 22px; border-radius: 999px;">
+              Close
+            </button>
+          </div>
+        `;
         successMessage.style.display = 'block';
+
+        const closeFeedbackBtn = successMessage.querySelector('#contact-modal-close-feedback-btn');
+        if (closeFeedbackBtn) {
+          closeFeedbackBtn.addEventListener('click', closeContactModal);
+        }
       }
-      setTimeout(() => {
-        closeContactModal();
-        // reset after close
-        setTimeout(() => {
-          contactForm.reset();
-          contactForm.style.display = 'block';
-          if (successMessage) successMessage.style.display = 'none';
-        }, 400);
-      }, 3000);
     });
   }
 

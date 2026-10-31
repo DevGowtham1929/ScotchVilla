@@ -3,14 +3,6 @@
    Clean, Responsive, High-Performance Stylesheet
    ========================================================================== */
 
-@font-face {
-  font-family: 'Titan One';
-  src: url('../TitanOne-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* --------------------------------------------------
    CSS Custom Properties (Theme Variables)
 -------------------------------------------------- */
@@ -35,10 +27,11 @@
   --tint-amber: rgba(252, 173, 54, 0.25);
 
   /* Fonts */
+  /* Scotchvilla uses Fraunces throughout for one consistent brand typeface. */
   --font-serif: "Fraunces", Georgia, serif;
   --font-display: "Fraunces", Georgia, serif;
-  --font-titan: "Titan One", "Fraunces", cursive, sans-serif;
-  --font-body: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-titan: "Fraunces", Georgia, serif;
+  --font-body: "Fraunces", Georgia, serif;
 
   /* Dimensions */
   --container-max-width: 1400px;
@@ -448,6 +441,22 @@ ul, ol {
   color: var(--color-white);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(192, 58, 40, 0.35);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: var(--color-white) !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background-color: #1ebc59;
+  border-color: #1ebc59;
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 .btn-outline {
@@ -921,12 +930,13 @@ ul, ol {
 
 .hero-container {
   display: grid;
-  grid-template-columns: minmax(0, 820px);
-  justify-content: center;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 36px;
+  gap: 44px;
   position: relative;
   z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* --------------------------------------------------
@@ -1048,7 +1058,7 @@ ul, ol {
 }
 
 /* --------------------------------------------------
-   RIGHT COLUMN: SCOTCH MEDIA, DOODLE & FLOATING CARDS
+   RIGHT COLUMN: 3D POP-OUT EDITORIAL ARCH STAGE
 -------------------------------------------------- */
 .hero-media-col {
   position: relative;
@@ -1057,14 +1067,111 @@ ul, ol {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  padding-bottom: 45px;
+  padding-bottom: 50px;
+}
+
+.hero-stage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Arch Stage Backdrop Behind Scotch */
+.hero-arch-backdrop {
+  position: absolute;
+  top: 45px;
+  bottom: 12px;
+  left: 20px;
+  right: 20px;
+  background: linear-gradient(175deg, #FFF6EC 0%, #FBE5D2 55%, #F7D2B8 100%);
+  border-radius: 240px 240px 44px 44px;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 28px 60px rgba(99, 39, 19, 0.12),
+              0 8px 24px rgba(99, 39, 19, 0.06),
+              inset 0 2px 12px rgba(255, 255, 255, 0.85);
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.hero-arch-inner-glow {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 65%;
+  background: radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.95) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.hero-arch-paw-badge {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFDF80 0%, #F5A623 50%, #E95B47 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 18px;
+  box-shadow: 0 8px 20px rgba(245, 166, 35, 0.35),
+              inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  border: 2px solid #FFFFFF;
+  animation: badgeGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeGlow {
+  0% { transform: scale(1) rotate(0deg); box-shadow: 0 8px 20px rgba(245, 166, 35, 0.35); }
+  100% { transform: scale(1.06) rotate(6deg); box-shadow: 0 12px 28px rgba(233, 91, 71, 0.45); }
+}
+
+/* Scotch 3D Pop-Out Cutout Container */
+.hero-scotch-cutout-wrap {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 18px;
+}
+
+.hero-scotch-popout-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* 3D drop shadow giving elevation over the arch */
+  filter: drop-shadow(0 20px 40px rgba(54, 18, 4, 0.18));
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+  will-change: transform;
+}
+
+.hero-stage-wrapper:hover .hero-arch-backdrop {
+  transform: translateY(-4px);
+  box-shadow: 0 34px 70px rgba(99, 39, 19, 0.16),
+              0 12px 28px rgba(99, 39, 19, 0.08);
+}
+
+.hero-stage-wrapper:hover .hero-scotch-popout-img {
+  transform: translateY(-8px) scale(1.025);
+  filter: drop-shadow(0 28px 52px rgba(54, 18, 4, 0.25));
 }
 
 /* Speech Bubble Doodle */
 .hero-speech-doodle {
   position: absolute;
-  top: -15px;
-  left: 2%;
+  top: -6px;
+  left: -14px;
   z-index: 6;
   pointer-events: none;
   animation: doodleFloat 3.8s ease-in-out infinite alternate;
@@ -1075,30 +1182,65 @@ ul, ol {
   100% { transform: translateY(-7px) rotate(2deg); }
 }
 
-/* Hero Main Dog Cutout Graphic */
-.hero-dog-wrapper {
+/* Floating Category Feature Cards (Overlapping Base) */
+.hero-feature-cards {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 7;
+  width: 90%;
+  max-width: 440px;
+}
+
+.hero-feature-card {
   position: relative;
-  width: 100%;
-  max-width: 530px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-brown, #361204);
+  color: #FFFFFF;
+  padding: 16px 12px 14px;
+  border-radius: 20px;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 16px 36px rgba(54, 18, 4, 0.25);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background-color 0.25s ease;
+}
+
+.hero-feature-card:hover {
+  transform: translateY(-6px);
+  background-color: var(--color-coral, #E95B47);
+  box-shadow: 0 22px 42px rgba(233, 91, 71, 0.35);
+}
+
+.hero-card-icon {
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  color: #FFFFFF;
 }
 
-.hero-dog-main-img {
-  width: 100%;
-  max-width: 510px;
-  height: auto;
-  object-fit: contain;
+.hero-card-title {
+  font-family: var(--font-titan, 'Titan One', sans-serif);
+  font-size: 1.12rem;
+  color: #FFFFFF;
   display: block;
-  filter: drop-shadow(0 18px 36px rgba(54, 18, 4, 0.14));
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+  margin-bottom: 3px;
+  line-height: 1.2;
 }
 
-.hero-dog-wrapper:hover .hero-dog-main-img {
-  transform: translateY(-6px) scale(1.02);
-  filter: drop-shadow(0 24px 44px rgba(54, 18, 4, 0.18));
+.hero-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.82);
+  display: block;
+  line-height: 1.2;
 }
 
 /* Fallback slider support if needed */
@@ -1198,62 +1340,7 @@ ul, ol {
   box-shadow: 0 3px 10px rgba(255, 90, 54, 0.35);
 }
 
-/* Floating Category Feature Cards (Overlapping Dog) */
-.hero-feature-cards {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 16px;
-  z-index: 7;
-  width: 86%;
-  max-width: 440px;
-}
 
-.hero-feature-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: var(--color-brown, #632713);
-  color: #FFFFFF;
-  padding: 22px 14px 18px;
-  border-radius: 18px;
-  box-shadow: 0 16px 32px rgba(54, 18, 4, 0.25);
-  text-decoration: none;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
-}
-
-.hero-feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 42px rgba(54, 18, 4, 0.32);
-}
-
-.hero-card-icon {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-card-title {
-  font-family: var(--font-titan);
-  font-size: 1.15rem;
-  color: #FFFFFF;
-  display: block;
-  margin-bottom: 3px;
-  line-height: 1.2;
-}
-
-.hero-card-subtitle {
-  font-family: var(--font-body);
-  font-size: 0.86rem;
-  color: rgba(255, 255, 255, 0.82);
-  display: block;
-  line-height: 1.2;
-}
 
 /* --------------------------------------------------
    SECTION 2: MEET SCOTCH
@@ -1331,7 +1418,7 @@ ul, ol {
 .why-us-image-card {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: clamp(460px, 38vw, 520px);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(6, 45, 62, 0.09);
@@ -1345,6 +1432,23 @@ ul, ol {
   object-fit: cover;
   transition: transform 0.5s ease;
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .why-us-image-card {
+    width: min(100%, 600px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us-image-card {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .card-img-left .rounded-card-img {
@@ -2256,6 +2360,7 @@ ul, ol {
 
 .testimonials-track {
   display: flex;
+  align-items: stretch;
   gap: 30px;
   transition: transform var(--transition-smooth);
 }
@@ -2263,19 +2368,34 @@ ul, ol {
 .testimonial-card {
   flex: 0 0 calc((100% - 60px) / 3);
   min-width: calc((100% - 60px) / 3);
+  min-height: 430px;
   background-color: #FFFFFF;
-  border-radius: 20px;
-  padding: 28px 30px;
+  border-radius: 24px;
+  padding: 28px 30px 24px;
   box-shadow: 0 10px 28px rgba(99, 39, 19, 0.06);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-self: stretch;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .testimonial-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(99, 39, 19, 0.12);
+}
+
+.testimonial-paw-mark {
+  width: 76px;
+  height: 76px;
+  margin: 0 0 22px;
+  flex: 0 0 auto;
+  color: #1f1b18;
+}
+
+.testimonial-paw-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .testimonial-rating-box {
@@ -2866,18 +2986,22 @@ ul, ol {
     order: 2;
     justify-content: center;
     width: 100%;
-    margin-top: 10px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 45px;
+  }
+
+  .hero-stage-wrapper {
+    max-width: 420px;
   }
 
   .hero-feature-cards {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    width: 100%;
-    max-width: 540px;
-    margin-top: 24px;
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 420px;
+    margin-top: 0;
   }
 
   .hero-art-wrapper,
@@ -2923,7 +3047,7 @@ ul, ol {
   }
 
   .why-us-image-card {
-    height: 320px;
+    height: auto;
   }
 
   .services-grid,
@@ -3074,22 +3198,43 @@ ul, ol {
     transform-origin: left top;
   }
 
+  .hero-stage-wrapper {
+    max-width: 380px;
+  }
+
+  .hero-arch-backdrop {
+    top: 36px;
+    bottom: 10px;
+    left: 14px;
+    right: 14px;
+  }
+
   .hero-feature-cards {
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
+    bottom: -20px;
+    width: 95%;
   }
 
   .hero-feature-card {
-    padding: 16px 10px 14px;
+    padding: 12px 8px 10px;
     border-radius: 14px;
   }
 
+  .hero-card-icon {
+    margin-bottom: 4px;
+  }
+
+  .hero-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
   .hero-card-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .hero-card-subtitle {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
 
   .section-title {
@@ -3177,6 +3322,7 @@ ul, ol {
   .testimonial-card {
     flex: 0 0 100%;
     min-width: 100%;
+    min-height: 450px;
   }
 
   .carousel-arrow-prev {

@@ -1,8 +1,8 @@
 /* Scotchvilla cookie and analytics preferences.
-   Add the site's GA4 measurement ID below to enable analytics after consent. */
+   Analytics stays off until a visitor accepts it. */
 (() => {
   const CONSENT_KEY = 'scotchvilla-analytics-consent-v1';
-  const GA_MEASUREMENT_ID = '';
+  const GA_MEASUREMENT_ID = 'G-Y8FZ31WBJH';
   let banner = null;
 
   function readConsent() {

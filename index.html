@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scotchvilla – Every great world begins small.</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
   <link rel="icon" href="images/favicon-192x192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Google Fonts: Titan One, Fraunces (with SOFT axis) & Bricolage Grotesque -->
+  <!-- Scotchvilla brand typeface -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&family=Titan+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/style.css?v=20.0">
+  <link rel="stylesheet" href="css/style.css?v=30.0">
 </head>
 <body>
 
@@ -139,7 +139,7 @@
                 <line x1="16" y1="13" x2="20" y2="18" stroke="currentColor" stroke-width="2" />
                 <line x1="21" y1="13" x2="25" y2="18" stroke="currentColor" stroke-width="2" />
               </svg>
-              <span class="hero-eyebrow-text">Welcome to My Little World!</span>
+              <span class="hero-eyebrow-text">Welcome to Scotch Villa</span>
             </div>
 
             <h1 class="hero-headline">Every great<br class="desktop-br"> world begins<br class="desktop-br"> small.</h1>
@@ -157,13 +157,76 @@
             </div>
           </div>
         </div>
+
+        <!-- Right Column: Hero Dog Media & Category Cards (Scotch 3D Pop-Out Arch Stage) -->
+        <div class="hero-media-col">
+          <div class="hero-stage-wrapper">
+            <!-- Speech Bubble Doodle -->
+            <div class="hero-speech-doodle" aria-hidden="true">
+              <svg width="96" height="74" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 40C12 20 30 8 55 8C80 8 92 22 92 40C92 58 78 70 55 70C46 70 38 68 32 64L14 74L18 56C14 51 12 45 12 40Z" fill="#FFFFFF" stroke="var(--color-brown, #632713)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="52" y="45" font-family="var(--font-titan, 'Titan One', sans-serif)" font-size="18" fill="var(--color-brown, #632713)" text-anchor="middle">Hello!</text>
+                <!-- Playful Sparkles -->
+                <path d="M6 24L10 20M8 18L8 26M4 22L12 22" stroke="var(--color-coral, #E95B47)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M88 16L92 12M90 10L90 18M86 14L94 14" stroke="var(--color-coral, #E95B47)" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <!-- Arch Stage Backdrop (grounds Scotch & creates depth) -->
+            <div class="hero-arch-backdrop" aria-hidden="true">
+              <div class="hero-arch-inner-glow"></div>
+              <div class="hero-arch-paw-badge" title="Scotch • Pet Fed Mascot">
+                <i class="fa-solid fa-crown" style="font-size: 15px;"></i>
+              </div>
+            </div>
+
+            <!-- Scotch 3D Pop-Out Cutout Photo -->
+            <div class="hero-scotch-cutout-wrap">
+              <img src="images/scotch-cutout-hero.png" 
+                   alt="Scotch the Dwarf Beagle wearing his colorful designer bow tie"
+                   class="hero-scotch-popout-img"
+                   width="1002"
+                   height="1024"
+                   loading="eager"
+                   fetchpriority="high">
+            </div>
+
+            <!-- Floating Feature Category Cards (Kenneli Style) -->
+            <div class="hero-feature-cards">
+              <a href="#meet-scotch" class="hero-feature-card">
+                <div class="hero-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.8 1.974 3.5 2 1.25.02 2.61-.1 3.5-.5"/>
+                    <path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.703-1.8 1.974-3.5 2-1.25.02-2.61-.1-3.5-.5"/>
+                    <path d="M8 14v.5"/>
+                    <path d="M16 14v.5"/>
+                    <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/>
+                    <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.5c0 4.142 3.582 7.5 8 7.5s8-3.358 8-7.5c0-1.127-.27-2.19-.757-3.136"/>
+                  </svg>
+                </div>
+                <span class="hero-card-title">Meet Scotch</span>
+                <span class="hero-card-subtitle">Our Little Mascot</span>
+              </a>
+              <a href="#puppies" class="hero-feature-card">
+                <div class="hero-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  </svg>
+                </div>
+                <span class="hero-card-title">Meet the Family</span>
+                <span class="hero-card-subtitle">Akash &amp; Family</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ==================== SECTION 2: MEET SCOTCH ==================== -->
     <section id="meet-scotch" class="why-us-section" style="background-image: none !important; background-color: var(--color-blue-bg) !important;">
       <div class="section-container why-us-container">
-        
+
         <!-- Left Column -->
         <div class="why-us-col why-us-left">
           <span class="section-badge gold-badge"><i class="fas fa-paw" style="margin-right: 6px;"></i> Meet Scotch</span>
@@ -178,24 +241,24 @@
             <span class="bio-pill"><i class="fas fa-trophy"></i> Pet Fed Mascot 2023</span>
           </div>
           <div class="why-us-image-card card-img-left">
-            <img src="images/scotch-section2-a.jpg" 
-                 alt="Scotch sticking his tongue out on grass" 
-                 class="rounded-card-img" 
-                 width="768" height="1024"
+            <img src="images/scotch-tie-table.jpg"
+                 alt="Scotch standing on a wooden table wearing a striped tie"
+                 class="rounded-card-img"
+                 width="815" height="1024"
                  loading="lazy">
-            <span class="image-card-caption-chip"><i class="fas fa-sun"></i> Scotch on the Lawn</span>
+            <span class="image-card-caption-chip"><i class="fas fa-heart"></i> Dressed for Success</span>
           </div>
         </div>
 
         <!-- Right Column -->
         <div class="why-us-col why-us-right">
           <div class="why-us-image-card main-right-card">
-            <img src="images/scotch-section2-b.jpg" 
-                 alt="Scotch as a puppy resting peacefully on cozy blanket" 
-                 class="rounded-card-img" 
-                 width="900" height="1024"
+            <img src="images/scotch-grass-tongue.jpg"
+                 alt="Scotch outdoors on the grass licking his nose"
+                 class="rounded-card-img"
+                 width="768" height="1024"
                  loading="lazy">
-            <span class="image-card-caption-chip"><i class="fas fa-heart"></i> The Signature Puppy Nap</span>
+            <span class="image-card-caption-chip"><i class="fas fa-sun"></i> Pure Joy</span>
           </div>
           <p class="why-us-paragraph secondary-desc">
             Every picture of mine tells a small story. An ear flopped over a cushion. A hopeful nose pointed towards the kitchen. A little waddle on a very important mission. (The mission being food). I never planned to be famous. I simply lay down, tilted my head and let the world fall in love. My family has been chasing me with a camera ever since. Not that I am hard to catch. You are welcome ;)
@@ -214,7 +277,7 @@
     <!-- ==================== SECTION 3: THE STORY SO FAR ==================== -->
     <section id="story-so-far" class="story-so-far-section">
       <div class="section-container">
-        
+
         <!-- Header with Heart Doodles -->
         <div class="section-header-centered story-header">
           <span class="doodle-heart doodle-heart-left" aria-hidden="true">
@@ -225,7 +288,7 @@
 
           <span class="section-badge gold-badge">The Story So Far</span>
           <h2 class="section-title">From A Birthday Present<br class="desktop-br"> To A Little World</h2>
-          
+
           <span class="doodle-heart doodle-heart-right" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E95B47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -235,17 +298,17 @@
 
         <!-- 3 Interactive 3D Rotating Flip Story Cards Grid -->
         <div class="story-cards-grid">
-          
+
           <!-- Card 1: 2021 The Beginning -->
           <article class="story-card flip-card" tabindex="0" role="button" aria-label="Happy Birthday to Us - Click or hover to flip">
             <div class="flip-card-inner">
-              
+
               <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="story-card-media">
-                  <img src="images/home/story-birthday-puppy.jpg" 
-                       alt="Scotch as a puppy in a red bow tie" 
-                       class="story-card-img" 
+                  <img src="images/home/story-birthday-puppy.jpg"
+                       alt="Scotch as a puppy in a red bow tie"
+                       class="story-card-img"
                        width="960" height="1280"
                        loading="lazy">
                   <span class="story-year-badge"><i class="fas fa-calendar-alt"></i> August 2021</span>
@@ -278,13 +341,13 @@
           <!-- Card 2: 2023 Pet Fed Mascot -->
           <article class="story-card flip-card" tabindex="0" role="button" aria-label="The People Have Spoken - Click or hover to flip">
             <div class="flip-card-inner">
-              
+
               <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="story-card-media">
-                  <img src="images/home/story-mascot-scotch.jpg" 
-                       alt="Scotch dressed in a festive red outfit" 
-                       class="story-card-img" 
+                  <img src="images/home/story-mascot-scotch.jpg"
+                       alt="Scotch dressed in a festive red outfit"
+                       class="story-card-img"
                        width="960" height="1280"
                        loading="lazy">
                   <span class="story-year-badge"><i class="fas fa-trophy"></i> November 2023</span>
@@ -317,13 +380,13 @@
           <!-- Card 3: 2026 Brand Launch -->
           <article class="story-card flip-card" tabindex="0" role="button" aria-label="Pupdate We're a Brand Now - Click or hover to flip">
             <div class="flip-card-inner">
-              
+
               <!-- Front Face -->
               <div class="flip-card-front">
                 <div class="story-card-media">
-                  <img src="images/home/brand-launch.jpg" 
-                       alt="The Scotchvilla team celebrating the 2026 brand launch" 
-                       class="story-card-img" 
+                  <img src="images/home/brand-launch.jpg"
+                       alt="The Scotchvilla team celebrating the 2026 brand launch"
+                       class="story-card-img"
                        width="839" height="1024"
                        loading="lazy">
                   <span class="story-year-badge"><i class="fas fa-rocket" aria-hidden="true"></i> January 2026</span>
@@ -372,7 +435,7 @@
     <!-- ==================== SECTION 5: THE HEART OF SCOTCHVILLA ==================== -->
     <section id="heart-of-scotchvilla" class="core-values-section">
       <div class="section-container">
-        
+
         <!-- Header -->
         <div class="section-header-centered core-values-header">
           <span class="section-badge gold-badge">The Heart of Scotchvilla</span>
@@ -384,14 +447,14 @@
 
         <!-- 4 Core Values Grid -->
         <div class="core-values-grid">
-          
+
           <!-- Value 1: Compassion -->
           <div class="core-value-card">
             <div class="core-value-icon-box">
-              <img src="images/icons/01_yellow_hearts_transparent.png" 
-                   alt="A little Beagle surrounded by yellow hearts" 
-                   class="core-value-icon-img" 
-                   width="136" height="136" 
+              <img src="images/icons/01_yellow_hearts_transparent.png"
+                   alt="A little Beagle surrounded by yellow hearts"
+                   class="core-value-icon-img"
+                   width="136" height="136"
                    loading="lazy">
             </div>
             <h3 class="core-value-title">Compassion</h3>
@@ -403,10 +466,10 @@
           <!-- Value 2: Kindness -->
           <div class="core-value-card">
             <div class="core-value-icon-box">
-              <img src="images/icons/02_pink_sparkles_transparent.png" 
-                   alt="A smiling Beagle surrounded by pink sparkles" 
-                   class="core-value-icon-img" 
-                   width="136" height="136" 
+              <img src="images/icons/02_pink_sparkles_transparent.png"
+                   alt="A smiling Beagle surrounded by pink sparkles"
+                   class="core-value-icon-img"
+                   width="136" height="136"
                    loading="lazy">
             </div>
             <h3 class="core-value-title">Kindness</h3>
@@ -418,10 +481,10 @@
           <!-- Value 3: Empathy & Inclusivity -->
           <div class="core-value-card">
             <div class="core-value-icon-box">
-              <img src="images/icons/03_green_kitten_hug_transparent.png" 
-                   alt="A Beagle cuddling a kitten" 
-                   class="core-value-icon-img" 
-                   width="136" height="136" 
+              <img src="images/icons/03_green_kitten_hug_transparent.png"
+                   alt="A Beagle cuddling a kitten"
+                   class="core-value-icon-img"
+                   width="136" height="136"
                    loading="lazy">
             </div>
             <h3 class="core-value-title">Empathy &amp; Inclusivity</h3>
@@ -433,10 +496,10 @@
           <!-- Value 4: Joy -->
           <div class="core-value-card">
             <div class="core-value-icon-box">
-              <img src="images/icons/04_orange_ice_cream_transparent.png?v=2.0" 
-                   alt="A happy Beagle holding an ice cream" 
-                   class="core-value-icon-img" 
-                   width="136" height="136" 
+              <img src="images/icons/04_orange_ice_cream_transparent.png?v=2.0"
+                   alt="A happy Beagle holding an ice cream"
+                   class="core-value-icon-img"
+                   width="136" height="136"
                    loading="lazy">
             </div>
             <h3 class="core-value-title">Joy</h3>
@@ -455,11 +518,11 @@
 
         <!-- Two Column Layout: Visuals on Left, Story on Right -->
         <div class="different-grid">
-          
+
           <!-- Left Column: Arched Pill Photos & Playful Doodles -->
           <div class="different-visual-col">
             <div class="different-photos-wrap">
-              
+
               <!-- Floating Top Red Squiggle Doodle -->
               <span class="different-doodle doodle-squiggle" aria-hidden="true">
                 <svg width="46" height="42" viewBox="0 0 50 46" fill="none">
@@ -476,19 +539,19 @@
 
               <!-- Left Arch Photo (tall pill) -->
               <div class="arch-photo-box arch-photo-left">
-                <img src="images/scotch-section2-a.png" 
-                     alt="Scotch enjoying a sunny moment on the grass" 
-                     class="arch-photo-img" 
-                     width="839" height="1024" 
+                <img src="images/scotch-traditional-yellow.jpg"
+                     alt="Scotch wearing a festive yellow outfit and pearl necklace"
+                     class="arch-photo-img"
+                     width="741" height="1024"
                      loading="lazy">
               </div>
 
               <!-- Right Arch Photo (offset pill) -->
               <div class="arch-photo-box arch-photo-right">
-                <img src="images/scotch-section2-b.png" 
-                     alt="Scotch relaxing at home in a dark vest" 
-                     class="arch-photo-img" 
-                     width="819" height="1024" 
+                <img src="images/scotch-section2-b.png"
+                     alt="Scotch relaxing at home in a dark vest"
+                     class="arch-photo-img"
+                     width="819" height="1024"
                      loading="lazy">
               </div>
 
@@ -507,7 +570,7 @@
 
           <!-- Right Column: Story Copy & Checklist Grid -->
           <div class="different-content-col">
-            
+
             <h2 class="different-headline">
               Dwarfism Made Me a<br>
               Little <span class="doodle-circled">Different<svg class="doodle-circle-svg" viewBox="0 0 170 65" fill="none" preserveAspectRatio="none"><ellipse cx="85" cy="32" rx="78" ry="26" stroke="#E95B47" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="280 20" transform="rotate(-2 85 32)"/><path d="M15 42 C40 58 135 56 160 38" stroke="#E95B47" stroke-width="2.5" stroke-linecap="round"/></svg></span>, but<br>
@@ -520,7 +583,7 @@
 
             <!-- 2x2 Checklist Grid -->
             <div class="different-checklist-grid">
-              
+
               <!-- Point 1: What it is -->
               <div class="checklist-item">
                 <div class="checklist-item-header">
@@ -597,7 +660,7 @@
     <!-- ==================== SECTION 7: MEET THE FAMILY (CAROUSEL) ==================== -->
     <section id="puppies" class="puppies-section">
       <div class="section-container">
-        
+
         <!-- Header -->
         <div class="section-header-centered">
           <span class="section-badge gold-badge">Meet My Family</span>
@@ -615,14 +678,14 @@
 
           <div class="carousel-track-container" id="puppies-carousel-container">
             <div class="carousel-track" id="puppies-carousel-track">
-              
+
               <!-- Member 1: Srikala Bhaskaran -->
               <div class="puppy-carousel-item tint-lavender">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-granny.png" 
-                         alt="Srikala Bhaskaran" 
-                         width="768" height="968" 
+                    <img src="images/family-granny.png"
+                         alt="Srikala Bhaskaran"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -636,9 +699,9 @@
               <div class="puppy-carousel-item tint-coral">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-akash.png" 
-                         alt="Akash Bhaskar" 
-                         width="768" height="968" 
+                    <img src="images/family-akash.png"
+                         alt="Akash Bhaskar"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -652,9 +715,9 @@
               <div class="puppy-carousel-item tint-amber">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-whiskey.png" 
-                         alt="Whiskey" 
-                         width="768" height="968" 
+                    <img src="images/family-whiskey.png"
+                         alt="Whiskey"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -668,9 +731,9 @@
               <div class="puppy-carousel-item tint-lavender">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-niyati.png" 
-                         alt="Niyati Nair" 
-                         width="768" height="968" 
+                    <img src="images/family-niyati.png"
+                         alt="Niyati Nair"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -684,9 +747,9 @@
               <div class="puppy-carousel-item tint-coral">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-athira-sagar.png" 
-                         alt="Athira Bhaskar & Sagar Shah" 
-                         width="768" height="968" 
+                    <img src="images/family-athira-sagar.png"
+                         alt="Athira Bhaskar & Sagar Shah"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -700,9 +763,9 @@
               <div class="puppy-carousel-item tint-amber">
                 <div class="puppy-card-inner">
                   <div class="puppy-img-placeholder">
-                    <img src="images/family-grandpa.png" 
-                         alt="Bhaskar PV" 
-                         width="768" height="968" 
+                    <img src="images/family-grandpa.png"
+                         alt="Bhaskar PV"
+                         width="768" height="968"
                          loading="lazy">
                   </div>
                   <div class="puppy-card-info">
@@ -726,7 +789,7 @@
     <!-- ==================== SECTION 8: WHAT MY ONLINE FAM SAYS ==================== -->
     <section id="testimonials" class="testimonials-section">
       <div class="section-container">
-        
+
         <!-- Header -->
         <div class="section-header-centered">
           <span class="section-badge gold-badge">What My Online Fam Says</span>
@@ -740,9 +803,20 @@
         <div class="testimonials-carousel-wrapper">
           <div class="testimonials-track-container" id="testimonials-container">
             <div class="testimonials-track" id="testimonials-track">
-              
+
               <!-- Review 1: Keerthy -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“You're a floff with intelligence and the cutest CEO ever you have love all over the world and your charm is unbearable loads of patotie cuteness. Please don't cry when grandpa didn't share food. Because they care for you and please don't cry it makes me sad. You're just a floof with full of lovvv.”</p>
                   <div class="testimonial-author">Keerthy <span>Malaysia</span></div>
@@ -751,6 +825,17 @@
 
               <!-- Review 2: Krishnavilash Biswas -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“You may be a tiny Baby, but you occupy a gigantic space in my heart. I love your floppy ears, innocent eyes, silly antics, and the happiness you bring just by existing. You're not just adorable you're a little bundle of unconditional love, mischief, and pure magic. Stay cute and spread happiness, little heart-stealer!”</p>
                   <div class="testimonial-author">Krishnavilash Biswas <span>India (Kolkata)</span></div>
@@ -759,6 +844,17 @@
 
               <!-- Review 3: Sarah Parsons -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“Since I found you, i have followed every post. They make my day. I love hearing about your life and what fun &amp; mischief you have been up to. It warms my heart. You are so very loved and special Scotch xx I wish you good health and happiness always.”</p>
                   <div class="testimonial-author">Sarah Parsons <span>The United Kingdom</span></div>
@@ -767,6 +863,17 @@
 
               <!-- Review 4: Jill -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“Scotch is the cutest little pup ever, he's definitely special he makes me smile every time i see him on Instagram he's just so huggable and sweet.”</p>
                   <div class="testimonial-author">Jill <span>Spain</span></div>
@@ -775,6 +882,17 @@
 
               <!-- Review 5: Toni D’Ambrosio -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“It is always such a joy to see your sweet face on your post and stories. You always bring a smile to my face. Your family is so lucky to have you and you them.”</p>
                   <div class="testimonial-author">Toni D’Ambrosio <span>USA</span></div>
@@ -783,6 +901,17 @@
 
               <!-- Review 6: Simran -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“Scotch is special to Coco because some friendships are written in pawprints and sealed with love. With his adorable personality and playful charm, Scotch makes every little moment brighter and their friendship extra precious.”</p>
                   <div class="testimonial-author">Simran <span>Coco’s mom · India</span></div>
@@ -791,6 +920,17 @@
 
               <!-- Review 7: Mehr Grover -->
               <article class="testimonial-card">
+                <div class="testimonial-paw-mark" aria-hidden="true">
+                  <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="17" cy="20" rx="4.8" ry="7" transform="rotate(28 17 20)" />
+                      <ellipse cx="29" cy="13" rx="4.8" ry="7" transform="rotate(10 29 13)" />
+                      <ellipse cx="43" cy="13" rx="4.8" ry="7" transform="rotate(-10 43 13)" />
+                      <ellipse cx="55" cy="21" rx="4.8" ry="7" transform="rotate(-28 55 21)" />
+                      <path d="M15 48c1-8 8-15 21-15s20 7 21 15c1 7-5 11-12 8-6-2-12-2-18 0-7 3-13-1-12-8Z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="testimonial-body">
                   <p class="testimonial-quote">“There is I believe not even a single post/reel that I have skipped. You are so so loved &amp; you will always be my fuzzy wuzzy little ball of fur. Tbh there is so much to write that 50 words can’t do justice. I so so wish I could hold him once. I love you way too much and god bless you and the whole family always.”</p>
                   <div class="testimonial-author">Mehr Grover <span>India</span></div>
@@ -813,9 +953,9 @@
 
           <!-- Floating Bone Badge -->
           <div class="testimonials-floating-badge" aria-hidden="true">
-            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/sryjry.png" 
-                 alt="" 
-                 width="613" height="371" 
+            <img src="https://kenela.peerduck.com/wp-content/uploads/2024/01/sryjry.png"
+                 alt=""
+                 width="613" height="371"
                  loading="lazy">
           </div>
         </div>
@@ -845,7 +985,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-grid">
-          
+
           <!-- Column 1: Explore Around -->
           <div class="footer-col">
             <h3 class="footer-col-title">Explore Around</h3>
@@ -901,11 +1041,11 @@
 
       <!-- Giant Display Wordmark (SCOTCHVILLA with Dog Paw Cutout) -->
       <div class="footer-huge-wordmark" aria-label="Scotchvilla">
-        <img src="images/scotchvilla-footer-wordmark.png" 
-             alt="Scotchvilla" 
-             class="footer-wordmark-img" 
-             width="1916" 
-             height="280" 
+        <img src="images/scotchvilla-footer-wordmark.png"
+             alt="Scotchvilla"
+             class="footer-wordmark-img"
+             width="1916"
+             height="280"
              loading="lazy">
       </div>
 
@@ -930,11 +1070,11 @@
     <div class="video-modal-content">
       <button class="video-modal-close" id="video-modal-close-btn" aria-label="Close video">&times;</button>
       <div class="video-iframe-container">
-        <iframe id="video-iframe" 
-                src="" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        <iframe id="video-iframe"
+                src=""
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
       </div>
     </div>
@@ -948,7 +1088,7 @@
       <div class="contact-modal-header">
         <span class="section-badge gold-badge">Get In Touch</span>
         <h3 class="contact-modal-title">Off you go, little message</h3>
-        <p class="contact-modal-subtitle">Leave your details and drop a note in Scotch’s bowl.</p>
+        <p class="contact-modal-subtitle">Leave your details to send a message directly to us on WhatsApp.</p>
       </div>
       <form id="contact-form" class="contact-modal-form">
         <div class="form-group">
@@ -961,14 +1101,16 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-8900">
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
         </div>
         <div class="form-group">
           <label for="inquiry-reason">I am getting in touch about</label>
           <select id="inquiry-reason" name="inquiry-reason">
-            <option value="hello">Just saying hello to Scotch</option>
-            <option value="collab">Collaborations &amp; Press</option>
-            <option value="story">Sharing my own pet story</option>
+            <option value="brand-collaboration">Brand collaboration</option>
+            <option value="press-media">Press &amp; media</option>
+            <option value="events-appearances">Events &amp; appearances</option>
+            <option value="merch-products">Merch &amp; products</option>
+            <option value="hello">Just saying hello to Scotch!</option>
             <option value="other">Something else</option>
           </select>
         </div>
@@ -976,18 +1118,18 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="3" placeholder="Write your note for Scotch..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Drop it in Scotch’s bowl</button>
+        <button type="submit" class="btn btn-primary btn-block"><i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 1.15em;"></i>Send via WhatsApp</button>
       </form>
       <div id="form-success-message" class="form-success-message" style="display: none;">
-        <i class="fas fa-check-circle"></i>
+        <i class="fab fa-whatsapp" style="font-size: 52px; color: #25D366; margin-bottom: 16px;"></i>
         <h4>Thank you!</h4>
-        <p>Your message has been dropped in Scotch’s bowl! We will get back to you shortly.</p>
+        <p>Opening WhatsApp to send your message...</p>
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="js/cookie-consent.js?v=1.0"></script>
-  <script src="js/main.js?v=10.0"></script>
+  <script src="js/cookie-consent.js?v=2.0"></script>
+  <script src="js/main.js?v=12.0"></script>
 </body>
 </html>
