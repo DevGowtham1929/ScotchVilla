@@ -2198,7 +2198,6 @@
 
 .blog-hero::before,
 .socials-hero::before,
-.merch-hero::before,
 .gallery-hero::before,
 .blog-hero::after,
 .socials-hero::after,
@@ -2273,12 +2272,8 @@
 }
 
 .merch-hero::before {
-  left: 6%;
-  bottom: 12%;
-  width: 100px;
-  height: 100px;
-  background-image: url("../images/brand-elements/coconut.svg");
-  opacity: 0.95;
+  display: none !important;
+  content: none !important;
 }
 
 .merch-hero::after {
@@ -2383,7 +2378,6 @@
   .socials-hero::after,
   .gallery-hero::before,
   .gallery-hero::after,
-  .merch-hero::before,
   .merch-hero::after {
     width: 46px;
     height: 46px;
@@ -2409,7 +2403,6 @@
   .socials-hero::after,
   .gallery-hero::before,
   .gallery-hero::after,
-  .merch-hero::before,
   .merch-hero::after { animation: none; }
 }
 
