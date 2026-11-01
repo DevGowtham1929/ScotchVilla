@@ -44,7 +44,7 @@
   --header-height: 120px;
   --header-height-scrolled: 90px;
   --border-radius-card: 8px;
-  --border-radius-btn: 4px;
+  --border-radius-btn: 12px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -1372,7 +1372,7 @@ ul, ol {
   align-items: center;
   gap: 12px;
   padding: 16px 36px;
-  border-radius: 999px;
+  border-radius: 12px;
   background-color: var(--color-brown, #221510);
   color: #FFFFFF !important;
   font-family: var(--font-body);
