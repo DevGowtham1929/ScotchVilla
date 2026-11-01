@@ -30,12 +30,12 @@
   --tint-amber: rgba(252, 173, 54, 0.25);
 
   /* Fonts */
-  /* Scotchvilla uses Fraunces throughout for one consistent brand typeface, plus Plus Jakarta Sans and Caveat for accents. */
+  /* Scotchvilla brand typefaces: Fraunces (primary) and Bricolage Grotesque (secondary), plus Caveat for accents. */
   --font-serif: "Fraunces", Georgia, serif;
   --font-display: "Fraunces", Georgia, serif;
   --font-titan: "Fraunces", Georgia, serif;
-  --font-body: "Nunito", "Fraunces", sans-serif;
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-script: "Caveat", cursive;
 
   /* Dimensions */
@@ -199,7 +199,7 @@ input[type="button"],
   position: relative;
   background: #FFFFFF;
   border-radius: 32px;
-  padding: 38px 34px 34px;
+  padding: 36px 32px 28px;
   box-shadow: 0 28px 75px rgba(0, 0, 0, 0.45), 0 10px 28px rgba(0, 0, 0, 0.18);
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -211,65 +211,71 @@ input[type="button"],
 
 .cookie-card-title {
   color: var(--color-brown, #221510);
-  font-family: var(--font-sans, "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.22;
-  letter-spacing: -0.4px;
+  font-family: var(--font-serif, "Fraunces", Georgia, serif);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
   margin: 0;
 }
 
 .cookie-card-body p {
   color: #4A3B32;
-  font-family: var(--font-sans, "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
-  font-size: 14px;
-  line-height: 1.55;
-  margin: 0 0 24px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+.cookie-card-body p.cookie-subtext {
+  color: var(--color-navy-muted, #6B7280);
+  font-size: 13.5px;
   font-weight: 500;
+  margin: 0 0 22px;
 }
 
-.cookie-privacy-link {
-  color: var(--color-coral, #E95B47);
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.2s ease, text-decoration 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.cookie-privacy-link:hover {
-  color: #C03A28;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Stacked Pill Action Buttons */
+/* Two-Button Pill Action Row */
 .cookie-card-actions {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .cookie-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 13px 20px;
+  flex: 1;
+  padding: 13px 18px;
   border-radius: 999px;
-  font-family: var(--font-sans, "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-family: var(--font-body);
   font-size: 14.5px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
   transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
   border: none;
   text-align: center;
+  white-space: nowrap;
 }
 
-/* 1. Reject Non-Essential (Soft Neutral Pill) */
+/* 1. Accept Analytics (Bold High-Contrast Pill) */
+.cookie-btn-accept {
+  background: var(--color-brown, #221510);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(34, 21, 16, 0.16);
+}
+
+.cookie-btn-accept:hover {
+  background: var(--color-coral, #E95B47);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(233, 91, 71, 0.35);
+}
+
+/* 2. Reject Analytics (Soft Neutral Pill) */
 .cookie-btn-reject {
   background: #EAE6E1;
   color: #423229;
@@ -281,42 +287,49 @@ input[type="button"],
   transform: translateY(-1px);
 }
 
-/* 2. Settings (Soft Neutral Pill) */
-.cookie-btn-settings {
-  background: #EAE6E1;
-  color: #423229;
+/* Cookie Footer Links */
+.cookie-card-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(74, 59, 50, 0.7);
+  margin-top: 4px;
 }
 
-.cookie-btn-settings:hover {
-  background: #DFD9D2;
-  color: #221510;
-  transform: translateY(-1px);
+.cookie-footer-link {
+  color: var(--color-brown, #221510);
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+  font-weight: 700;
+  transition: color 0.2s ease;
 }
 
-/* 3. Accept All (Bold High-Contrast Pill) */
-.cookie-btn-accept {
-  background: #FFFFFF;
-  border: 2px solid #221510;
-  color: #221510;
-  box-shadow: 0 4px 14px rgba(34, 21, 16, 0.08);
+.cookie-footer-link:hover {
+  color: var(--color-coral, #E95B47);
 }
 
-.cookie-btn-accept:hover {
-  background: #221510;
-  color: #FFFFFF;
-  transform: translateY(-1.5px);
-  box-shadow: 0 6px 20px rgba(34, 21, 16, 0.25);
+.cookie-footer-sep {
+  color: rgba(74, 59, 50, 0.4);
+  font-weight: 700;
+}
+
+.cookie-footer-text {
+  color: rgba(74, 59, 50, 0.75);
 }
 
 /* Mascot Vector Overlap (Dog Carrying the Card in Mouth) */
 .cookie-mascot-wrapper {
   position: absolute;
-  right: -130px;
-  bottom: -32px;
-  width: 270px;
+  right: -132px;
+  bottom: -26px;
+  width: 255px;
   z-index: 3;
   pointer-events: none;
-  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.32));
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   animation: mascotSlideIn 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.25) forwards;
 }
@@ -324,7 +337,7 @@ input[type="button"],
 @keyframes mascotSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(35px) rotate(-6deg);
+    transform: translateY(35px) rotate(-4deg);
   }
   100% {
     opacity: 1;
@@ -333,7 +346,7 @@ input[type="button"],
 }
 
 .cookie-modal-stage:hover .cookie-mascot-wrapper {
-  transform: translateY(-6px) rotate(2deg) scale(1.02);
+  transform: translateY(-6px) rotate(1.5deg) scale(1.02);
 }
 
 .cookie-mascot-img {
@@ -352,7 +365,7 @@ body.cookie-modal-open {
 /* Responsive adjustments */
 @media (max-width: 680px) {
   .cookie-modal-stage {
-    max-width: 360px;
+    max-width: 370px;
   }
   
   .cookie-modal-card {
@@ -361,28 +374,33 @@ body.cookie-modal-open {
   }
 
   .cookie-card-title {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .cookie-card-body p {
     font-size: 13.5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .cookie-card-actions {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .cookie-mascot-wrapper {
-    width: 180px;
+    width: 170px;
     right: -25px;
     bottom: -22px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .cookie-modal-stage {
     max-width: 320px;
   }
   
   .cookie-mascot-wrapper {
-    width: 140px;
+    width: 135px;
     right: -15px;
     bottom: -15px;
   }
@@ -485,6 +503,205 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ==========================================================================
+   DESIGNER TYPOGRAPHY SPECIFICATION:
+   Primary: Fraunces (Headlines 700, Sub-heads 600, Quotes 400 italic; softness 0, wonky off; never all caps)
+   Secondary: Bricolage Grotesque (Reading 400, Captions & Legal 500, Buttons & Nav 600, Small Uppercase Labels 700; width 100, optical size matched)
+   ========================================================================== */
+
+/* Primary: Fraunces */
+h1, h2, h3, h4,
+.section-title,
+.subpage-title,
+.hero-headline,
+.product-name,
+.product-title,
+.story-card-title,
+.flip-back-title,
+.core-value-title,
+.different-headline,
+.checklist-item-title,
+.cta-headline,
+.blog-card-title,
+.post-title,
+.reel-title,
+.gallery-card-title,
+.viral-title,
+.channel-name,
+.collab-text h3,
+.footer-col-title,
+.cookie-card-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none; /* Never all capitals */
+}
+
+/* Fraunces Weights: 700 for headlines & product names */
+h1, h2,
+.hero-headline,
+.subpage-title,
+.section-title,
+.story-header .section-title,
+.different-headline,
+.cta-headline,
+.gallery-share-title,
+.newsletter-title,
+.product-name,
+.product-title,
+.reels-spotlight-header .section-title,
+.faq-category-title,
+.terms-article h2,
+.cookie-policy-content h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none;
+}
+
+/* Fraunces Weights: 600 for sub-heads & card titles */
+h3, h4,
+.story-card-title,
+.flip-back-title,
+.core-value-title,
+.checklist-item-title,
+.blog-card-title,
+.post-title,
+.reel-title,
+.gallery-card-title,
+.viral-title,
+.channel-name,
+.collab-text h3,
+.footer-col-title,
+.puppy-name,
+.lightbox-caption h3,
+.reader-title,
+.cookie-card-title,
+.terms-article h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none;
+}
+
+/* Fraunces Weights: 400 italic for quotes & big statements */
+blockquote,
+.parallax-quote-text,
+.hero-quote,
+.testimonial-quote-text {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none;
+}
+
+/* Secondary: Bricolage Grotesque */
+body,
+p,
+li,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'opsz' auto;
+}
+
+/* Bricolage Grotesque Weights: 400 for reading */
+body,
+p,
+li,
+.hero-description,
+.story-card-text,
+.product-desc,
+.blog-card-excerpt,
+.gallery-card-desc,
+.reader-body p,
+.channel-desc,
+.section-subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'opsz' auto;
+}
+
+/* Bricolage Grotesque Weights: 500 for captions and legal text */
+.terms-article p,
+.terms-article li,
+.cookie-policy-content p,
+.faq-answer,
+.faq-answer p,
+.privacy-content p,
+.privacy-content li,
+.reel-caption,
+.viral-desc,
+.cookie-subtext,
+.footer-col-subtitle,
+.footer-bottom,
+.footer-bottom p,
+.subpage-breadcrumbs,
+.subpage-breadcrumbs a,
+.author-info span,
+.gallery-card-meta,
+.product-meta,
+.blog-card-footer {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'opsz' auto;
+}
+
+/* Bricolage Grotesque Weights: 600 for buttons and navigation */
+.btn,
+.btn-primary,
+.btn-outline,
+.btn-add-bag,
+.btn-dark-pill,
+.btn-story-play,
+.btn-cta,
+.btn-text-link,
+.nav-link,
+.nav-cta,
+.mobile-nav-link,
+.mobile-dropdown-btn,
+.filter-btn,
+.newsletter-submit-btn,
+.channel-btn,
+.gallery-share-btn,
+.cookie-btn,
+.footer-nav-link,
+.footer-credit-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'opsz' auto;
+}
+
+/* Bricolage Grotesque Weights: 700 only for small uppercase labels */
+.section-badge,
+.product-badge,
+.reel-tag,
+.viral-badge-pill,
+.channel-badge,
+.post-tag,
+.story-year-badge,
+.gallery-card-tag,
+.hero-pill-badge,
+.hero-floating-badge,
+.flip-indicator-pill,
+.product-type-label,
+.product-tag-chip {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-variation-settings: 'wdth' 100, 'opsz' auto;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 18px;
@@ -544,8 +761,9 @@ ul, ol {
 
 .section-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-variation-settings: 'opsz' 72, 'SOFT' 50, 'wght' 600;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
   font-size: clamp(1.875rem, 2.5vw + 1rem, 3rem);
   line-height: 1.15;
   color: var(--color-brown);
@@ -575,9 +793,9 @@ ul, ol {
   align-items: center;
   justify-content: center;
   padding: 16px 36px;
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.5px;
   border-radius: var(--border-radius-btn);
   transition: all var(--transition-smooth);
@@ -858,8 +1076,9 @@ ul, ol {
   align-items: center;
   gap: 8px;
   padding: 12px 26px;
+  font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 24px;
   box-shadow: 0 4px 14px rgba(233, 91, 71, 0.28);
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1045,19 +1264,19 @@ ul, ol {
 .hero-pill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 18px 8px 12px;
+  gap: 12px;
+  padding: 10px 22px 10px 14px;
   border: 1.5px solid rgba(34, 21, 16, 0.16);
   border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-family: var(--font-body);
-  font-size: 14.5px;
-  font-weight: 700;
+  font-size: 16.5px;
+  font-weight: 800;
   color: var(--color-brown, #221510);
   margin-bottom: 24px;
-  box-shadow: 0 4px 14px rgba(34, 21, 16, 0.04);
+  box-shadow: 0 4px 16px rgba(34, 21, 16, 0.05);
   transition: all 0.25s ease;
 }
 
@@ -1065,23 +1284,26 @@ ul, ol {
   background-color: #FFFFFF;
   border-color: rgba(34, 21, 16, 0.3);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(34, 21, 16, 0.08);
+  box-shadow: 0 6px 20px rgba(34, 21, 16, 0.08);
 }
 
 .badge-icon-pill {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: rgba(233, 91, 71, 0.12);
+  background-color: rgba(229, 66, 45, 0.14);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-coral, #E95B47);
-  font-size: 13px;
+  color: var(--color-coral, #E5422D);
+  font-size: 15px;
 }
 
 .badge-title {
   color: var(--color-brown, #221510);
+  font-size: 16.5px;
+  font-weight: 800;
+  letter-spacing: 0.1px;
 }
 
 .badge-dot {
@@ -1095,11 +1317,13 @@ ul, ol {
 }
 
 .hero-headline {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
   font-size: clamp(44px, 5.2vw, 76px);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--color-brown, #221510);
   margin-bottom: 24px;
 }
@@ -1147,7 +1371,7 @@ ul, ol {
   color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
   box-shadow: 0 8px 24px rgba(34, 21, 16, 0.18);
@@ -1177,7 +1401,7 @@ ul, ol {
   color: var(--color-brown, #221510);
   font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -1288,7 +1512,7 @@ ul, ol {
   right: 5%;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(233, 91, 71, 0.2) 0%, rgba(253, 227, 207, 0) 70%);
+  background: radial-gradient(circle, rgba(229, 66, 45, 0.22) 0%, rgba(253, 227, 207, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -1312,7 +1536,7 @@ ul, ol {
   left: -20px;
   width: 86%;
   height: 96%;
-  background: linear-gradient(135deg, #FFC1B0 0%, #F18B74 100%);
+  background: linear-gradient(135deg, #FCA893 0%, #E5422D 100%);
   border-radius: 56% 44% 48% 52% / 60% 48% 52% 40%;
   z-index: 1;
   transform: rotate(-4deg);
@@ -1499,32 +1723,34 @@ ul, ol {
   transform: scale(1.12) rotate(2deg);
 }
 
-/* Script Calligraphy Curve along top-right edge */
+/* Script Calligraphy Curve wrapping around circular photo blob */
 .script-curve-text {
   position: absolute;
-  top: -26px;
-  right: -12px;
-  width: 260px;
-  height: 85px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 5;
   pointer-events: none;
-  transform: rotate(6deg);
+  overflow: visible;
   transition: transform 0.4s ease;
 }
 
 .blob-stage:hover .script-curve-text {
-  transform: rotate(4deg) translateY(-2px);
+  transform: scale(1.015);
 }
 
 .script-curve-text text {
-  font-family: var(--font-script);
-  font-size: 27px;
+  font-family: var(--font-script, "Caveat", cursive);
+  font-size: 29px;
   font-weight: 700;
-  fill: var(--color-coral, #E95B47);
-  letter-spacing: 0.3px;
+  fill: #E5422D;
+  letter-spacing: 1.2px;
+  filter: drop-shadow(0 2px 4px rgba(229, 66, 45, 0.15));
 }
 
 .script-heart {
+  fill: #E5422D;
   transition: transform 0.3s ease;
   display: inline-block;
 }
@@ -1533,8 +1759,8 @@ ul, ol {
 .accent-dot {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 32%, #FFC8BA 0%, #EE8D75 100%);
-  box-shadow: 0 10px 24px -4px rgba(233, 91, 71, 0.32);
+  background: radial-gradient(circle at 35% 32%, #FCA893 0%, #E5422D 100%);
+  box-shadow: 0 10px 24px -4px rgba(229, 66, 45, 0.35);
   z-index: 3;
   pointer-events: none;
   animation: floatDot 4.5s ease-in-out infinite alternate;
@@ -1847,11 +2073,12 @@ ul, ol {
   margin-top: 14px;
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.2vw + 1rem, 3.2rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--color-brown);
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
 }
 
 /* Floating Doodle Hearts */
@@ -1898,7 +2125,7 @@ ul, ol {
 
 .story-card.flip-card {
   position: relative;
-  height: 490px;
+  height: 500px;
   -webkit-perspective: 1400px;
   perspective: 1400px;
   cursor: pointer;
@@ -1963,7 +2190,7 @@ ul, ol {
 .story-card-media {
   position: relative;
   width: 100%;
-  height: 340px;
+  height: 350px;
   border-radius: 18px;
   overflow: hidden;
   background-color: #FFF5EE;
@@ -1978,19 +2205,8 @@ ul, ol {
   display: block;
 }
 
-/* Keep the launch group centered slightly to the right within the card crop. */
-.story-card:nth-child(3) .story-card-img {
-  object-position: 78% 56%;
-  transform: scale(1.06) translateX(1.5%);
-  transform-origin: 50% 56%;
-}
-
 .story-card.flip-card:hover .story-card-img {
   transform: scale(1.05);
-}
-
-.story-card:nth-child(3).flip-card:hover .story-card-img {
-  transform: scale(1.1) translateX(1.5%);
 }
 
 .story-year-badge {
@@ -2264,7 +2480,8 @@ ul, ol {
   color: var(--color-brown);
   margin-bottom: 6px;
   letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
 }
 
 .puppy-breed {
@@ -2342,11 +2559,13 @@ ul, ol {
 .parallax-quote-text {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 3.4vw + 1rem, 3.75rem);
-  font-weight: 600;
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.28;
   color: #FFF7F0;
   letter-spacing: -0.015em;
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
@@ -2421,7 +2640,8 @@ ul, ol {
   margin-top: 0;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
   transition: color var(--transition-fast);
   text-align: center;
 }
@@ -2468,9 +2688,9 @@ ul, ol {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
   min-height: 440px;
 }
 
@@ -2488,15 +2708,15 @@ ul, ol {
 
 .arch-photo-left {
   width: 200px;
-  height: 350px;
+  height: 360px;
   position: relative;
   z-index: 2;
 }
 
 .arch-photo-right {
-  width: 200px;
-  height: 350px;
-  margin-top: 50px;
+  width: 236px;
+  height: 360px;
+  margin-top: 45px;
   position: relative;
   z-index: 1;
 }
@@ -2542,22 +2762,13 @@ ul, ol {
 /* Bottom Doodle Text */
 .different-pup-doodle {
   position: absolute;
-  bottom: -15px;
+  bottom: -28px;
   left: 20px;
   z-index: 4;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  transform: rotate(-7deg);
-}
-
-.radiating-rays-svg {
-  flex-shrink: 0;
-}
-
-.pup-doodle-text {
-  display: flex;
   flex-direction: column;
+  align-items: center;
+  transform: rotate(-7deg);
 }
 
 .pup-doodle-headline {
@@ -2569,15 +2780,35 @@ ul, ol {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
 }
 
-.pup-doodle-sub {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 13.5px;
-  color: #2E8B57;
-  letter-spacing: 0.02em;
-  margin-top: 2px;
+.radiating-rays-svg {
+  display: block;
+  width: 34px;
+  height: 18px;
+  margin: 3px auto 1px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.different-pup-doodle:hover .radiating-rays-svg {
+  transform: scale(1.15) translateY(-2px);
+}
+
+.pup-doodle-coconut {
+  display: block;
+  width: 76px;
+  height: 50px;
+  object-fit: contain;
+  margin: 0 auto;
+  opacity: 0.95;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
+}
+
+.different-pup-doodle:hover .pup-doodle-coconut {
+  transform: scale(1.1) rotate(4deg);
+  opacity: 1;
 }
 
 /* Right Content Column */
@@ -2588,11 +2819,12 @@ ul, ol {
 .different-headline {
   font-family: var(--font-serif);
   font-size: clamp(2.1rem, 2.7vw + 0.8rem, 2.85rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--color-brown);
   letter-spacing: -0.015em;
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
 }
 
 /* Sketched Circled Word */
@@ -2641,10 +2873,22 @@ ul, ol {
 }
 
 .checklist-icon {
-  display: flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(252, 173, 54, 0.16);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #FCAD36;
+  font-size: 14.5px;
   flex-shrink: 0;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.checklist-item:hover .checklist-icon {
+  transform: scale(1.15);
+  background-color: rgba(252, 173, 54, 0.28);
 }
 
 .checklist-item-title {
@@ -2653,7 +2897,8 @@ ul, ol {
   font-weight: 600;
   line-height: 1.25;
   color: var(--color-brown);
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
 }
 
 .checklist-item-desc {
@@ -2661,7 +2906,7 @@ ul, ol {
   font-size: 15px;
   line-height: 1.62;
   color: var(--color-navy-muted);
-  padding-left: 32px;
+  padding-left: 38px;
 }
 
 /* --------------------------------------------------
@@ -2693,12 +2938,13 @@ ul, ol {
 }
 
 .testimonial-card {
+  position: relative;
   flex: 0 0 calc((100% - 60px) / 3);
   min-width: calc((100% - 60px) / 3);
   min-height: 430px;
   background-color: #FFFFFF;
   border-radius: 24px;
-  padding: 28px 30px 24px;
+  padding: 32px 30px 24px;
   box-shadow: 0 10px 28px rgba(99, 39, 19, 0.06);
   display: flex;
   flex-direction: column;
@@ -2712,17 +2958,28 @@ ul, ol {
 }
 
 .testimonial-paw-mark {
-  width: 76px;
-  height: 76px;
-  margin: 0 0 22px;
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  width: 60px;
+  height: 48px;
+  margin: 0;
   flex: 0 0 auto;
-  color: #1f1b18;
+  pointer-events: none;
 }
 
-.testimonial-paw-mark svg {
-  display: block;
+.testimonial-badge-img,
+.testimonial-coconut-img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.testimonial-card:hover .testimonial-badge-img,
+.testimonial-card:hover .testimonial-coconut-img {
+  transform: scale(1.1) translateY(-2px);
 }
 
 .testimonial-rating-box {
@@ -2755,6 +3012,7 @@ ul, ol {
   font-weight: 700;
   color: rgba(99, 39, 19, 0.75);
   margin-top: auto;
+  padding-right: 68px;
 }
 
 .testimonial-author span {
@@ -2915,12 +3173,13 @@ ul, ol {
   margin-top: 18px;
   font-family: var(--font-serif);
   font-size: clamp(2.3rem, 3.5vw + 1rem, 3.8rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.18;
   color: var(--color-brown);
   margin-bottom: 24px;
   letter-spacing: -0.015em;
-  font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 600;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
 }
 
 .cta-subtext {
@@ -3503,9 +3762,9 @@ ul, ol {
   }
 
   .hero-pill-badge {
-    font-size: 13.5px;
-    padding: 6px 14px;
-    margin-bottom: 18px;
+    font-size: 15px;
+    padding: 8px 16px 8px 12px;
+    margin-bottom: 20px;
   }
 
   .hero-headline {
@@ -3555,14 +3814,16 @@ ul, ol {
   }
 
   .script-curve-text {
-    width: 200px;
-    height: 65px;
-    top: -20px;
-    right: -5px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .script-curve-text text {
-    font-size: 20px;
+    font-size: 22px;
+    letter-spacing: 0.8px;
   }
 
   .dot-top-left {
@@ -3633,10 +3894,14 @@ ul, ol {
     gap: 22px;
   }
 
-  .arch-photo-left,
-  .arch-photo-right {
+  .arch-photo-left {
     width: 145px;
-    height: 250px;
+    height: 255px;
+  }
+
+  .arch-photo-right {
+    width: 172px;
+    height: 255px;
   }
 
   .different-photos-wrap {
@@ -3645,11 +3910,16 @@ ul, ol {
 
   .different-pup-doodle {
     left: 10px;
-    bottom: -10px;
+    bottom: -18px;
   }
 
   .pup-doodle-headline {
     font-size: 18px;
+  }
+
+  .pup-doodle-coconut {
+    width: 62px;
+    height: 40px;
   }
 
   .checklist-item-desc {
@@ -3736,7 +4006,6 @@ ul, ol {
 
 /* Scotchvilla graphic kit accents used across the homepage */
 .core-values-section::before,
-.different-section::before,
 .bottom-cta-section::before,
 .bottom-cta-section::after,
 .site-footer::before {
@@ -3760,13 +4029,7 @@ ul, ol {
 }
 
 .different-section::before {
-  left: 2.5%;
-  bottom: 7%;
-  width: 92px;
-  height: 92px;
-  background-image: url("../images/brand-elements/coconut-half.svg");
-  opacity: 0.18;
-  transform: rotate(-14deg);
+  display: none !important;
 }
 
 .bottom-cta-section::before {

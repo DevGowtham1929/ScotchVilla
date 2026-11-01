@@ -3,6 +3,60 @@
    Matches the warmth, typography & playfulness of the main site
    ========================================================================== */
 
+/* ==========================================================================
+   DESIGNER TYPOGRAPHY SPECIFICATION:
+   Primary: Fraunces (Headlines 700, Sub-heads 600, Quotes 400 italic; softness 0, wonky off; never all caps)
+   Secondary: Bricolage Grotesque (Reading 400, Captions & Legal 500, Buttons & Nav 600, Small Uppercase Labels 700; width 100, optical size matched)
+   ========================================================================== */
+
+.subpage-title,
+.product-name,
+.post-title,
+.blog-card-title,
+.reel-title,
+.gallery-card-title,
+.viral-title,
+.channel-name,
+.collab-text h3,
+.gallery-share-title,
+.newsletter-title,
+.faq-category-title,
+.terms-article h2,
+.cookie-policy-content h2,
+.lightbox-caption h3,
+.reader-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none; /* Never all capitals */
+}
+
+/* Fraunces 700: Headlines & Product Names */
+.subpage-title,
+.product-name,
+.gallery-share-title,
+.newsletter-title,
+.faq-category-title,
+.terms-article h2,
+.cookie-policy-content h2,
+.reels-spotlight-header .section-title {
+  font-weight: 700;
+}
+
+/* Fraunces 600: Sub-heads & Card Titles */
+.post-title,
+.blog-card-title,
+.reel-title,
+.gallery-card-title,
+.viral-title,
+.channel-name,
+.collab-text h3,
+.terms-article h3,
+.lightbox-caption h3,
+.reader-title {
+  font-weight: 600;
+}
+
 /* --------------------------------------------------
    Subpage Hero Banner
 -------------------------------------------------- */
@@ -26,8 +80,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-navy-muted);
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -48,6 +103,9 @@
   font-family: var(--font-serif);
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
+  text-transform: none;
   color: var(--color-brown);
   line-height: 1.15;
   margin-bottom: 18px;
@@ -210,15 +268,17 @@
 .terms-article h3 {
   margin: 20px 0 8px;
   color: var(--color-brown);
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .terms-article p,
 .terms-article li {
   color: var(--color-navy-muted);
+  font-family: var(--font-body);
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.8;
 }
 
@@ -390,7 +450,7 @@
 }
 
 .filter-btn:hover {
-  background-color: rgba(233, 91, 71, 0.08);
+  background-color: rgba(229, 66, 45, 0.08);
   border-color: var(--color-coral);
   color: var(--color-coral);
   transform: translateY(-2px);
@@ -400,7 +460,7 @@
   background-color: var(--color-coral);
   color: #FFFFFF;
   border-color: var(--color-coral);
-  box-shadow: 0 4px 14px rgba(233, 91, 71, 0.35);
+  box-shadow: 0 4px 14px rgba(229, 66, 45, 0.35);
 }
 
 /* --------------------------------------------------
@@ -482,7 +542,7 @@
 }
 
 .post-tag.tag-coral {
-  background-color: rgba(233, 91, 71, 0.15);
+  background-color: rgba(229, 66, 45, 0.15);
   color: var(--color-coral);
 }
 
@@ -685,7 +745,7 @@
 .newsletter-banner {
   margin-top: 80px;
   background: linear-gradient(135deg, #FFF5EE 0%, #FDEEE4 100%);
-  border: 2px dashed rgba(233, 91, 71, 0.35);
+  border: 2px dashed rgba(229, 66, 45, 0.35);
   border-radius: 24px;
   padding: 50px 40px;
   text-align: center;
@@ -740,13 +800,14 @@
 
 .newsletter-input:focus {
   border-color: var(--color-coral);
-  box-shadow: 0 0 0 3px rgba(233, 91, 71, 0.15);
+  box-shadow: 0 0 0 3px rgba(229, 66, 45, 0.15);
 }
 
 .newsletter-submit-btn {
   padding: 14px 26px;
   border-radius: 30px;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -793,11 +854,12 @@
   max-width: 600px;
   width: 100%;
   text-align: center;
-  transform: translate(8vw, -115px);
+  transform: translate(8vw, -138px);
 }
 
 .merch-hero-content .subpage-breadcrumbs {
   margin-bottom: 18px;
+  font-size: 13.45px;
   color: rgba(99, 39, 19, 0.82);
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
@@ -808,7 +870,7 @@
 
 .merch-hero-content .subpage-title {
   font-family: var(--font-serif);
-  font-size: clamp(29.4px, 3.43vw, 43.12px);
+  font-size: clamp(28.81px, 3.36vw, 42.26px);
   font-weight: 700;
   color: var(--color-brown);
   line-height: 1.1;
@@ -822,7 +884,7 @@
   margin: 0 auto;
   color: rgba(76, 39, 22, 0.94);
   font-family: var(--font-body);
-  font-size: clamp(13.72px, 1.225vw, 15.68px);
+  font-size: clamp(13.45px, 1.2vw, 15.37px);
   line-height: 1.45;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.58);
 }
@@ -840,15 +902,19 @@
 
   .merch-hero-content {
     max-width: 500px;
-    transform: translateY(-100px);
+    transform: translateY(-122px);
+  }
+
+  .merch-hero-content .subpage-breadcrumbs {
+    font-size: 12.8px;
   }
 
   .merch-hero-content .subpage-title {
-    font-size: clamp(25.48px, 6.86vw, 31.36px);
+    font-size: clamp(24.97px, 6.72vw, 30.73px);
   }
 
   .merch-hero-copy {
-    font-size: 13.72px;
+    font-size: 13.45px;
     line-height: 1.4;
   }
 }
@@ -891,7 +957,7 @@
 }
 
 .trust-badge-item:nth-child(2) .trust-badge-icon {
-  background-color: rgba(233, 91, 71, 0.15);
+  background-color: rgba(229, 66, 45, 0.15);
   color: var(--color-coral);
 }
 
@@ -976,7 +1042,7 @@
   letter-spacing: 0.06em;
   padding: 4px 12px;
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(233, 91, 71, 0.35);
+  box-shadow: 0 4px 10px rgba(229, 66, 45, 0.35);
   z-index: 2;
 }
 
@@ -1012,13 +1078,16 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--color-coral, #E95B47);
+  color: var(--color-coral, #E5422D);
   margin-bottom: 6px;
 }
 
 .product-name {
   font-family: var(--font-serif);
   font-size: 20px;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
   color: var(--color-brown);
   line-height: 1.3;
   margin-bottom: 8px;
@@ -1073,7 +1142,7 @@
   border: none;
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 10px 18px;
   border-radius: 8px;
   cursor: pointer;
@@ -1086,7 +1155,7 @@
 .btn-add-bag:hover {
   background-color: var(--color-coral-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(233, 91, 71, 0.35);
+  box-shadow: 0 4px 14px rgba(229, 66, 45, 0.35);
 }
 
 /* --------------------------------------------------
@@ -1103,7 +1172,7 @@
 /* Featured Video Shorts Showcase Bar */
 .gallery-reels-spotlight {
   background: linear-gradient(135deg, #FFF5EE 0%, #FDF0E6 100%);
-  border: 2px dashed rgba(233, 91, 71, 0.35);
+  border: 2px dashed rgba(229, 66, 45, 0.35);
   border-radius: 28px;
   padding: 40px 32px 48px;
   margin-bottom: 60px;
@@ -1228,6 +1297,18 @@
   column-gap: 20px;
 }
 
+.gallery-masonry[data-active-filter="videos"] {
+  column-count: 3;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.gallery-masonry[data-active-filter="family"],
+.gallery-masonry[data-active-filter="adventures"] {
+  column-count: 3;
+  column-gap: 24px;
+}
+
 .gallery-item {
   break-inside: avoid;
   margin-bottom: 20px;
@@ -1322,7 +1403,7 @@
 }
 
 .gallery-card-tag.tag-coral {
-  background-color: rgba(233, 91, 71, 0.15);
+  background-color: rgba(229, 66, 45, 0.15);
   color: var(--color-coral);
 }
 
@@ -1379,6 +1460,89 @@
   margin: 0;
 }
 
+/* Gallery Share the Love CTA Banner */
+.gallery-share-banner {
+  margin-top: 70px;
+  background: linear-gradient(135deg, #FFF5EE 0%, #FDEEE4 100%);
+  border: 2px dashed rgba(229, 66, 45, 0.35);
+  border-radius: 24px;
+  padding: 50px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(99, 39, 19, 0.05);
+  isolation: isolate;
+}
+
+.gallery-share-banner::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 110px;
+  height: 110px;
+  right: 24px;
+  top: 20px;
+  background-image: url("../images/brand-elements/envelope.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.18;
+}
+
+.gallery-share-content {
+  max-width: 620px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-share-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.2vw, 36px);
+  color: var(--color-brown);
+  margin: 14px 0 10px;
+  line-height: 1.22;
+}
+
+.gallery-share-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-navy-muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.gallery-share-handle {
+  color: var(--color-coral);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.gallery-share-handle:hover {
+  color: var(--color-coral-hover, #C03A28);
+}
+
+.gallery-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(229, 66, 45, 0.3);
+}
+
+.gallery-share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(229, 66, 45, 0.42);
+}
+
 /* Lightbox Modal Polish */
 .lightbox-modal {
   position: fixed;
@@ -1431,19 +1595,6 @@
 .lightbox-caption p {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: -45px;
-  right: 0;
-  background: none;
-  border: none;
-  color: #FFFFFF;
-  font-size: 36px;
-  cursor: pointer;
-  line-height: 1;
-}
 }
 
 .lightbox-close {
@@ -1720,7 +1871,7 @@
 }
 
 .channel-icon.instagram-brand {
-  background: linear-gradient(135deg, #FCAD36, #E95B47);
+  background: linear-gradient(135deg, #FCAD36, #E5422D);
 }
 
 .channel-icon.youtube {
@@ -1778,7 +1929,8 @@
   width: 100%;
   padding: 13px 22px;
   border-radius: 30px;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 14.5px;
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -1793,7 +1945,7 @@
 .channel-btn.btn-outline:hover {
   background-color: var(--color-coral);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(233, 91, 71, 0.3);
+  box-shadow: 0 4px 14px rgba(229, 66, 45, 0.3);
 }
 
 /* Viral Moments Section */
@@ -1904,7 +2056,7 @@
 /* Community Tag Banner */
 .community-wall-banner {
   background: linear-gradient(135deg, #FFF5EE 0%, #FDF0E6 100%);
-  border: 2px dashed rgba(233, 91, 71, 0.35);
+  border: 2px dashed rgba(229, 66, 45, 0.35);
   border-radius: 24px;
   padding: 45px 35px;
   text-align: center;
@@ -1974,7 +2126,10 @@
 
 /* Responsive adjustments for Socials */
 @media (max-width: 992px) {
-  .gallery-masonry {
+  .gallery-masonry,
+  .gallery-masonry[data-active-filter="videos"],
+  .gallery-masonry[data-active-filter="family"],
+  .gallery-masonry[data-active-filter="adventures"] {
     column-count: 2;
     column-gap: 16px;
   }
@@ -2000,8 +2155,12 @@
 }
 
 @media (max-width: 640px) {
-  .gallery-masonry {
+  .gallery-masonry,
+  .gallery-masonry[data-active-filter="videos"],
+  .gallery-masonry[data-active-filter="family"],
+  .gallery-masonry[data-active-filter="adventures"] {
     column-count: 1;
+    column-gap: 0;
   }
   .reels-spotlight-grid {
     grid-template-columns: 1fr;
@@ -2239,6 +2398,7 @@
   .merch-hero::after { right: 3%; }
   .page-blog .newsletter-banner::before,
   .page-gallery .gallery-reels-spotlight::before,
+  .gallery-share-banner::before,
   .page-socials .community-wall-banner::before { opacity: 0.09; }
 }
 
@@ -2313,6 +2473,7 @@
   }
 
   .gallery-reels-spotlight,
+  .gallery-share-banner,
   .community-wall-banner {
     padding: 28px 18px 32px;
     border-radius: 20px;
@@ -2324,7 +2485,10 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .gallery-masonry {
+  .gallery-masonry,
+  .gallery-masonry[data-active-filter="videos"],
+  .gallery-masonry[data-active-filter="family"],
+  .gallery-masonry[data-active-filter="adventures"] {
     column-count: 1;
     column-gap: 0;
   }
@@ -2389,6 +2553,7 @@
 
   .newsletter-banner,
   .gallery-reels-spotlight,
+  .gallery-share-banner,
   .community-wall-banner {
     padding-right: 14px;
     padding-left: 14px;
