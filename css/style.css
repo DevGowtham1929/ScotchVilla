@@ -3327,6 +3327,13 @@ ul, ol {
 }
 
 .footer-credit-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-credit-link .footer-credit-brand {
   color: #FFFFFF;
   font-weight: 600;
   text-decoration: underline;
@@ -3336,6 +3343,10 @@ ul, ol {
 }
 
 .footer-credit-link:hover {
+  color: #FFFFFF;
+}
+
+.footer-credit-link:hover .footer-credit-brand {
   color: var(--color-gold);
   text-decoration-color: var(--color-gold);
 }
