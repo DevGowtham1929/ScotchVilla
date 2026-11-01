@@ -54,8 +54,14 @@
     else clearGoogleAnalyticsCookies();
 
     if (banner) {
-      banner.remove();
-      banner = null;
+      banner.classList.add('is-closing');
+      setTimeout(() => {
+        if (banner) {
+          banner.remove();
+          banner = null;
+        }
+        document.body.classList.remove('cookie-modal-open');
+      }, 260);
     }
     document.dispatchEvent(new CustomEvent('scotchvilla:cookie-consent-changed', { detail: { choice } }));
   }
@@ -67,32 +73,46 @@
       return;
     }
 
-    banner = document.createElement('section');
-    banner.className = 'cookie-consent-banner';
+    banner = document.createElement('div');
+    banner.className = 'cookie-modal-overlay';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-modal', 'false');
+    banner.setAttribute('aria-modal', 'true');
     banner.setAttribute('aria-labelledby', 'cookie-consent-title');
     banner.setAttribute('aria-describedby', 'cookie-consent-description');
     banner.innerHTML = `
-      <div class="cookie-consent-heading">
-        <h2 class="cookie-consent-title" id="cookie-consent-title">I Promise Not to Eat These Cookies! 🍪</h2>
-      </div>
-      <div class="cookie-consent-copy" id="cookie-consent-description">
-        <p>Hi, I'm Scotch! I've recently discovered that not all cookies are edible. Quite disappointing, if you ask me.</p>
-        <p>These little cookies help me understand how you explore Scotchvilla through Google Analytics, so I can make your visits even better.</p>
-        <p>Only if you say yes. Pinky paw promise!<br>Saying no won't stop you using the site.</p>
-      </div>
-      <div class="cookie-consent-actions">
-        <button type="button" data-cookie-choice="accepted">Accept Analytics</button>
-        <button type="button" data-cookie-choice="rejected">Reject Analytics</button>
-      </div>
-      <div class="cookie-consent-links">
-        <a href="cookie-policy.html">Cookie Policy</a>
-        <span aria-hidden="true">·</span>
-        <button type="button" data-cookie-preferences>Change your choice anytime</button>
+      <div class="cookie-modal-backdrop"></div>
+      <div class="cookie-modal-stage">
+        <div class="cookie-modal-card">
+          <div class="cookie-card-header">
+            <h2 class="cookie-card-title" id="cookie-consent-title">How about some cookies? 🍪</h2>
+          </div>
+          <div class="cookie-card-body" id="cookie-consent-description">
+            <p>
+              We use cookies to provide you with a better experience. Cookies enable us to operate, improve, and understand website activity through Google Analytics. For more information, please <a href="privacy.html" class="cookie-privacy-link">read our privacy notice. ↗</a>
+            </p>
+          </div>
+          <div class="cookie-card-actions">
+            <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-choice="rejected">
+              Reject non-essential
+            </button>
+            <a href="cookie-policy.html" class="cookie-btn cookie-btn-settings">
+              Settings
+            </a>
+            <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-choice="accepted">
+              Accept all
+            </button>
+          </div>
+        </div>
+        <div class="cookie-mascot-wrapper" aria-hidden="true">
+          <img src="images/cookie-mascot-scotch.png" alt="Scotch carrying cookies card in mouth" class="cookie-mascot-img" width="819" height="797">
+        </div>
       </div>`;
 
     document.body.appendChild(banner);
+    document.body.classList.add('cookie-modal-open');
+
+    const acceptBtn = banner.querySelector('[data-cookie-choice="accepted"]');
+    if (acceptBtn) setTimeout(() => acceptBtn.focus(), 150);
   }
 
   document.addEventListener('click', (event) => {

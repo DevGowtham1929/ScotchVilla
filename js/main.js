@@ -414,6 +414,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
     // Reset form after modal animation completes
     setTimeout(() => {
+      const modalHeader = contactModal.querySelector('.contact-modal-header');
+      if (modalHeader) {
+        modalHeader.style.display = '';
+      }
       if (contactForm) {
         contactForm.reset();
         contactForm.style.display = 'block';
@@ -479,21 +483,41 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open(waUrl, '_blank');
 
       // Update and show modal confirmation state
+      const modalHeader = contactModal.querySelector('.contact-modal-header');
+      if (modalHeader) {
+        modalHeader.style.display = 'none';
+      }
       contactForm.style.display = 'none';
       if (successMessage) {
+        const displayName = escapeHtml(name);
+        const greeting = displayName ? `Thank you, ${displayName}!` : 'Thank you!';
         successMessage.innerHTML = `
-          <i class="fab fa-whatsapp" style="font-size: 54px; color: #25D366; margin-bottom: 16px; display: inline-block;"></i>
-          <h4>Thank you, ${escapeHtml(name) || 'friend'}!</h4>
-          <p style="margin-bottom: 20px; color: var(--color-navy-muted, #555); font-size: 15px; line-height: 1.5;">
-            Your inquiry is ready to send to <strong>+91 8877338585</strong> on WhatsApp. Click below if WhatsApp didn’t open automatically.
-          </p>
-          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 12px 24px; text-decoration: none; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;">
-              <i class="fab fa-whatsapp" style="font-size: 18px; margin: 0; color: #fff;"></i> Open in WhatsApp
-            </a>
-            <button type="button" class="btn btn-outline" id="contact-modal-close-feedback-btn" style="padding: 12px 22px; border-radius: 999px;">
-              Close
-            </button>
+          <div style="text-align: center; padding: 10px 4px;">
+            <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: rgba(37, 211, 102, 0.12); margin-bottom: 14px;">
+              <i class="fab fa-whatsapp" style="font-size: 36px; color: #25D366; margin: 0;"></i>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span class="section-badge gold-badge" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 14px; text-transform: none; letter-spacing: 0.2px;">
+                Get in touch (WhatsApp)
+              </span>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-brown, #221510); margin: 0 0 12px; font-weight: 700;">
+              ${greeting}
+            </h3>
+            <p style="font-size: 16px; font-weight: 600; color: var(--color-brown, #221510); margin: 0 0 10px; line-height: 1.5;">
+              Your message is ready to be sent to the Scotchvilla team through WhatsApp.
+            </p>
+            <p style="font-size: 14.5px; color: var(--color-navy-muted, #555); margin: 0 auto 24px; line-height: 1.6; max-width: 440px;">
+              Tap the button below to open WhatsApp and send your message. If WhatsApp didn't open automatically, you can try again here.
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 12px 24px; text-decoration: none; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px;">
+                <i class="fab fa-whatsapp" style="font-size: 18px; margin: 0; color: #fff;"></i> Open in WhatsApp
+              </a>
+              <button type="button" class="btn btn-outline" id="contact-modal-close-feedback-btn" style="padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 15px;">
+                Close
+              </button>
+            </div>
           </div>
         `;
         successMessage.style.display = 'block';
@@ -528,8 +552,120 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 11. HERO 3-IMAGE SLIDER (EVERY 2 SECONDS)
+  // 11. HERO ORGANIC BLOB SLIDER (AUTO-MOVING)
   // ==========================================
+  const blobSlider = document.getElementById('heroBlobSlider');
+  if (blobSlider) {
+    const slides = blobSlider.querySelectorAll('.blob-slide');
+    const dots = blobSlider.querySelectorAll('.blob-dot');
+    const prevBtn = blobSlider.querySelector('.blob-nav-prev');
+    const nextBtn = blobSlider.querySelector('.blob-nav-next');
+    let currentIndex = 0;
+    let timer = null;
+
+    function goToBlobSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      
+      slides.forEach((slide, i) => {
+        const isActive = i === index;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', !isActive);
+      });
+
+      dots.forEach((dot, i) => {
+        const isActive = i === index;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', isActive);
+      });
+
+      currentIndex = index;
+    }
+
+    function nextBlobSlide() {
+      goToBlobSlide(currentIndex + 1);
+    }
+
+    function prevBlobSlide() {
+      goToBlobSlide(currentIndex - 1);
+    }
+
+    function startBlobTimer() {
+      if (!timer) {
+        timer = setInterval(nextBlobSlide, 3800);
+      }
+    }
+
+    function stopBlobTimer() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    // Start auto moving carousel
+    startBlobTimer();
+
+    // Dot click
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goToBlobSlide(i);
+        stopBlobTimer();
+        startBlobTimer();
+      });
+    });
+
+    // Arrow navigation
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prevBlobSlide();
+        stopBlobTimer();
+        startBlobTimer();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nextBlobSlide();
+        stopBlobTimer();
+        startBlobTimer();
+      });
+    }
+
+    // Pause on hover
+    blobSlider.addEventListener('mouseenter', stopBlobTimer);
+    blobSlider.addEventListener('mouseleave', startBlobTimer);
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    blobSlider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopBlobTimer();
+    }, { passive: true });
+
+    blobSlider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startBlobTimer();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          nextBlobSlide();
+        } else {
+          prevBlobSlide();
+        }
+      }
+    }
+  }
+
+  // Fallback hero slide code if needed
   const heroSlides = document.querySelectorAll('.hero-slide');
   const heroDots = document.querySelectorAll('.hero-dot');
   if (heroSlides.length > 1) {
@@ -572,10 +708,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Start auto slide
     startHeroTimer();
 
-    // Click dot navigation
     heroDots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         goToSlide(i);
@@ -584,7 +718,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Pause on hover
     const sliderWrap = document.getElementById('hero-slider-wrap');
     if (sliderWrap) {
       sliderWrap.addEventListener('mouseenter', stopHeroTimer);
