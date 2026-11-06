@@ -19,7 +19,76 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/style.css?v=74.0">
+  <link rel="stylesheet" href="css/style.css?v=85.0">
+  <!-- Embedded Paw Footprints Styling for Instant Global Rendering (Bypasses all CDN/browser CSS cache) -->
+  <style>
+    .hero-paws-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-paw {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+      will-change: transform, opacity;
+      transform: rotate(var(--rot, 0deg));
+    }
+    .hero-paw svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-paw.paw-coral {
+      color: #E5422D;
+      opacity: 0.17;
+    }
+    .hero-paw.paw-gold {
+      color: #E28743;
+      opacity: 0.22;
+    }
+    .hero-paw.paw-brown {
+      color: #632713;
+      opacity: 0.14;
+    }
+    @keyframes pawWagA {
+      0%, 100% {
+        transform: translateY(0px) rotate(var(--rot, 0deg)) scale(1);
+      }
+      50% {
+        transform: translateY(-7px) rotate(calc(var(--rot, 0deg) + 3deg)) scale(1.03);
+      }
+    }
+    @keyframes pawWagB {
+      0%, 100% {
+        transform: translateY(0px) rotate(var(--rot, 0deg)) scale(1);
+      }
+      50% {
+        transform: translateY(6px) rotate(calc(var(--rot, 0deg) - 3deg)) scale(0.98);
+      }
+    }
+    .hero-paw.anim-a {
+      animation: pawWagA 8s ease-in-out infinite;
+    }
+    .hero-paw.anim-b {
+      animation: pawWagB 9.5s ease-in-out infinite;
+    }
+    @media (max-width: 768px) {
+      .hero-paw {
+        opacity: 0.12 !important;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-paw {
+        animation: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
