@@ -286,9 +286,20 @@
   margin: 0;
 }
 
-.terms-article ul {
+.terms-article ul,
+.cookie-policy-content ul,
+.faq-content ul {
   margin: 8px 0 0;
   padding-left: 24px;
+  list-style: disc;
+}
+
+.terms-article ol,
+.cookie-policy-content ol,
+.faq-content ol {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  list-style: decimal;
 }
 
 .terms-article li + li {
