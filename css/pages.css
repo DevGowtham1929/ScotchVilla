@@ -133,36 +133,43 @@
   text-align: left;
 }
 
-.gallery-hero .subpage-doodle {
+.gallery-hero .subpage-doodle,
+.socials-hero .subpage-doodle {
   display: none;
 }
 
-.gallery-hero .subpage-hero-container {
+.gallery-hero .subpage-hero-container,
+.socials-hero .subpage-hero-container {
   width: 100%;
   max-width: 1240px;
 }
 
-.gallery-hero .subpage-breadcrumbs {
+.gallery-hero .subpage-breadcrumbs,
+.socials-hero .subpage-breadcrumbs {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.gallery-hero .subpage-breadcrumbs a {
+.gallery-hero .subpage-breadcrumbs a,
+.socials-hero .subpage-breadcrumbs a {
   color: #FFFFFF;
 }
 
-.gallery-hero .section-badge {
+.gallery-hero .section-badge,
+.socials-hero .section-badge {
   color: #FFD27A;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
-.gallery-hero .subpage-title {
+.gallery-hero .subpage-title,
+.socials-hero .subpage-title {
   max-width: 700px;
   color: #FFFFFF;
   text-shadow: 0 3px 16px rgba(0, 0, 0, 0.6);
 }
 
-.gallery-hero .subpage-subtitle {
+.gallery-hero .subpage-subtitle,
+.socials-hero .subpage-subtitle {
   max-width: 620px;
   margin-left: 0;
   color: rgba(255, 255, 255, 0.96);
@@ -170,7 +177,8 @@
 }
 
 @media (max-width: 768px) {
-  .gallery-hero {
+  .gallery-hero,
+  .socials-hero {
     min-height: 500px;
     padding: 115px 24px 70px;
     background-position: center center;
@@ -186,9 +194,15 @@
 
 .socials-hero {
   background-image:
-    linear-gradient(90deg, rgba(24, 12, 6, 0.78) 0%, rgba(24, 12, 6, 0.58) 42%, rgba(24, 12, 6, 0.14) 100%),
+    linear-gradient(90deg, rgba(24, 12, 6, 0.68) 0%, rgba(24, 12, 6, 0.46) 45%, rgba(24, 12, 6, 0.10) 100%),
     url("../images/socials-hero.jpg");
   background-position: center center;
+  background-size: cover;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 140px 7vw 90px;
+  text-align: left;
 }
 
 /* Floating Doodles in Subpage Hero */
@@ -834,7 +848,7 @@
   position: relative;
   background-image:
     linear-gradient(90deg, rgba(24, 12, 6, 0.72) 0%, rgba(24, 12, 6, 0.46) 36%, rgba(24, 12, 6, 0.08) 52%, transparent 64%),
-    url("../images/merch/merch-hero-banner.jpg");
+    url("../images/merch/merch-hero-banner.jpg?v=2.0");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -901,7 +915,7 @@
     min-height: 520px;
     background-image:
       linear-gradient(180deg, rgba(24, 12, 6, 0.82) 0%, rgba(24, 12, 6, 0.65) 50%, rgba(24, 12, 6, 0.88) 100%),
-      url("../images/merch/merch-hero-banner.jpg");
+      url("../images/merch/merch-hero-banner.jpg?v=2.0");
     background-position: center center;
     justify-content: center;
   }
@@ -1039,6 +1053,11 @@
 
 .product-card:hover .product-img {
   transform: scale(1.08) rotate(2deg);
+}
+
+.product-card[data-category="bookmarks"] .product-img {
+  border-radius: 8px;
+  max-height: 90%;
 }
 
 .product-badge {
@@ -1194,6 +1213,34 @@
   box-shadow: 0 10px 30px rgba(99, 39, 19, 0.05);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.page-merch .bottom-cta-section .cta-inner-card::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 120px;
+  height: 120px;
+  right: 28px;
+  top: 24px;
+  background-image: url("../images/brand-elements/flower-yellow.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.32;
+  transform: rotate(-10deg);
+  transition: transform 0.5s ease;
+}
+
+.page-merch .bottom-cta-section .cta-inner-card:hover::before {
+  transform: rotate(15deg) scale(1.08);
+}
+
+.page-merch .bottom-cta-section .cta-inner-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .page-merch .bottom-cta-section .cta-headline {
@@ -1215,6 +1262,13 @@
   .page-merch .bottom-cta-section .cta-inner-card {
     padding: 36px 20px 38px;
     border-radius: 20px;
+  }
+  .page-merch .bottom-cta-section .cta-inner-card::before {
+    width: 80px;
+    height: 80px;
+    right: 14px;
+    top: 14px;
+    opacity: 0.22;
   }
 }
 
@@ -2306,18 +2360,8 @@
   opacity: 0.86;
 }
 
+.page-gallery .gallery-hero::after,
 .gallery-hero::after {
-  right: 22%;
-  top: 17%;
-  width: 44px;
-  height: 44px;
-  background-image: url("../images/brand-elements/leaf.svg");
-  opacity: 0.85;
-  animation-delay: -3s;
-}
-
-.socials-hero::before,
-.socials-hero::after {
   display: none !important;
   content: none !important;
 }
@@ -2326,6 +2370,35 @@
 .merch-hero::after {
   display: none !important;
   content: none !important;
+}
+
+/* Socials hero: clean, warm brand accent */
+.socials-hero .subpage-doodle {
+  display: none !important;
+}
+
+.socials-hero::before {
+  display: none !important;
+  content: none !important;
+}
+
+.socials-hero::after {
+  display: block !important;
+  content: "" !important;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../images/brand-elements/sparkle-yellow.svg") !important;
+  right: 12% !important;
+  top: 22% !important;
+  width: 56px !important;
+  height: 56px !important;
+  opacity: 0.92 !important;
+  filter: drop-shadow(0 6px 16px rgba(24, 12, 6, 0.35));
+  animation: brand-float 6s ease-in-out infinite;
 }
 
 /* Blog shares the gallery photo backdrop, so keep its story motifs on the open right side. */
@@ -2365,11 +2438,18 @@
 }
 
 .page-blog .newsletter-banner::before {
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
   right: 24px;
   top: 20px;
-  background-image: url("../images/brand-elements/envelope.svg");
+  background-image: url("../images/brand-elements/star-coin-yellow.webp");
+  opacity: 0.30;
+  transform: rotate(-8deg);
+  transition: transform 0.5s ease;
+}
+
+.page-blog .newsletter-banner:hover::before {
+  transform: rotate(12deg) scale(1.08);
 }
 
 .page-blog .newsletter-content,
@@ -2597,5 +2677,182 @@
   .merch-hero {
     padding-right: 14px;
     padding-left: 14px;
+  }
+}
+
+/* ==================================================
+   SUBPAGES (PRIVACY, TERMS, COOKIE, FAQ): HERO & FLOATING DOODLES
+================================================== */
+.page-privacy .privacy-main,
+.page-terms .privacy-main,
+.page-cookie-policy .privacy-main,
+.page-faq .privacy-main {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-cream-bg);
+}
+
+.page-privacy .terms-hero,
+.page-terms .terms-hero,
+.page-cookie-policy .terms-hero,
+.page-faq .terms-hero {
+  position: relative;
+  padding-top: 92px;
+  padding-bottom: 24px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.page-privacy .subpage-doodle,
+.page-terms .subpage-doodle,
+.page-cookie-policy .subpage-doodle,
+.page-faq .subpage-doodle {
+  display: none !important;
+}
+
+.hero-brand-doodles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.page-privacy .terms-hero .subpage-title,
+.page-terms .terms-hero .subpage-title,
+.page-cookie-policy .terms-hero .subpage-title,
+.page-faq .terms-hero .subpage-title {
+  margin-bottom: 10px;
+}
+
+.page-privacy .terms-section,
+.page-terms .terms-section,
+.page-cookie-policy .cookie-policy-section,
+.page-faq .faq-section {
+  padding-top: 14px;
+  padding-bottom: 85px;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.page-privacy .terms-content,
+.page-terms .terms-content,
+.page-cookie-policy .cookie-policy-content {
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 16px 50px rgba(54, 18, 4, 0.08);
+}
+
+.page-faq .faq-category {
+  position: relative;
+  z-index: 3;
+}
+
+/* Floating background elements wrapper */
+.privacy-floating-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.privacy-doodle {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(99, 39, 19, 0.08));
+}
+
+/* 4 Playful "Approach & Return" Natural Choreography Animations */
+@keyframes doodleApproachA {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(14px, 12px) rotate(8deg);
+  }
+}
+
+@keyframes doodleApproachB {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-14px, -12px) rotate(-8deg);
+  }
+}
+
+@keyframes doodleApproachC {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-12px, 14px) rotate(7deg);
+  }
+}
+
+@keyframes doodleApproachD {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -14px) rotate(-7deg);
+  }
+}
+
+.privacy-doodle.anim-float-a {
+  animation: doodleApproachA ease-in-out infinite;
+}
+
+.privacy-doodle.anim-float-b {
+  animation: doodleApproachB ease-in-out infinite;
+}
+
+.privacy-doodle.anim-float-c {
+  animation: doodleApproachC ease-in-out infinite;
+}
+
+.privacy-doodle.anim-float-d {
+  animation: doodleApproachD ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .privacy-doodle {
+    opacity: 0.45 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-privacy .terms-hero,
+  .page-terms .terms-hero,
+  .page-cookie-policy .terms-hero,
+  .page-faq .terms-hero {
+    padding-top: 84px;
+    padding-bottom: 18px;
+  }
+  .page-privacy .terms-section,
+  .page-terms .terms-section,
+  .page-cookie-policy .cookie-policy-section,
+  .page-faq .faq-section {
+    padding-top: 8px;
+    padding-bottom: 55px;
+  }
+  .privacy-doodle {
+    opacity: 0.32 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-doodle {
+    animation: none !important;
   }
 }

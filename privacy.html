@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main & Subpages Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=71.0">
-  <link rel="stylesheet" href="css/pages.css?v=39.0">
+  <link rel="stylesheet" href="css/style.css?v=74.0">
+  <link rel="stylesheet" href="css/pages.css?v=52.0">
 </head>
 <body class="page-privacy page-terms">
 
@@ -75,14 +75,30 @@
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" class="privacy-main">
     <section class="subpage-hero terms-hero">
-      <span class="subpage-doodle subpage-doodle-left" aria-hidden="true">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5422D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-      </span>
-      <span class="subpage-doodle subpage-doodle-right" aria-hidden="true">
-        <svg width="44" height="44" viewBox="0 0 36 36" fill="none"><path d="M18 2 L18 34 M2 18 L34 18 M6 6 L30 30 M6 30 L30 6" stroke="#FCAD36" stroke-width="3" stroke-linecap="round"/></svg>
-      </span>
+<!-- Dedicated Floating Hero Elements -->
+      <div class="hero-brand-doodles" aria-hidden="true">
+        <!-- Left Group -->
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 15%; left: 4%; width: 34px; height: 34px; animation-duration: 6.8s; animation-delay: -2.1s; transform: rotate(-12deg); opacity: 0.85;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 38%; left: 16%; width: 26px; height: 26px; animation-duration: 5.8s; animation-delay: -1.2s; transform: rotate(15deg); opacity: 0.85;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 62%; left: 5%; width: 38px; height: 38px; animation-duration: 7.2s; animation-delay: -3.5s; transform: rotate(8deg); opacity: 0.88;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 85%; left: 16%; width: 28px; height: 28px; animation-duration: 6.5s; animation-delay: -0.8s; transform: rotate(-18deg); opacity: 0.8;">
+
+        <!-- Middle Doodles (Fill center gaps, approach and return animation) -->
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-a" style="top: 13%; left: 28%; width: 30px; height: 30px; animation-duration: 6.4s; animation-delay: -1.5s; transform: rotate(5deg); opacity: 0.85;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 13%; right: 28%; width: 32px; height: 32px; animation-duration: 6.7s; animation-delay: -3.2s; transform: rotate(-5deg); opacity: 0.85;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-c" style="top: 50%; left: 23%; width: 36px; height: 36px; animation-duration: 7.0s; animation-delay: -4.0s; transform: rotate(8deg); opacity: 0.88;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 50%; right: 23%; width: 28px; height: 28px; animation-duration: 7.1s; animation-delay: -2.3s; transform: rotate(-8deg); opacity: 0.8;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-a" style="top: 86%; left: 27%; width: 30px; height: 30px; animation-duration: 6.5s; animation-delay: -2.5s; transform: rotate(10deg); opacity: 0.82;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-b" style="top: 86%; right: 27%; width: 28px; height: 28px; animation-duration: 6.9s; animation-delay: -1.0s; transform: rotate(-10deg); opacity: 0.85;">
+
+        <!-- Right Group -->
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-b" style="top: 15%; right: 16%; width: 30px; height: 30px; animation-duration: 8.4s; animation-delay: -5.0s; transform: rotate(12deg); opacity: 0.8;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-d" style="top: 38%; right: 5%; width: 38px; height: 38px; animation-duration: 6.2s; animation-delay: -1.8s; transform: rotate(-10deg); opacity: 0.88;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-b" style="top: 62%; right: 16%; width: 28px; height: 28px; animation-duration: 6.0s; animation-delay: -2.7s; transform: rotate(-16deg); opacity: 0.85;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-d" style="top: 85%; right: 5%; width: 32px; height: 32px; animation-duration: 7.5s; animation-delay: -3.1s; transform: rotate(20deg); opacity: 0.85;">
+      </div>
       <div class="subpage-hero-container">
         <span class="section-badge gold-badge">YOUR PRIVACY MATTERS</span>
         <h1 class="subpage-title">Privacy Policy</h1>
@@ -91,6 +107,50 @@
     </section>
 
     <section class="terms-section" aria-label="Privacy Policy">
+      <div class="privacy-floating-background" aria-hidden="true">
+        <!-- Left Gutter Doodles (Equal Stride, Guaranteed Zero Collision) -->
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 4.0%; left: 4.0%; width: 30px; height: 30px; animation-duration: 7.2s; animation-delay: -0.0s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 8.6%; left: 11.5%; width: 26px; height: 26px; animation-duration: 7.6s; animation-delay: -1.7s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 13.2%; left: 4.0%; width: 34px; height: 34px; animation-duration: 8.0s; animation-delay: -3.4s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 17.8%; left: 11.5%; width: 28px; height: 28px; animation-duration: 8.4s; animation-delay: -5.1s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 22.4%; left: 4.0%; width: 30px; height: 30px; animation-duration: 8.8s; animation-delay: -0.5s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 27.0%; left: 11.5%; width: 26px; height: 26px; animation-duration: 9.2s; animation-delay: -2.2s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 31.6%; left: 4.0%; width: 34px; height: 34px; animation-duration: 9.6s; animation-delay: -3.9s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 36.2%; left: 11.5%; width: 28px; height: 28px; animation-duration: 7.2s; animation-delay: -5.6s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 40.8%; left: 4.0%; width: 30px; height: 30px; animation-duration: 7.6s; animation-delay: -1.0s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 45.4%; left: 11.5%; width: 26px; height: 26px; animation-duration: 8.0s; animation-delay: -2.7s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 50.0%; left: 4.0%; width: 34px; height: 34px; animation-duration: 8.4s; animation-delay: -4.4s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 54.6%; left: 11.5%; width: 28px; height: 28px; animation-duration: 8.8s; animation-delay: -6.1s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 59.2%; left: 4.0%; width: 30px; height: 30px; animation-duration: 9.2s; animation-delay: -1.5s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 63.8%; left: 11.5%; width: 26px; height: 26px; animation-duration: 9.6s; animation-delay: -3.2s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 68.4%; left: 4.0%; width: 34px; height: 34px; animation-duration: 7.2s; animation-delay: -4.9s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 73.0%; left: 11.5%; width: 28px; height: 28px; animation-duration: 7.6s; animation-delay: -0.3s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-a" style="top: 77.6%; left: 4.0%; width: 30px; height: 30px; animation-duration: 8.0s; animation-delay: -2.0s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-c" style="top: 82.2%; left: 11.5%; width: 26px; height: 26px; animation-duration: 8.4s; animation-delay: -3.7s; transform: rotate(-14deg); opacity: 0.65;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-a" style="top: 86.8%; left: 4.0%; width: 34px; height: 34px; animation-duration: 8.8s; animation-delay: -5.4s; transform: rotate(12deg); opacity: 0.72;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-c" style="top: 91.4%; left: 11.5%; width: 28px; height: 28px; animation-duration: 9.2s; animation-delay: -0.8s; transform: rotate(-14deg); opacity: 0.65;">
+        <!-- Right Gutter Doodles (Staggered Half-Stride, Complementary Approach) -->
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-b" style="top: 6.3%; right: 11.5%; width: 34px; height: 34px; animation-duration: 7.4s; animation-delay: -1.2s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 10.9%; right: 4.0%; width: 28px; height: 28px; animation-duration: 7.9s; animation-delay: -3.1s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 15.5%; right: 11.5%; width: 30px; height: 30px; animation-duration: 8.4s; animation-delay: -5.0s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-d" style="top: 20.1%; right: 4.0%; width: 26px; height: 26px; animation-duration: 8.9s; animation-delay: -0.4s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-b" style="top: 24.7%; right: 11.5%; width: 34px; height: 34px; animation-duration: 9.4s; animation-delay: -2.3s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 29.3%; right: 4.0%; width: 28px; height: 28px; animation-duration: 9.9s; animation-delay: -4.2s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 33.9%; right: 11.5%; width: 30px; height: 30px; animation-duration: 7.4s; animation-delay: -6.1s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-d" style="top: 38.5%; right: 4.0%; width: 26px; height: 26px; animation-duration: 7.9s; animation-delay: -1.5s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-b" style="top: 43.1%; right: 11.5%; width: 34px; height: 34px; animation-duration: 8.4s; animation-delay: -3.4s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 47.7%; right: 4.0%; width: 28px; height: 28px; animation-duration: 8.9s; animation-delay: -5.3s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 52.3%; right: 11.5%; width: 30px; height: 30px; animation-duration: 9.4s; animation-delay: -0.7s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-d" style="top: 56.9%; right: 4.0%; width: 26px; height: 26px; animation-duration: 9.9s; animation-delay: -2.6s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-b" style="top: 61.5%; right: 11.5%; width: 34px; height: 34px; animation-duration: 7.4s; animation-delay: -4.5s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 66.1%; right: 4.0%; width: 28px; height: 28px; animation-duration: 7.9s; animation-delay: -6.4s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 70.7%; right: 11.5%; width: 30px; height: 30px; animation-duration: 8.4s; animation-delay: -1.8s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-d" style="top: 75.3%; right: 4.0%; width: 26px; height: 26px; animation-duration: 8.9s; animation-delay: -3.7s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/bow-tie-blue.svg" alt="" class="privacy-doodle anim-float-b" style="top: 79.9%; right: 11.5%; width: 34px; height: 34px; animation-duration: 9.4s; animation-delay: -5.6s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/ball-light-green.svg" alt="" class="privacy-doodle anim-float-d" style="top: 84.5%; right: 4.0%; width: 28px; height: 28px; animation-duration: 9.9s; animation-delay: -1.0s; transform: rotate(15deg); opacity: 0.64;">
+        <img src="images/brand-elements/heart-pink.svg" alt="" class="privacy-doodle anim-float-b" style="top: 89.1%; right: 11.5%; width: 30px; height: 30px; animation-duration: 7.4s; animation-delay: -2.9s; transform: rotate(-16deg); opacity: 0.7;">
+        <img src="images/brand-elements/sparkle-yellow.svg" alt="" class="privacy-doodle anim-float-d" style="top: 93.7%; right: 4.0%; width: 26px; height: 26px; animation-duration: 7.9s; animation-delay: -4.8s; transform: rotate(15deg); opacity: 0.64;">
+      </div>
       <article class="terms-content terms-article">
         <p class="terms-intro">
           Scotchvilla respects your privacy. This policy explains what information we collect, how we use it, who we share it with, and your rights when using our website.<br><br>

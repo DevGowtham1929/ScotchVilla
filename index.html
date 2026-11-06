@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Main Styles -->
-  <link rel="stylesheet" href="css/style.css?v=71.0">
+  <link rel="stylesheet" href="css/style.css?v=74.0">
 </head>
 <body>
 
@@ -77,6 +77,55 @@
 
     <!-- ==================== SECTION 1: HERO (NUZZLE ORGANIC BLOB STYLE) ==================== -->
     <section id="hero" class="hero-section hero-nuzzle-section">
+
+      <!-- Reusable SVG symbol for Scotch's paw print -->
+      <svg style="display: none;" aria-hidden="true">
+        <defs>
+          <g id="hero-paw-symbol">
+            <path fill="currentColor" d="M407.7,451.0 L429.0,445.4 L444.9,436.0 L463.2,418.0 L476.5,397.0 L485.2,375.0 L490.5,352.0 L492.1,320.0 L490.1,299.0 L483.2,270.0 L474.0,248.0 L459.1,224.0 L445.4,209.0 L428.0,195.7 L407.0,185.6 L386.0,181.7 L368.0,182.8 L347.0,189.2 L332.1,198.0 L316.0,212.3 L304.0,228.6 L291.5,256.0 L286.6,275.0 L284.1,298.0 L285.8,329.0 L290.9,351.0 L300.9,377.0 L312.0,396.7 L328.0,417.6 L345.2,433.0 L366.0,444.8 L386.0,450.8 L407.7,451.0 Z M623.8,452.0 L639.0,449.1 L655.0,442.6 L675.0,429.8 L692.0,413.4 L707.0,393.0 L719.2,370.0 L730.5,336.0 L734.0,315.0 L734.6,292.0 L731.0,264.0 L724.1,244.0 L713.3,224.0 L703.3,211.0 L683.0,194.5 L664.0,185.7 L647.0,182.8 L620.0,184.7 L603.0,190.8 L587.0,199.6 L566.6,218.0 L551.6,238.0 L537.0,267.0 L527.8,298.0 L524.6,320.0 L524.7,348.0 L528.8,372.0 L538.7,399.0 L549.8,417.0 L564.5,433.0 L584.0,445.8 L608.0,452.3 L623.8,452.0 Z M255.3,629.0 L273.0,625.9 L292.9,616.0 L310.0,600.0 L319.0,586.1 L325.3,572.0 L330.3,549.0 L330.2,517.0 L325.4,493.0 L313.2,464.0 L303.2,448.0 L287.0,428.6 L268.0,412.2 L248.0,399.8 L222.0,390.9 L208.0,389.3 L186.2,391.0 L172.0,395.7 L153.9,407.0 L140.0,421.2 L130.9,436.0 L122.5,459.0 L119.9,476.0 L120.7,501.0 L123.8,517.0 L133.5,543.0 L143.5,561.0 L153.4,575.0 L175.0,597.3 L192.0,610.4 L217.0,623.4 L238.0,628.9 L255.3,629.0 Z M767.4,630.0 L783.0,628.0 L798.4,623.0 L819.0,613.2 L837.5,601.0 L855.4,585.0 L875.1,561.0 L886.0,543.0 L895.3,522.0 L900.5,503.0 L902.8,480.0 L901.2,461.0 L896.0,443.5 L889.4,430.0 L879.0,415.8 L863.0,403.0 L848.0,395.9 L831.0,391.9 L808.0,391.9 L778.0,400.0 L754.0,412.7 L726.1,436.0 L712.0,452.3 L698.0,474.2 L684.8,505.0 L679.7,530.0 L679.6,554.0 L684.1,575.0 L693.5,595.0 L711.9,615.0 L728.0,624.2 L747.0,629.4 L767.4,630.0 Z M652.0,853.0 L680.0,847.2 L700.0,838.3 L719.0,824.7 L732.0,811.5 L745.1,791.0 L752.4,769.0 L753.9,750.0 L750.0,728.2 L743.0,711.0 L727.0,688.6 L711.0,672.2 L672.5,639.0 L651.9,615.0 L615.1,548.0 L601.0,527.8 L575.0,504.8 L545.0,491.5 L512.0,486.9 L483.0,488.7 L448.0,499.9 L424.0,515.7 L410.0,529.3 L397.1,546.0 L366.2,600.0 L352.3,619.0 L333.6,639.0 L276.7,688.0 L257.8,712.0 L246.7,736.0 L243.6,752.0 L243.4,767.0 L246.1,783.0 L252.8,799.0 L264.0,815.0 L277.4,828.0 L291.0,837.3 L311.0,846.3 L332.0,851.3 L362.0,851.2 L391.0,844.1 L449.0,822.4 L472.0,817.8 L494.0,816.4 L511.0,817.7 L535.0,822.7 L612.0,850.4 L632.0,853.0 L652.0,853.0 Z"/>
+          </g>
+        </defs>
+      </svg>
+
+      <!-- Ambient Paw Footprints Backdrop (Scotch's 30 Playful Footprints - Scaled & Distributed) -->
+      <div class="hero-paws-backdrop" aria-hidden="true">
+        <!-- Trail 1: The Scotch Waddle Path (Meandering walking track across lower & mid canvas) -->
+        <span class="hero-paw paw-coral anim-a" style="left: 3%; top: 70%; width: 54px; height: 54px; --rot: 24deg; animation-delay: 0s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-b" style="left: 7%; top: 56%; width: 50px; height: 50px; --rot: 42deg; animation-delay: -2s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-a" style="left: 12%; top: 74%; width: 58px; height: 58px; --rot: 18deg; animation-delay: -4s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-b" style="left: 17%; top: 60%; width: 52px; height: 52px; --rot: 36deg; animation-delay: -1s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-a" style="left: 22%; top: 78%; width: 62px; height: 62px; --rot: 15deg; animation-delay: -3s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-b" style="left: 28%; top: 64%; width: 54px; height: 54px; --rot: 30deg; animation-delay: -5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-a" style="left: 35%; top: 80%; width: 58px; height: 58px; --rot: 20deg; animation-delay: -2.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-b" style="left: 41%; top: 66%; width: 52px; height: 52px; --rot: 35deg; animation-delay: -6s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-a" style="left: 48%; top: 82%; width: 64px; height: 64px; --rot: 15deg; animation-delay: -4.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-b" style="left: 54%; top: 70%; width: 54px; height: 54px; --rot: 28deg; animation-delay: -1.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-a" style="left: 60%; top: 84%; width: 58px; height: 58px; --rot: 16deg; animation-delay: -3.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-b" style="left: 66%; top: 72%; width: 50px; height: 50px; --rot: 32deg; animation-delay: -2s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+
+        <!-- Trail 2: Upper / Framing Area (Across top margin, header, and middle) -->
+        <span class="hero-paw paw-gold anim-a" style="left: 2%; top: 14%; width: 48px; height: 48px; --rot: -22deg; animation-delay: -3.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-b" style="left: 9%; top: 5%; width: 44px; height: 44px; --rot: 14deg; animation-delay: -5.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-a" style="left: 17%; top: 6%; width: 46px; height: 46px; --rot: -12deg; animation-delay: -1.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-b" style="left: 26%; top: 10%; width: 52px; height: 52px; --rot: -18deg; animation-delay: -1s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-a" style="left: 36%; top: 6%; width: 46px; height: 46px; --rot: 20deg; animation-delay: -4s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-b" style="left: 46%; top: 8%; width: 48px; height: 48px; --rot: 26deg; animation-delay: -4.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-a" style="left: 54%; top: 14%; width: 44px; height: 44px; --rot: -15deg; animation-delay: -2s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-a" style="left: 47%; top: 30%; width: 50px; height: 50px; --rot: -12deg; animation-delay: -2s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-b" style="left: 43%; top: 48%; width: 46px; height: 46px; --rot: 22deg; animation-delay: -3s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-a" style="left: 38%; top: 38%; width: 44px; height: 44px; --rot: -25deg; animation-delay: -5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+
+        <!-- Trail 3: Right Side & Perimeter Framing around Blob Stage -->
+        <span class="hero-paw paw-gold anim-a" style="right: 7%; top: 10%; width: 52px; height: 52px; --rot: -28deg; animation-delay: -4.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-b" style="right: 18%; top: 6%; width: 46px; height: 46px; --rot: 18deg; animation-delay: -3s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-a" style="right: 1%; top: 32%; width: 54px; height: 54px; --rot: -14deg; animation-delay: -2.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-b" style="right: 2%; top: 52%; width: 58px; height: 58px; --rot: 16deg; animation-delay: -2s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-brown anim-a" style="right: 4%; top: 72%; width: 60px; height: 60px; --rot: -22deg; animation-delay: -5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-b" style="right: 13%; top: 84%; width: 54px; height: 54px; --rot: 24deg; animation-delay: -4s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-coral anim-a" style="right: 22%; top: 90%; width: 56px; height: 56px; --rot: 18deg; animation-delay: -3.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+        <span class="hero-paw paw-gold anim-b" style="right: 32%; top: 86%; width: 50px; height: 50px; --rot: -10deg; animation-delay: -1.5s;"><svg viewBox="0 0 1024 1024"><use href="#hero-paw-symbol"/></svg></span>
+      </div>
+
       <div class="hero-grid">
 
         <!-- Left Column: Editorial Copy -->
@@ -402,9 +451,9 @@
       <div class="quote-overlay"></div>
       <div class="quote-container">
         <blockquote class="parallax-quote-text">
-          Scotchvilla is a little corner of the world<br class="desktop-br">
+          “Scotchvilla is a little corner of the world<br class="desktop-br">
           where different is beautiful,<br class="desktop-br">
-          kindness is cool and joy is never far off.
+          kindness is cool and joy is never far off”
         </blockquote>
       </div>
     </section>
@@ -759,7 +808,7 @@
         <!-- Header -->
         <div class="section-header-centered">
           <span class="section-badge gold-badge">What My Online Fam Says</span>
-          <h2 class="section-title">Letters From My Online Fam<br class="desktop-br"> Proof That Joy Travels Further Than You Think.</h2>
+          <h2 class="section-title">Letters From My Online Fam!<br class="desktop-br"> Proof That Joy Travels Further Than You Think.</h2>
           <p class="section-subtitle">
             A head tilt at home, a smile halfway across the world. They write from across oceans and just down the road. Some found me on a hard day; others simply needed a lift. Amid all the noise online, my little corner has stayed gentle, and I have kept every word.
           </p>
@@ -918,7 +967,7 @@
               <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Contact Us</a></li>
               <li><a href="#contact-modal" class="footer-nav-link open-contact-trigger">Collaborations &amp; Press</a></li>
               <li><a href="faq.html" class="footer-nav-link">FAQs</a></li>
-              <li><a href="mailto:hello@scotchvilla.com" class="footer-nav-link footer-email-link">hello@scotchvilla.com</a></li>
+              <li><a href="mailto:hello@scotchvilla.com" class="footer-nav-link">hello@scotchvilla.com</a></li>
             </ul>
           </div>
 
