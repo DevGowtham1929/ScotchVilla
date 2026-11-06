@@ -211,8 +211,8 @@ input[type="button"],
 
 .cookie-card-title {
   color: var(--color-brown, #221510);
-  font-family: var(--font-serif, "Fraunces", Georgia, serif);
-  font-size: 24px;
+  font-family: var(--font-body, "Bricolage Grotesque", sans-serif);
+  font-size: 23px;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.3px;
@@ -535,8 +535,7 @@ h1, h2, h3, h4,
 .viral-title,
 .channel-name,
 .collab-text h3,
-.footer-col-title,
-.cookie-card-title {
+.footer-col-title {
   font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-variation-settings: 'opsz' auto, 'SOFT' 0, 'WONK' 0;
@@ -583,7 +582,6 @@ h3, h4,
 .puppy-name,
 .lightbox-caption h3,
 .reader-title,
-.cookie-card-title,
 .terms-article h3 {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -2667,9 +2665,194 @@ ul, ol {
   padding: 85px 0 95px;
 }
 
-.core-values-header {
-  margin-bottom: 48px;
+/* Dedicated Full-Section Wings Suite (Option A: Flanking Empty Margins from Top to Bottom) */
+.core-values-section {
+  position: relative;
+  background-color: var(--color-cream-bg);
+  padding: 85px 0 95px;
+  overflow: hidden;
 }
+
+.core-values-header {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto 54px;
+  text-align: center;
+  z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+  
+  }
+
+.core-values-wings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wing-doodle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* === FAR LEFT WING CORRIDOR (Spread along left 2% - 10%) === */
+.wing-star-left-top {
+  left: 3.5%;
+  top: 45px;
+  transform: rotate(-14deg);
+  animation: floatDoodle 4.4s ease-in-out infinite 0.2s;
+}
+
+.wing-squiggle-left {
+  left: 9%;
+  top: 140px;
+  transform: rotate(-8deg);
+  animation: floatDoodle 5.8s ease-in-out infinite;
+}
+
+.wing-heart-left {
+  left: 2.5%;
+  top: 250px;
+  --rot: -14deg;
+  transform: rotate(-14deg);
+  animation: floatGentle 4.2s ease-in-out infinite;
+}
+
+/* === FAR RIGHT WING CORRIDOR (Spread along right 2% - 10%) === */
+.wing-star-right-top {
+  right: 3.5%;
+  top: 45px;
+  transform: rotate(14deg);
+  animation: floatDoodle 4.4s ease-in-out infinite 1.0s;
+}
+
+.wing-squiggle-right {
+  right: 9%;
+  top: 140px;
+  transform: scaleX(-1) rotate(-8deg);
+  animation: floatDoodle 5.8s ease-in-out infinite 0.5s;
+}
+
+.wing-heart-right {
+  right: 2.5%;
+  top: 250px;
+  --rot: 18deg;
+  transform: rotate(18deg);
+  animation: floatGentle 4.2s ease-in-out infinite 2s;
+}
+/* Wing Base Paws */
+.wing-paw-left {
+  left: 4%;
+  top: 480px;
+  transform: rotate(24deg);
+  animation: floatDoodle 6.2s ease-in-out infinite 0.8s;
+}
+
+.wing-paw-right {
+  right: 4%;
+  top: 480px;
+  transform: rotate(-20deg);
+  animation: floatDoodle 6.2s ease-in-out infinite 1.4s;
+}
+
+/* 4 Title-Framing Paws */
+.title-framing-paw {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.paw-title-top-left {
+  left: 18%;
+  top: -12px;
+  transform: rotate(16deg);
+  animation: floatDoodle 4.8s ease-in-out infinite 0.4s;
+}
+
+.paw-title-mid-left {
+  left: 8%;
+  top: 75px;
+  transform: rotate(32deg);
+  animation: floatDoodle 5.4s ease-in-out infinite 1.2s;
+}
+
+.paw-title-top-right {
+  right: 18%;
+  top: 10px;
+  transform: rotate(-22deg);
+  animation: floatDoodle 5.0s ease-in-out infinite 0.8s;
+}
+
+.paw-title-bottom-right {
+  right: 10%;
+  bottom: -15px;
+  transform: rotate(18deg);
+  animation: floatDoodle 5.6s ease-in-out infinite 1.6s;
+}
+
+
+@media (max-width: 1200px) {
+  .wing-star-left-top { left: 1%; }
+  .wing-star-right-top { right: 1%; }
+  .wing-heart-left { left: 1%; }
+  .wing-heart-right { right: 1%; }
+  .wing-squiggle-left { left: 6%; }
+  .wing-squiggle-right { right: 6%; }
+  }
+
+@media (max-width: 900px) {
+  }
+
+@media (max-width: 768px) {
+  .wing-heart-left,
+  .wing-heart-right,
+  .wing-paw-left,
+  .wing-paw-right,
+  .paw-title-mid-left,
+  .paw-title-bottom-right {
+    display: none;
+  }
+  .paw-title-top-left {
+    left: 4%;
+    top: -6px;
+    transform: scale(0.8) rotate(16deg);
+  }
+  .paw-title-top-right {
+    right: 4%;
+    top: 0px;
+    transform: scale(0.8) rotate(-22deg);
+  }
+  .wing-squiggle-left {
+    left: 2%;
+    top: 20px;
+    transform: scale(0.7);
+  }
+  .wing-squiggle-right {
+    right: 2%;
+    top: 20px;
+    transform: scaleX(-1) scale(0.7);
+  }
+  .wing-star-left-top {
+    left: 18%;
+    top: 15px;
+    transform: scale(0.75);
+  }
+  .wing-star-right-top {
+    right: 18%;
+    top: 15px;
+    transform: scale(0.75);
+  }
+}
+
 
 .core-values-intro {
   max-width: 780px;
@@ -3282,10 +3465,73 @@ ul, ol {
   overflow: hidden;
 }
 
+
 .cta-inner-card {
+  position: relative;
   max-width: 860px;
   margin: 0 auto;
 }
+
+.cta-doodle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cta-heart-left {
+  left: 3%;
+  top: 15px;
+  --rot: -14deg;
+  transform: rotate(-14deg);
+  animation: floatGentle 4.2s ease-in-out infinite;
+}
+
+.cta-star-left {
+  left: 14%;
+  top: -20px;
+  transform: rotate(-10deg);
+  animation: floatDoodle 4.6s ease-in-out infinite 0.5s;
+}
+
+.cta-heart-right {
+  right: 3%;
+  top: 15px;
+  --rot: 18deg;
+  transform: rotate(18deg);
+  animation: floatGentle 4.2s ease-in-out infinite 2s;
+}
+
+.cta-star-right {
+  right: 14%;
+  top: -20px;
+  transform: rotate(12deg);
+  animation: floatDoodle 4.6s ease-in-out infinite 1.2s;
+}
+
+@media (max-width: 900px) {
+  .cta-heart-left { left: 0%; }
+  .cta-heart-right { right: 0%; }
+  .cta-star-left { left: 6%; }
+  .cta-star-right { right: 6%; }
+}
+
+@media (max-width: 768px) {
+  .cta-heart-left,
+  .cta-heart-right {
+    display: none;
+  }
+  .cta-star-left {
+    left: 2%;
+    top: -12px;
+    transform: scale(0.75);
+  }
+  .cta-star-right {
+    right: 2%;
+    top: -12px;
+    transform: scale(0.75);
+  }
+}
+
 
 .cta-headline {
   margin-top: 18px;
@@ -4253,7 +4499,6 @@ ul, ol {
 }
 
 /* Scotchvilla graphic kit accents used across the homepage */
-.core-values-section::before,
 .bottom-cta-section::before,
 .bottom-cta-section::after,
 .site-footer::before {
@@ -4325,7 +4570,7 @@ ul, ol {
 }
 
 @media (max-width: 768px) {
-  .core-values-section::before,
+  
   .different-section::before,
   .bottom-cta-section::before,
   .bottom-cta-section::after {
@@ -4352,5 +4597,35 @@ ul, ol {
   .footer-credit-link .footer-credit-brand,
   .footer-credit-link .footer-credit-brand::after {
     transition: none !important;
+  }
+}
+
+/* Unified Single Typeface (Bricolage Grotesque) for Cookie Modal */
+.cookie-modal-card,
+.cookie-card-title,
+.cookie-card-body,
+.cookie-card-body p,
+.cookie-card-body p.cookie-subtext,
+.cookie-btn,
+.cookie-card-footer-links a {
+  font-family: var(--font-body, "Bricolage Grotesque", -apple-system, sans-serif) !important;
+}
+
+/* Guarantee 100% exact font size, weight, and line-height parity for button footer links */
+button.footer-nav-link,
+.cookie-settings-link {
+  font-family: var(--font-body, "Bricolage Grotesque", sans-serif) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  letter-spacing: normal !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  button.footer-nav-link,
+  .cookie-settings-link {
+    font-size: 15px !important;
   }
 }
