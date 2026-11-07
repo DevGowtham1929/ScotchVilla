@@ -444,7 +444,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle Form Submit -> Directly send to WhatsApp (+91 8877338585)
+  const WEB3FORMS_ACCESS_KEY = '38467b75-1465-42bf-a344-a0d87176c96b';
+
+  // Handle Form Submit -> Send Email via Web3Forms AND Open WhatsApp (+91 8877338585)
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -463,7 +465,32 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'General Inquiry';
       const userMessage = (contactForm.querySelector('#message')?.value || '').trim() || 'No message provided';
 
-      // Build structured WhatsApp message
+      // 1. Send Email in Background via Web3Forms
+      if (WEB3FORMS_ACCESS_KEY) {
+        try {
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_ACCESS_KEY,
+              subject: `🐾 New Scotchvilla Enquiry from ${name || 'Visitor'} (${reasonText})`,
+              from_name: 'Scotchvilla Website',
+              name: name,
+              email: email,
+              phone: phone,
+              inquiry_reason: reasonText,
+              message: userMessage
+            })
+          }).catch(err => console.warn('Web3Forms submit notice:', err));
+        } catch (err) {
+          console.warn('Web3Forms fetch error:', err);
+        }
+      }
+
+      // 2. Build structured WhatsApp message and open immediately
       const waTextLines = [
         '🐾 *New Website Inquiry - Scotchvilla*',
         '',
