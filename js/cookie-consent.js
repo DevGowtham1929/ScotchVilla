@@ -93,10 +93,10 @@
           </div>
           <div class="cookie-card-actions">
             <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-choice="accepted">
-              Accept Analytics
+              Accept cookies
             </button>
             <button type="button" class="cookie-btn cookie-btn-reject" data-cookie-choice="rejected">
-              Reject Analytics
+              Reject cookies
             </button>
           </div>
           <div class="cookie-card-footer-links">
